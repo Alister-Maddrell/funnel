@@ -27,18 +27,19 @@ const steps = [
 <section id="process" class="py-24 md:py-32 px-5 bg-grey-50">
   <div class="mx-auto max-w-5xl">
     <div class="md:text-center md:max-w-xl md:mx-auto mb-16">
-      <svg class="w-7 h-7 mb-5 mx-auto text-grey-400" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 28V6h8" />
-        <path d="M4 18h12" />
-        <circle cx="20" cy="6" r="4" />
-        <path d="M18 6l2 2 4-3" stroke-width="1.2" />
-        <circle cx="24" cy="18" r="4" />
-        <path d="M22 18l2 2 4-3" stroke-width="1.2" />
-        <circle cx="16" cy="26" r="4" stroke-dasharray="2 2" />
+      <!-- Hand-drawn roadmap illustration -->
+      <svg class="w-14 h-14 mb-5 mx-auto" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 48 C8 32, 20 28, 28 24 S48 16, 48 8" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+        <circle cx="8" cy="48" r="5" fill="#5cbd6a" opacity="0.2" stroke="#5cbd6a" stroke-width="1.5"/>
+        <circle cx="8" cy="48" r="2" fill="#5cbd6a"/>
+        <circle cx="22" cy="32" r="4" fill="#f5c542" opacity="0.2" stroke="#f5c542" stroke-width="1.5"/>
+        <circle cx="22" cy="32" r="1.5" fill="#f5c542"/>
+        <circle cx="36" cy="20" r="4" fill="#1a3a5c" opacity="0.15" stroke="#1a3a5c" stroke-width="1.5"/>
+        <circle cx="36" cy="20" r="1.5" fill="#1a3a5c"/>
+        <circle cx="48" cy="8" r="5" fill="#e8635a" opacity="0.15" stroke="#e8635a" stroke-width="1.5"/>
+        <path d="M46 6 L48 8 L52 4" stroke="#e8635a" stroke-width="1.5" stroke-linecap="round"/>
       </svg>
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-grey-200/60 mb-6">
-        <span class="text-xs font-medium text-grey-500">How it works</span>
-      </div>
+      <div class="tag mb-6">How it works</div>
       <h2 class="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-black">
         You talk. I build. You launch.
       </h2>
@@ -69,7 +70,7 @@ const steps = [
         href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"
         target="_blank"
         rel="noopener noreferrer"
-        class="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-grey-200 bg-white text-dark text-sm font-medium hover:border-grey-400 hover:shadow-xs transition-all"
+        class="btn-secondary group"
       >
         Book a free 15-min call
         <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 7l-10 10M17 7H7m10 0v10"/></svg>
