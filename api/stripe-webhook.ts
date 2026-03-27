@@ -10,7 +10,7 @@ const resendApiKey = process.env.RESEND_API_KEY!;
 
 // TODO: Replace pbGZdZ with your actual Tally form ID
 const TALLY_FORM_URL = "https://tally.so/r/pbGZdZ";
-const SITE_URL = process.env.SITE_URL || "https://your-funnel-site.vercel.app";
+const SITE_URL = process.env.SITE_URL || "https://maddrelldesign.com";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
