@@ -2,22 +2,38 @@
 
 @theme {
   --color-black: #000;
-  --color-dark: #242424;
+  --color-dark: #111827;
   --color-grey-900: #1a1a1a;
   --color-grey-800: #2a2a2a;
   --color-grey-600: #555;
-  --color-grey-500: #777;
-  --color-grey-400: #999;
-  --color-grey-300: #bbb;
-  --color-grey-200: #e5e5e5;
+  --color-grey-500: #6b7280;
+  --color-grey-400: #9ca3af;
+  --color-grey-300: #d1d5db;
+  --color-grey-200: #e5e7eb;
   --color-grey-150: #ededed;
-  --color-grey-100: #f5f5f5;
-  --color-grey-50: #fafafa;
+  --color-grey-100: #f3f4f6;
+  --color-grey-50: #f9fafb;
   --color-white: #fff;
-  --color-accent: #111;
-  --color-accent-hover: #333;
-  --color-highlight: #1a3a5c;
-  --color-highlight-hover: #0f2a45;
+  --color-accent: #111827;
+  --color-accent-hover: #1f2937;
+  --color-highlight: #111827;
+  --color-highlight-hover: #000;
+
+  /* Cal.com-inspired accent colors for illustrations */
+  --color-orange: #f97316;
+  --color-orange-light: #fff7ed;
+  --color-blue: #3b82f6;
+  --color-blue-light: #eff6ff;
+  --color-green: #22c55e;
+  --color-green-light: #f0fdf4;
+  --color-purple: #8b5cf6;
+  --color-purple-light: #f5f3ff;
+  --color-red: #ef4444;
+  --color-red-light: #fef2f2;
+  --color-amber: #f59e0b;
+  --color-amber-light: #fffbeb;
+  --color-teal: #14b8a6;
+  --color-teal-light: #f0fdfa;
 
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
   --font-display: "Cal Sans", "Inter", system-ui, sans-serif;
@@ -43,7 +59,6 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Cal Sans display headings — tight tracking like cal.com */
 .font-display {
   letter-spacing: -0.02em;
 }

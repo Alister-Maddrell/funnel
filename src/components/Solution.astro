@@ -1,67 +1,120 @@
 ---
-const solutions = [
+const features = [
   {
-    title: "Show up first",
-    text: "When someone nearby searches for what you do, your business is right there.",
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7" stroke="#1a3a5c" stroke-width="1.5"/><path d="M16 16l5 5" stroke="#1a3a5c" stroke-width="2"/><circle cx="11" cy="11" r="3" fill="#5cbd6a" opacity="0.2"/></svg>`,
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <circle cx="12" cy="12" r="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+      <path d="M18 18l6 6" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M9 12h6M12 9v6" stroke="#93c5fd" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+    colorClass: "bg-blue-light",
+    title: "Show up on Google",
+    text: "SEO foundations so customers in your area actually find you.",
   },
   {
-    title: "Look sharp everywhere",
-    text: "Phone, tablet, laptop. Pixel perfect on every screen your customers use.",
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3" stroke="#1a3a5c" stroke-width="1.5"/><path d="M10 19h4" stroke="#1a3a5c" stroke-width="1.5"/></svg>`,
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <rect x="7" y="2" width="14" height="24" rx="3.5" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+      <path d="M12 22h4" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="9" y="6" width="10" height="12" rx="1" fill="#bbf7d0" opacity="0.5"/>
+    </svg>`,
+    colorClass: "bg-green-light",
+    title: "Perfect on every screen",
+    text: "Mobile-first design that looks sharp on phone, tablet, and desktop.",
   },
   {
-    title: "Load before they blink",
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <path d="M15 2L8 16h6l-1 10 9-14h-6l1-10z" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="5" cy="6" r="1.5" fill="#fde68a" opacity="0.6"/>
+      <circle cx="23" cy="22" r="1" fill="#fde68a" opacity="0.5"/>
+    </svg>`,
+    colorClass: "bg-amber-light",
+    title: "Loads instantly",
     text: "Under 2 seconds. No spinner, no waiting, no lost sales.",
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L6 14h6l-1 8 8-12h-6l1-8z" stroke="#f5c542" stroke-width="1.5" fill="#f5c542" fill-opacity="0.1"/></svg>`,
   },
   {
-    title: "Take bookings 24/7",
-    text: "Enquiries, appointments, and orders come in around the clock. Even on your day off.",
-    icon: `<svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3" stroke="#1a3a5c" stroke-width="1.5"/><path d="M3 10h18M8 2v4M16 2v4" stroke="#1a3a5c" stroke-width="1.5"/><circle cx="8" cy="15" r="1.5" fill="#5cbd6a" opacity="0.4"/></svg>`,
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <rect x="3" y="5" width="22" height="20" rx="3.5" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/>
+      <path d="M3 11h22" stroke="#8b5cf6" stroke-width="1.5"/>
+      <path d="M9 2v5M19 2v5" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="10" cy="17" r="1.5" fill="#8b5cf6"/>
+      <circle cx="14" cy="17" r="1.5" fill="#c4b5fd"/>
+      <circle cx="18" cy="17" r="1.5" fill="#c4b5fd"/>
+    </svg>`,
+    colorClass: "bg-purple-light",
+    title: "Bookings 24/7",
+    text: "Enquiries and appointments come in while you sleep.",
+  },
+  {
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <path d="M14 4l-2 6h-6l5 4-2 6 5-4 5 4-2-6 5-4h-6L14 4z" fill="#fff7ed" stroke="#f97316" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M5 14a9 9 0 0018 0" stroke="#fdba74" stroke-width="1" stroke-dasharray="2 2" opacity="0.5"/>
+    </svg>`,
+    colorClass: "bg-orange-light",
+    title: "You own everything",
+    text: "Your code, your domain, your data. No lock-in, ever.",
+  },
+  {
+    icon: `<svg class="w-6 h-6" viewBox="0 0 28 28" fill="none">
+      <rect x="3" y="4" width="22" height="18" rx="3" fill="#f0fdfa" stroke="#14b8a6" stroke-width="1.5"/>
+      <path d="M8 10h12M8 14h8" stroke="#14b8a6" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="22" cy="20" r="5" fill="#14b8a6"/>
+      <path d="M20 20h4M22 18v4" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+    colorClass: "bg-teal-light",
+    title: "Easy to update",
+    text: "Simple CMS so you can change text and images yourself.",
   },
 ];
 ---
 
-<section id="solution" class="py-14 md:py-28 px-4 md:px-5 bg-grey-50">
-  <div class="mx-auto max-w-4xl">
-    <div class="md:flex md:items-start md:justify-between md:gap-16 mb-10 md:mb-16">
-      <div class="md:max-w-md">
-        <div class="w-11 h-11 rounded-xl bg-white border-[1.5px] border-grey-200/50 flex items-center justify-center mb-5">
-          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none">
-            <path d="M12 2C8 2 5 6 5 10c0 3 2 5.5 4 7.5V20h6v-2.5c2-2 4-4.5 4-7.5 0-4-3-8-7-8z" stroke="#f5c542" stroke-width="1.5" fill="none"/>
-            <path d="M9 22h6" stroke="#f5c542" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+<section id="solution" class="py-16 md:py-28 px-5 bg-white">
+  <div class="mx-auto max-w-3xl text-center mb-10 md:mb-16">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 text-[12px] font-medium text-grey-500 mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-green"></span>
+      The solution
+    </div>
+    <h2 class="font-display text-[28px] md:text-[48px] leading-[1.1] text-dark">
+      A website that works as<br class="hidden sm:block" /> hard as you do
+    </h2>
+    <p class="mt-4 text-[14px] md:text-[16px] text-grey-500 leading-relaxed max-w-lg mx-auto">
+      Everything your business needs to look professional online and convert visitors into customers.
+    </p>
+  </div>
+
+  <!-- Product screenshot -->
+  <div class="mx-auto max-w-5xl">
+    <div class="mb-10 md:mb-14 rounded-2xl border border-grey-200/50 shadow-md overflow-hidden bg-grey-50 p-2 md:p-3">
+      <div class="rounded-xl overflow-hidden border border-grey-200/40 bg-white">
+        <div class="flex items-center gap-2 px-4 py-2.5 border-b border-grey-100 bg-grey-50/50">
+          <div class="flex gap-1.5">
+            <span class="w-2.5 h-2.5 rounded-full bg-red/40"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-amber/40"></span>
+            <span class="w-2.5 h-2.5 rounded-full bg-green/40"></span>
+          </div>
+          <div class="flex-1 mx-4">
+            <div class="h-5 rounded-md bg-grey-100 flex items-center justify-center">
+              <span class="text-[10px] text-grey-400">kingraincafe.com.au</span>
+            </div>
+          </div>
         </div>
-        <div class="tag mb-4">The solution</div>
-        <h2 class="font-display text-[28px] md:text-[48px] leading-[1.1] text-dark">
-          A website that sells while you sleep
-        </h2>
+        <div class="aspect-[16/9] md:aspect-[16/8] bg-grey-50 overflow-hidden">
+          <img src="/thumbnails/cafe.webp" alt="Example website - Kin Grain Cafe" class="w-full h-full object-cover object-top" loading="lazy" />
+        </div>
       </div>
-      <p class="hidden md:block mt-6 text-[14px] text-grey-500 leading-[1.6] max-w-sm text-right">
-        Your site should be your hardest-working employee. Always on, always converting.
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 fade-in-stagger">
-      {solutions.map((s, i) => (
-        <div class={`group rounded-2xl bg-white border-[1.5px] border-grey-200/50 shadow-card p-3 transition-all duration-200 hover:shadow-card-hover fade-in ${i % 2 === 1 ? 'md:translate-y-4' : ''}`}>
-          <div class="p-4 md:p-6">
-            <!-- Icon in container -->
-            <div class="w-10 h-10 rounded-xl bg-grey-50 border border-grey-200/40 flex items-center justify-center">
-              <div class="w-5 h-5" set:html={s.icon} />
-            </div>
-            <h3 class="mt-4 text-[15px] font-semibold text-dark">{s.title}</h3>
-            <p class="mt-1.5 text-[13px] md:text-[14px] text-grey-500 leading-[1.6]">{s.text}</p>
+    <!-- Feature grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+      {features.map((f) => (
+        <div class="flex gap-4 p-5 rounded-xl border border-grey-200/40 bg-grey-50/30 hover:bg-grey-50 transition-colors fade-in">
+          <div class={`w-11 h-11 shrink-0 rounded-xl ${f.colorClass} flex items-center justify-center`}>
+            <Fragment set:html={f.icon} />
+          </div>
+          <div>
+            <h3 class="text-[14px] font-semibold text-dark">{f.title}</h3>
+            <p class="mt-1 text-[13px] text-grey-500 leading-relaxed">{f.text}</p>
           </div>
         </div>
       ))}
-    </div>
-  </div>
-
-  <div class="relative h-px bg-grey-200/50 mt-14 md:mt-28 mx-4 md:mx-5">
-    <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-lg bg-grey-50 border-[1.5px] border-grey-200/50 flex items-center justify-center">
-      <span class="text-[10px] text-grey-300">+</span>
     </div>
   </div>
 </section>

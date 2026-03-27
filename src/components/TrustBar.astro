@@ -1,18 +1,18 @@
 ---
-const values = [
-  "Hand-coded",
-  "Mobile-first",
-  "< 2s load",
-  "10-day delivery",
+const metrics = [
+  { value: "10", label: "Day delivery", color: "text-blue" },
+  { value: "< 2s", label: "Load time", color: "text-orange" },
+  { value: "100%", label: "Hand-coded", color: "text-green" },
+  { value: "24/7", label: "Always on", color: "text-purple" },
 ];
 ---
 
-<div class="py-5 px-5 border-y border-grey-200/40 overflow-x-auto">
-  <div class="mx-auto flex items-center justify-start md:justify-center gap-4 md:gap-10 min-w-max md:min-w-0">
-    {values.map((v, i) => (
-      <div class="flex items-center gap-2 shrink-0">
-        {i > 0 && <span class="w-1 h-1 rounded-full bg-grey-300"></span>}
-        <span class="text-[12px] md:text-[13px] font-medium text-grey-500 whitespace-nowrap">{v}</span>
+<div class="py-8 md:py-10 px-5 border-y border-grey-200/40 bg-white">
+  <div class="mx-auto max-w-3xl grid grid-cols-4 gap-4 md:gap-8">
+    {metrics.map((m) => (
+      <div class="text-center">
+        <p class={`font-display text-[20px] md:text-[28px] ${m.color} leading-none`}>{m.value}</p>
+        <p class="mt-1.5 text-[10px] md:text-[12px] text-grey-400 font-medium">{m.label}</p>
       </div>
     ))}
   </div>
