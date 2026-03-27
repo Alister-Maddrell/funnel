@@ -13,33 +13,38 @@ const inclusions = [
 const stripeCheckoutUrl = "/api/create-checkout";
 ---
 
-<section id="pricing" class="py-20 md:py-28 px-5">
+<section id="pricing" class="py-24 md:py-32 px-5 bg-grey-50">
   <div class="mx-auto max-w-2xl">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grey-400 mb-3 text-center">Pricing</p>
-    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black text-center">
-      One package. Everything included.
-    </h2>
-    <div class="mt-12 rounded-3xl bg-white shadow-lg overflow-hidden">
-      <div class="relative bg-black text-white px-8 py-12 text-center overflow-hidden">
-        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.06), transparent);"></div>
-        <div class="relative">
-          <p class="text-6xl md:text-7xl font-light tracking-tight">$1,999</p>
-          <p class="mt-3 text-white/40 text-sm">Everything you need to get online</p>
-        </div>
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-grey-200/80 mb-6">
+        <span class="text-xs font-medium text-grey-500">Pricing</span>
       </div>
+      <h2 class="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-black">
+        One package. Everything included.
+      </h2>
+    </div>
+
+    <div class="rounded-3xl bg-white border border-grey-200/60 shadow-lg overflow-hidden">
+      <!-- Price header — light, not dark -->
+      <div class="px-8 pt-10 pb-8 text-center border-b border-grey-100">
+        <p class="font-display text-[4.5rem] md:text-[5.5rem] tracking-[-0.03em] text-black leading-none">$1,999</p>
+        <p class="mt-3 text-sm text-grey-400">Everything you need to get online</p>
+      </div>
+
       <div class="px-8 py-8">
-        <ul class="space-y-5">
+        <ul class="space-y-4">
           {inclusions.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-grey-600 py-0.5">
-              <svg class="w-5 h-5 text-grey-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <li class="flex items-start gap-3 text-[14px] text-grey-600 leading-relaxed">
+              <svg class="w-4.5 h-4.5 text-grey-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
               {item}
             </li>
           ))}
         </ul>
-        <div class="mt-8 border-t border-grey-200 pt-8">
+
+        <div class="mt-10">
           <a
             href={stripeCheckoutUrl}
-            class="block w-full text-center px-6 py-4 rounded-full bg-accent text-white text-lg font-bold hover:bg-accent-hover shadow-md hover:shadow-lg transition-all"
+            class="block w-full text-center px-6 py-4 rounded-full bg-highlight text-white text-[15px] font-semibold hover:bg-highlight-hover shadow-sm hover:shadow-md transition-all"
           >
             Let's go. $999 deposit.
           </a>
@@ -49,6 +54,7 @@ const stripeCheckoutUrl = "/api/create-checkout";
         </div>
       </div>
     </div>
+
     <!-- Trust indicators -->
     <div class="flex items-center justify-center gap-6 mt-8 flex-wrap">
       <span class="flex items-center gap-1.5 text-xs text-grey-400">
@@ -60,13 +66,14 @@ const stripeCheckoutUrl = "/api/create-checkout";
         No lock-in contracts
       </span>
     </div>
-    <p class="mt-6 text-center text-sm text-grey-600">
+
+    <p class="mt-6 text-center text-sm text-grey-500">
       Need e-commerce, booking systems, or something more complex?
       <a
         href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-semibold text-black underline decoration-grey-400 underline-offset-2 hover:decoration-black transition-colors"
+        class="font-semibold text-dark underline decoration-grey-300 underline-offset-2 hover:decoration-dark transition-colors"
       >
         Let's talk.
       </a>

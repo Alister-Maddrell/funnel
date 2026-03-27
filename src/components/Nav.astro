@@ -2,13 +2,36 @@
 ---
 
 <nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 px-5 transition-all duration-300">
-  <div id="nav-pill" class="mx-auto max-w-3xl mt-3 px-5 py-2.5 rounded-full flex items-center justify-between transition-all duration-300 bg-white/80 backdrop-blur-xl shadow-xs border border-grey-200/50">
-    <span class="text-sm font-bold tracking-tight text-black">Ster Maddrell</span>
+  <div id="nav-pill" class="mx-auto max-w-3xl mt-3 px-5 py-2.5 rounded-full flex items-center justify-between transition-all duration-300 bg-white/60 backdrop-blur-xl border border-grey-200/30 shadow-xs">
+    <span class="text-sm font-bold tracking-tight text-dark">Ster Maddrell</span>
     <a
       href="#pricing"
-      class="inline-flex items-center px-4 py-1.5 rounded-full bg-black text-white text-xs font-semibold hover:bg-grey-800 transition-colors"
+      class="inline-flex items-center px-4 py-1.5 rounded-full bg-dark text-white text-xs font-semibold hover:bg-black transition-colors"
     >
       Get started
     </a>
   </div>
 </nav>
+
+<script>
+  const navPill = document.getElementById('nav-pill');
+  if (navPill) {
+    let ticking = false;
+    const updateNav = () => {
+      if (window.scrollY > 100) {
+        navPill.classList.remove('bg-white/60', 'border-grey-200/30');
+        navPill.classList.add('bg-white/90', 'border-grey-200/60', 'shadow-sm');
+      } else {
+        navPill.classList.add('bg-white/60', 'border-grey-200/30');
+        navPill.classList.remove('bg-white/90', 'border-grey-200/60', 'shadow-sm');
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+</script>

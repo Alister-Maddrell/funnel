@@ -3,48 +3,66 @@ const solutions = [
   {
     title: "Show up first",
     text: "When someone nearby searches for what you do, your business is right there.",
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="20" r="14" stroke-dasharray="3 4"/><path d="M30 30 L42 42"/><path d="M38 42 L42 42 L42 38"/></svg>`,
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>`,
   },
   {
     title: "Look sharp everywhere",
     text: "Phone, tablet, laptop. Pixel perfect on every screen your customers use.",
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="4"/><path d="M20 40 L28 40"/><circle cx="24" cy="8" r="1" fill="currentColor"/></svg>`,
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>`,
   },
   {
     title: "Load before they blink",
     text: "Under 2 seconds. No spinner, no waiting, no lost sales.",
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4 L12 26 L22 26 L18 44 L38 18 L26 18 L32 4 Z"/></svg>`,
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>`,
   },
   {
     title: "Take bookings 24/7",
     text: "Enquiries, appointments, and orders come in around the clock. Even on your day off.",
-    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="40" height="34" rx="4"/><path d="M4 20 L44 20"/><path d="M14 4 L14 14"/><path d="M34 4 L34 14"/><circle cx="16" cy="30" r="2" fill="currentColor"/><circle cx="24" cy="30" r="2" fill="currentColor"/><circle cx="32" cy="30" r="2" fill="currentColor"/></svg>`,
+    icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"/></svg>`,
   },
 ];
 ---
 
-<section id="solution" class="py-20 md:py-28 px-5 bg-grey-50">
+<section id="solution" class="py-24 md:py-32 px-5 bg-white">
   <div class="mx-auto max-w-4xl">
-    <!-- Hand-drawn icon -->
-    <svg class="w-8 h-8 mb-4 opacity-50" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M32 8 L32 16" />
-      <path d="M16 18 L22 24" />
-      <path d="M48 18 L42 24" />
-      <circle cx="32" cy="36" r="16" />
-      <path d="M24 36 L30 42 L40 30" />
-    </svg>
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grey-400 mb-3">The Solution</p>
-    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black">
-      A website that sells while you sleep
-    </h2>
-    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-5">
-      {solutions.map((s) => (
-        <div class="bg-white rounded-2xl border border-grey-200/60 p-6 md:p-8 hover:shadow-md transition-shadow">
-          <div class="w-12 h-12 text-black opacity-70" set:html={s.icon} />
-          <h3 class="mt-5 text-base font-bold text-black">{s.title}</h3>
-          <p class="mt-2 text-sm text-grey-600 leading-relaxed">{s.text}</p>
+    <div class="md:flex md:items-start md:justify-between md:gap-16 mb-16">
+      <div class="md:max-w-md">
+        <!-- Hand-drawn icon -->
+        <svg class="w-7 h-7 mb-5 text-grey-400" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 4v4M8 8l3 3M24 8l-3 3" />
+          <circle cx="16" cy="19" r="9" />
+          <path d="M12 19l3 3 5-6" stroke-width="1.5" />
+        </svg>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-grey-50 border border-grey-200/80 mb-6">
+          <span class="text-xs font-medium text-grey-500">The solution</span>
+        </div>
+        <h2 class="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-black">
+          A website that sells while you sleep
+        </h2>
+      </div>
+      <p class="mt-4 md:mt-6 text-grey-500 leading-relaxed max-w-sm md:text-right text-sm">
+        Your site should be your hardest-working employee. Always on, always converting.
+      </p>
+    </div>
+
+    <!-- 2x2 grid but with visual interest — alternating alignment -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-in-stagger">
+      {solutions.map((s, i) => (
+        <div class={`group rounded-2xl border border-grey-150 p-7 md:p-8 transition-all duration-200 hover:border-grey-300 hover:shadow-card fade-in ${i % 2 === 1 ? 'sm:translate-y-4' : ''}`}>
+          <div class="w-10 h-10 rounded-xl bg-grey-50 border border-grey-200/60 flex items-center justify-center text-grey-600">
+            <div class="w-5 h-5" set:html={s.icon} />
+          </div>
+          <h3 class="mt-5 text-[15px] font-bold text-dark">{s.title}</h3>
+          <p class="mt-2 text-sm text-grey-500 leading-relaxed">{s.text}</p>
         </div>
       ))}
+    </div>
+  </div>
+
+  <!-- Section connector -->
+  <div class="relative h-px bg-grey-200/50 mt-24 md:mt-32 mx-5">
+    <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white border border-grey-200/60 flex items-center justify-center">
+      <span class="text-[10px] text-grey-300">+</span>
     </div>
   </div>
 </section>

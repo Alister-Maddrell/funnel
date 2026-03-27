@@ -7,12 +7,12 @@ const metrics = [
 ];
 ---
 
-<div class="py-6 md:py-8 px-5 bg-white border-y border-grey-200/50">
-  <div class="mx-auto max-w-4xl flex items-center justify-center gap-8 md:gap-14 flex-wrap">
+<div class="py-8 px-5 bg-grey-50 border-y border-grey-200/40">
+  <div class="mx-auto max-w-4xl flex items-center justify-center gap-8 md:gap-16 flex-wrap">
     {metrics.map((m) => (
-      <div class="flex items-center gap-2.5 text-grey-400">
-        <span class="text-lg font-bold text-black tracking-tight">{m.value}</span>
-        <span class="text-xs font-medium uppercase tracking-wide">{m.label}</span>
+      <div class="flex items-center gap-2.5">
+        <span class="text-base font-bold text-dark tracking-tight">{m.value}</span>
+        <span class="text-xs font-medium text-grey-400 uppercase tracking-wide">{m.label}</span>
       </div>
     ))}
   </div>
