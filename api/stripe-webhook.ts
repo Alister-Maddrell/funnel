@@ -69,7 +69,7 @@ async function sendConfirmationEmail(email: string, name: string) {
     body: JSON.stringify({
       from: "Ster Maddrell <hello@maddrelldesign.com>",
       to: email,
-      subject: "You're in — let's build your website",
+      subject: "You're in! Let's build your website",
       html: buildEmailHtml(name),
     }),
   });
@@ -101,7 +101,7 @@ function buildEmailHtml(name: string): string {
       </p>
 
       <p style="margin: 0 0 28px; font-size: 16px; color: #333; line-height: 1.7;">
-        In the meantime, there's one thing I need from you — a quick form about your business. The more you share, the better your site will be. But don't stress — even just your business name is enough to get started.
+        In the meantime, there's one thing I need from you. A quick form about your business. The more you share, the better your site will be. Even just your business name is enough to get started.
       </p>
 
       <!-- CTA Button -->
@@ -127,7 +127,7 @@ function buildEmailHtml(name: string): string {
           </tr>
           <tr>
             <td style="padding: 8px 12px 8px 0; vertical-align: top; width: 24px; font-size: 14px; font-weight: 700; color: #000;">4.</td>
-            <td style="padding: 8px 0; font-size: 14px; color: #555; line-height: 1.5;">Your site goes live — customers start finding you</td>
+            <td style="padding: 8px 0; font-size: 14px; color: #555; line-height: 1.5;">Your site goes live and customers start finding you</td>
           </tr>
         </table>
       </div>
