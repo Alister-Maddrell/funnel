@@ -1,9 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: "2025-03-31.basil",
-});
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 const SITE_URL = process.env.SITE_URL || "https://maddrelldesign.com";
 
@@ -36,7 +34,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Redirect to Stripe Checkout
     res.redirect(303, session.url!);
   } catch (err: any) {
-    console.error("Checkout session error:", err.message);
-    res.status(500).json({ error: "Failed to create checkout session" });
+    console.error("Checkout session error:", err.message, err.type, err.statusCode);
+    res.status(500).json({ error: err.message });
   }
 }
