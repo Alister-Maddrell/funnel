@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="You're in! — Ster Maddrell" description="Your deposit has been received. Fill in the quick form to get started.">
-  <div class="min-h-screen flex flex-col items-center justify-center px-5 py-20">
+  <div class="px-5 pt-28 pb-12">
     <div class="mx-auto max-w-xl text-center">
       <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-8">
         <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
@@ -15,25 +15,24 @@ import Layout from "../layouts/Layout.astro";
         Your deposit has been received. Check your email for next steps — or fill in the form below to get started right away.
       </p>
     </div>
+  </div>
 
-    <!-- Tally form embed -->
-    <div class="mt-12 w-full max-w-2xl">
-      <!-- TODO: Replace pbGZdZ with your actual Tally form ID -->
-      <iframe
-        data-tally-src="https://tally.so/embed/pbGZdZ?alignLeft=1&hideTitle=1&transparentBackground=1"
-        loading="lazy"
-        width="100%"
-        height="500"
-        frameborder="0"
-        marginheight="0"
-        marginwidth="0"
-        title="Client intake form"
-        class="rounded-xl"
-      ></iframe>
-      <script src="https://tally.so/widgets/embed.js"></script>
-    </div>
+  <!-- Tally form embed — seamless, no scrollbar -->
+  <div class="mx-auto max-w-2xl px-5 pb-20">
+    <iframe
+      data-tally-src="https://tally.so/embed/pbGZdZ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      loading="lazy"
+      width="100%"
+      height="0"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      title="Client intake form"
+      style="overflow: hidden;"
+    ></iframe>
+    <script src="https://tally.so/widgets/embed.js"></script>
 
-    <div class="mt-12">
+    <div class="mt-12 text-center">
       <a href="/" class="text-sm text-grey-400 hover:text-dark transition-colors">
         ← Back to homepage
       </a>
