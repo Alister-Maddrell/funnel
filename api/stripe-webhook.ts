@@ -8,8 +8,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 const resendApiKey = process.env.RESEND_API_KEY!;
 
-// TODO: Replace TALLY_FORM_ID with your actual Tally form ID
-const TALLY_FORM_URL = "https://tally.so/r/TALLY_FORM_ID";
+// TODO: Replace pbGZdZ with your actual Tally form ID
+const TALLY_FORM_URL = "https://tally.so/r/pbGZdZ";
 const SITE_URL = process.env.SITE_URL || "https://your-funnel-site.vercel.app";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
