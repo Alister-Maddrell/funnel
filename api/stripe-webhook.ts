@@ -8,8 +8,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET!;
 const resendApiKey = process.env.RESEND_API_KEY!;
 
-// TODO: Replace with actual Google Form URL once created
-const GOOGLE_FORM_URL = "https://forms.gle/PLACEHOLDER";
+// TODO: Replace TALLY_FORM_ID with your actual Tally form ID
+const TALLY_FORM_URL = "https://tally.so/r/TALLY_FORM_ID";
 const SITE_URL = process.env.SITE_URL || "https://your-funnel-site.vercel.app";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -66,7 +66,7 @@ async function sendConfirmationEmail(email: string, name: string) {
           <p style="font-size: 16px; color: #666; line-height: 1.6; margin: 0 0 24px;">
             To get started, fill in this quick form so I know the basics about your business:
           </p>
-          <a href="${GOOGLE_FORM_URL}" style="display: inline-block; background: #00B67A; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 16px;">
+          <a href="${TALLY_FORM_URL}" style="display: inline-block; background: #00B67A; color: #fff; text-decoration: none; padding: 14px 28px; border-radius: 999px; font-weight: 600; font-size: 16px;">
             Fill in the form →
           </a>
           <p style="font-size: 14px; color: #999; line-height: 1.6; margin: 32px 0 0;">
