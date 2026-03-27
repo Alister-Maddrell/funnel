@@ -67,7 +67,7 @@ async function sendConfirmationEmail(email: string, name: string) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Ster Maddrell <hello@maddrelldesign.com>",
+      from: "Alister Maddrell <hello@maddrelldesign.com>",
       to: email,
       subject: "You're in! Let's build your website",
       html: buildEmailHtml(name),
@@ -139,7 +139,7 @@ function buildEmailHtml(name: string): string {
         Got questions? <a href="${CAL_URL}" style="color: #000; font-weight: 600; text-decoration: underline;">Book a free 15-min call</a>
       </p>
       <p style="margin: 0; font-size: 13px; color: #999;">
-        Ster Maddrell · Web Designer · Sydney<br />
+        Alister Maddrell · Web Designer · Sydney<br />
         <a href="mailto:alistermaddrell@gmail.com" style="color: #999;">alistermaddrell@gmail.com</a>
       </p>
     </div>

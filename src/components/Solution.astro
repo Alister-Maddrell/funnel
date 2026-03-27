@@ -23,7 +23,8 @@ const solutions = [
 ];
 ---
 
-<section id="solution" class="py-24 md:py-32 px-5 bg-white">
+<!-- Layer 1: Grey section background -->
+<section id="solution" class="py-24 md:py-32 px-5 bg-grey-50">
   <div class="mx-auto max-w-4xl">
     <div class="md:flex md:items-start md:justify-between md:gap-16 mb-16">
       <div class="md:max-w-md">
@@ -48,12 +49,16 @@ const solutions = [
     <!-- 2x2 grid but with visual interest — alternating alignment -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-in-stagger">
       {solutions.map((s, i) => (
-        <div class={`group rounded-2xl border border-grey-150 p-7 md:p-8 transition-all duration-200 hover:border-grey-300 hover:shadow-card fade-in ${i % 2 === 1 ? 'sm:translate-y-4' : ''}`}>
-          <div class="w-10 h-10 rounded-xl bg-grey-50 border border-grey-200/60 flex items-center justify-center text-grey-600">
-            <div class="w-5 h-5" set:html={s.icon} />
+        <!-- Layer 2: White card -->
+        <div class={`group rounded-2xl bg-white border border-grey-200/60 shadow-card p-3 transition-all duration-200 hover:shadow-card-hover fade-in ${i % 2 === 1 ? 'sm:translate-y-4' : ''}`}>
+          <!-- Layer 3: Inner content area -->
+          <div class="p-5 md:p-6">
+            <div class="w-10 h-10 rounded-xl bg-grey-50 border border-grey-200/40 flex items-center justify-center text-grey-600">
+              <div class="w-5 h-5" set:html={s.icon} />
+            </div>
+            <h3 class="mt-5 text-[15px] font-bold text-dark">{s.title}</h3>
+            <p class="mt-2 text-sm text-grey-500 leading-relaxed">{s.text}</p>
           </div>
-          <h3 class="mt-5 text-[15px] font-bold text-dark">{s.title}</h3>
-          <p class="mt-2 text-sm text-grey-500 leading-relaxed">{s.text}</p>
         </div>
       ))}
     </div>

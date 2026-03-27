@@ -1,58 +1,62 @@
 ---
 ---
 
-<section id="hero" class="relative overflow-hidden bg-white">
-  <!-- Subtle grid background -->
-  <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
+<section id="hero" class="relative overflow-hidden bg-grey-50">
+  <!-- Layer 1: Subtle grid background pattern -->
+  <div class="absolute inset-0 opacity-[0.025]" style="background-image: linear-gradient(rgba(0,0,0,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 60px 60px;"></div>
 
-  <div class="relative pt-32 pb-24 md:pt-48 md:pb-36 px-5">
-    <div class="mx-auto max-w-3xl md:text-center">
-      <!-- Eyebrow pill -->
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 mb-8">
-        <span class="w-1.5 h-1.5 rounded-full bg-highlight animate-pulse"></span>
-        <span class="text-xs font-medium text-grey-500">Sydney Web Design</span>
+  <div class="relative pt-28 pb-20 md:pt-40 md:pb-28 px-5">
+    <!-- Layer 2: Hero card container -->
+    <div class="mx-auto max-w-3xl bg-white rounded-3xl border border-grey-200/60 shadow-md px-8 py-14 md:px-16 md:py-20">
+      <div class="md:text-center">
+        <!-- Layer 3: Eyebrow pill (nested element) -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-highlight animate-pulse"></span>
+          <span class="text-xs font-medium text-grey-500">Sydney Web Design</span>
+        </div>
+
+        <h1 class="font-display text-[clamp(2.5rem,6.5vw,4.5rem)] leading-[1.05] tracking-[-0.02em] text-black [text-wrap:balance]">
+          Stop losing customers to a bad <em class="not-italic text-highlight">website</em>
+        </h1>
+
+        <p class="mt-7 text-[17px] md:text-lg text-grey-500 max-w-xl md:mx-auto leading-relaxed [text-wrap:balance]">
+          Custom-designed websites for local businesses in Sydney.
+          Live in 10 days. <span class="font-semibold text-dark">$1,999 all-in.</span>
+        </p>
+
+        <!-- Layer 3: Personal intro inset -->
+        <div class="mt-6 inline-flex items-center gap-3 px-4 py-2 rounded-full bg-grey-50 border border-grey-200/40">
+          <div class="w-7 h-7 rounded-full bg-white border border-grey-200/60 flex items-center justify-center text-[11px] font-semibold text-grey-500">A</div>
+          <span class="text-sm text-grey-400">I'm Alister. Web designer, Sydney.</span>
+        </div>
+
+        <div class="mt-10 flex flex-col sm:flex-row items-center gap-4 md:justify-center">
+          <a
+            href="#portfolio"
+            class="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-dark text-white text-[15px] font-semibold hover:bg-black transition-all shadow-sm hover:shadow-md"
+          >
+            See my work
+            <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </a>
+          <a
+            href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-grey-200 text-[15px] font-medium text-grey-600 hover:text-dark hover:border-grey-400 transition-all"
+          >
+            Or book a free call
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 7l-10 10M17 7H7m10 0v10"/></svg>
+          </a>
+        </div>
+
+        <p class="mt-7 text-[13px] text-grey-300 tracking-wide">No lock-in contracts · No templates · No nonsense</p>
       </div>
-
-      <h1 class="font-display text-[clamp(2.8rem,7vw,5.5rem)] leading-[1.02] tracking-[-0.03em] text-black [text-wrap:balance]">
-        Stop losing customers<br class="hidden sm:block" /> to a bad <em class="not-italic text-highlight">website</em>
-      </h1>
-
-      <p class="mt-8 text-lg md:text-xl text-grey-500 max-w-xl md:mx-auto leading-relaxed [text-wrap:balance]">
-        Custom-designed websites for local businesses in Sydney.
-        Live in 10 days. <span class="font-semibold text-dark">$1,999 all-in.</span>
-      </p>
-
-      <div class="mt-6 flex items-center gap-3 md:justify-center">
-        <div class="w-8 h-8 rounded-full bg-grey-100 border border-grey-200/60 flex items-center justify-center text-xs font-semibold text-grey-500">S</div>
-        <span class="text-sm text-grey-400">I'm Ster. Web designer, Sydney.</span>
-      </div>
-
-      <div class="mt-12 flex flex-col sm:flex-row items-center gap-4 md:justify-center">
-        <a
-          href="#portfolio"
-          class="group inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-dark text-white text-[15px] font-semibold hover:bg-black transition-all shadow-sm hover:shadow-md"
-        >
-          See my work
-          <svg class="w-4 h-4 transition-transform group-hover:translate-y-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-        </a>
-        <a
-          href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group inline-flex items-center gap-2 px-6 py-3.5 rounded-full border border-grey-200 text-[15px] font-medium text-grey-600 hover:text-dark hover:border-grey-400 transition-all"
-        >
-          Or book a free call
-          <svg class="w-3.5 h-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 7l-10 10M17 7H7m10 0v10"/></svg>
-        </a>
-      </div>
-
-      <p class="mt-8 text-[13px] text-grey-300 tracking-wide">No lock-in contracts · No templates · No nonsense</p>
     </div>
   </div>
 
-  <!-- Section connector (Cal.com style) -->
+  <!-- Section connector -->
   <div class="relative h-px bg-grey-200/50">
-    <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white border border-grey-200/60 flex items-center justify-center">
+    <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-grey-50 border border-grey-200/60 flex items-center justify-center">
       <span class="text-[10px] text-grey-300">+</span>
     </div>
   </div>

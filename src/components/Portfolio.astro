@@ -6,7 +6,7 @@ const projects = [
 ];
 ---
 
-<section id="portfolio" class="py-24 md:py-32 px-5 bg-grey-50">
+<section id="portfolio" class="py-24 md:py-32 px-5 bg-white">
   <div class="mx-auto max-w-5xl">
     <div class="md:flex md:items-end md:justify-between mb-14">
       <div>
@@ -44,7 +44,7 @@ const projects = [
     <!-- Bento grid: 2 top, 1 wide bottom -->
     <div class="grid md:grid-cols-2 gap-5">
       {projects.slice(0, 2).map((p) => (
-        <div class="group bg-white rounded-2xl border border-grey-200/60 shadow-card overflow-hidden">
+        <div class="group bg-grey-50 rounded-2xl border border-grey-200/40 shadow-card overflow-hidden">
           <div class="p-3 pb-0">
             <div class="rounded-xl overflow-hidden">
               <img src={p.src} alt={p.alt} class="w-full h-auto group-hover:scale-[1.015] transition-transform duration-500" loading="lazy" />

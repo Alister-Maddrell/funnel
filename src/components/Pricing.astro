@@ -13,10 +13,11 @@ const inclusions = [
 const stripeCheckoutUrl = "/api/create-checkout";
 ---
 
-<section id="pricing" class="py-24 md:py-32 px-5 bg-grey-50">
+<!-- Layer 1: White section bg -->
+<section id="pricing" class="py-24 md:py-32 px-5 bg-white">
   <div class="mx-auto max-w-2xl">
     <div class="text-center mb-12">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-grey-200/80 mb-6">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 mb-6">
         <span class="text-xs font-medium text-grey-500">Pricing</span>
       </div>
       <h2 class="font-display text-[clamp(2rem,4.5vw,3.25rem)] leading-[1.08] tracking-[-0.02em] text-black">
@@ -24,33 +25,37 @@ const stripeCheckoutUrl = "/api/create-checkout";
       </h2>
     </div>
 
-    <div class="rounded-3xl bg-white border border-grey-200/60 shadow-lg overflow-hidden">
-      <!-- Price header — light, not dark -->
-      <div class="px-8 pt-10 pb-8 text-center border-b border-grey-100">
-        <p class="font-display text-[4.5rem] md:text-[5.5rem] tracking-[-0.03em] text-black leading-none">$1,999</p>
-        <p class="mt-3 text-sm text-grey-400">Everything you need to get online</p>
-      </div>
+    <!-- Layer 2: Outer card shell -->
+    <div class="rounded-3xl bg-grey-50 border border-grey-200/40 shadow-lg p-3 md:p-4">
+      <!-- Layer 3: Inner white card -->
+      <div class="bg-white rounded-2xl overflow-hidden">
+        <!-- Price header inset -->
+        <div class="px-8 pt-10 pb-8 text-center border-b border-grey-100">
+          <p class="font-display text-[4.5rem] md:text-[5.5rem] tracking-[-0.03em] text-black leading-none">$1,999</p>
+          <p class="mt-3 text-sm text-grey-400">Everything you need to get online</p>
+        </div>
 
-      <div class="px-8 py-8">
-        <ul class="space-y-4">
-          {inclusions.map((item) => (
-            <li class="flex items-start gap-3 text-[14px] text-grey-600 leading-relaxed">
-              <svg class="w-4.5 h-4.5 text-grey-300 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
-              {item}
-            </li>
-          ))}
-        </ul>
+        <div class="px-8 py-8">
+          <ul class="space-y-4">
+            {inclusions.map((item) => (
+              <li class="flex items-start gap-3 text-[14px] text-grey-600 leading-relaxed">
+                <svg class="w-4.5 h-4.5 text-highlight shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                {item}
+              </li>
+            ))}
+          </ul>
 
-        <div class="mt-10">
-          <a
-            href={stripeCheckoutUrl}
-            class="block w-full text-center px-6 py-4 rounded-full bg-highlight text-white text-[15px] font-semibold hover:bg-highlight-hover shadow-sm hover:shadow-md transition-all"
-          >
-            Let's go. $999 deposit.
-          </a>
-          <p class="mt-4 text-center text-xs text-grey-400">
-            7 days start · 5 days content · 2 revisions
-          </p>
+          <div class="mt-10">
+            <a
+              href={stripeCheckoutUrl}
+              class="block w-full text-center px-6 py-4 rounded-full bg-highlight text-white text-[15px] font-semibold hover:bg-highlight-hover shadow-sm hover:shadow-md transition-all"
+            >
+              Let's go. $999 deposit.
+            </a>
+            <p class="mt-4 text-center text-xs text-grey-400">
+              7 days start · 5 days content · 2 revisions
+            </p>
+          </div>
         </div>
       </div>
     </div>

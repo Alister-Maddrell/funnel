@@ -1,18 +1,18 @@
 ---
-const metrics = [
-  { value: "10+", label: "Sites launched" },
-  { value: "5★", label: "Google reviews" },
-  { value: "10", label: "Day turnaround" },
-  { value: "$0", label: "Hidden fees" },
+const values = [
+  "Hand-coded",
+  "Mobile-first",
+  "< 2s load time",
+  "10-day delivery",
 ];
 ---
 
-<div class="py-8 px-5 bg-grey-50 border-y border-grey-200/40">
-  <div class="mx-auto max-w-4xl flex items-center justify-center gap-8 md:gap-16 flex-wrap">
-    {metrics.map((m) => (
-      <div class="flex items-center gap-2.5">
-        <span class="text-base font-bold text-dark tracking-tight">{m.value}</span>
-        <span class="text-xs font-medium text-grey-400 uppercase tracking-wide">{m.label}</span>
+<div class="py-6 px-5 border-y border-grey-200/40">
+  <div class="mx-auto max-w-4xl flex items-center justify-center gap-6 md:gap-10 flex-wrap">
+    {values.map((v, i) => (
+      <div class="flex items-center gap-3">
+        {i > 0 && <span class="hidden md:block w-1 h-1 rounded-full bg-grey-300 -ml-3 mr-0"></span>}
+        <span class="text-[13px] font-medium text-grey-500 tracking-wide">{v}</span>
       </div>
     ))}
   </div>
