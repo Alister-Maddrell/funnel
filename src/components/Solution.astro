@@ -24,9 +24,9 @@ const solutions = [
 ---
 
 <!-- Layer 1: Grey section background -->
-<section id="solution" class="py-24 md:py-32 px-5 bg-grey-50">
+<section id="solution" class="py-16 md:py-32 px-5 bg-grey-50">
   <div class="mx-auto max-w-4xl">
-    <div class="md:flex md:items-start md:justify-between md:gap-16 mb-16">
+    <div class="md:flex md:items-start md:justify-between md:gap-16 mb-10 md:mb-16">
       <div class="md:max-w-md">
         <!-- Hand-drawn lightbulb illustration -->
         <svg class="w-12 h-12 mb-5" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -47,7 +47,7 @@ const solutions = [
           A website that sells while you sleep
         </h2>
       </div>
-      <p class="mt-4 md:mt-6 text-grey-500 leading-relaxed max-w-sm md:text-right text-sm">
+      <p class="hidden md:block mt-6 text-grey-500 leading-relaxed max-w-sm text-right text-sm">
         Your site should be your hardest-working employee. Always on, always converting.
       </p>
     </div>
@@ -56,7 +56,7 @@ const solutions = [
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 fade-in-stagger">
       {solutions.map((s, i) => (
         <!-- Layer 2: White card -->
-        <div class={`group rounded-2xl bg-white border border-grey-200/60 shadow-card p-3 transition-all duration-200 hover:shadow-card-hover fade-in ${i % 2 === 1 ? 'sm:translate-y-4' : ''}`}>
+        <div class={`group rounded-2xl bg-white border border-grey-200/60 shadow-card p-3 transition-all duration-200 hover:shadow-card-hover fade-in ${i % 2 === 1 ? 'md:translate-y-4' : ''}`}>
           <!-- Layer 3: Inner content area -->
           <div class="p-5 md:p-6">
             <div class="w-12 h-12" set:html={s.icon} />
@@ -69,7 +69,7 @@ const solutions = [
   </div>
 
   <!-- Section connector -->
-  <div class="relative h-px bg-grey-200/50 mt-24 md:mt-32 mx-5">
+  <div class="relative h-px bg-grey-200/50 mt-16 md:mt-32 mx-5">
     <div class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-7 h-7 rounded-full bg-white border border-grey-200/60 flex items-center justify-center">
       <span class="text-[10px] text-grey-300">+</span>
     </div>

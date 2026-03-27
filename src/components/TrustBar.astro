@@ -2,17 +2,17 @@
 const values = [
   "Hand-coded",
   "Mobile-first",
-  "< 2s load time",
+  "< 2s load",
   "10-day delivery",
 ];
 ---
 
-<div class="py-6 px-5 border-y border-grey-200/40">
-  <div class="mx-auto max-w-4xl flex items-center justify-center gap-6 md:gap-10 flex-wrap">
+<div class="py-5 px-5 border-y border-grey-200/40 overflow-x-auto">
+  <div class="mx-auto flex items-center justify-start md:justify-center gap-4 md:gap-10 min-w-max md:min-w-0">
     {values.map((v, i) => (
-      <div class="flex items-center gap-3">
-        {i > 0 && <span class="hidden md:block w-1 h-1 rounded-full bg-grey-300 -ml-3 mr-0"></span>}
-        <span class="text-[13px] font-medium text-grey-500 tracking-wide">{v}</span>
+      <div class="flex items-center gap-2 shrink-0">
+        {i > 0 && <span class="w-1 h-1 rounded-full bg-grey-300"></span>}
+        <span class="text-[12px] md:text-[13px] font-medium text-grey-500 whitespace-nowrap">{v}</span>
       </div>
     ))}
   </div>
