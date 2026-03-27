@@ -1,13 +1,13 @@
 ---
 const inclusions = [
-  "Designed from scratch — not a template, not a theme",
-  "Mobile-first — built for the screen your customers actually use",
-  "Loads in under 2 seconds — faster than your competitors",
-  "Booking or contact form — enquiries come straight to you",
-  "SEO foundations — so Google knows you exist",
-  "Simple CMS — update your own text and images without calling me",
-  "2 revision rounds — we refine until it feels right",
-  "3 months hosting + support — you're covered after launch",
+  "Designed from scratch. Not a template, not a theme.",
+  "Mobile-first. Built for the screen your customers actually use.",
+  "Loads in under 2 seconds. Faster than your competitors.",
+  "Booking or contact form. Enquiries come straight to you.",
+  "SEO foundations. So Google knows you exist.",
+  "Simple CMS. Update your own text and images without calling me.",
+  "2 revision rounds. We refine until it feels right.",
+  "3 months hosting + support. You're covered after launch.",
 ];
 
 const stripeCheckoutUrl = "/api/create-checkout";
@@ -15,19 +15,23 @@ const stripeCheckoutUrl = "/api/create-checkout";
 
 <section id="pricing" class="py-20 md:py-28 px-5">
   <div class="mx-auto max-w-2xl">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-grey-400 mb-3 text-center">Pricing</p>
     <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black text-center">
       One package. Everything included.
     </h2>
-    <div class="mt-12 rounded-2xl border border-grey-200 bg-white overflow-hidden">
-      <div class="bg-black text-white px-8 py-8 text-center">
-        <p class="text-5xl font-black">$1,999</p>
-        <p class="mt-2 text-white/60 text-sm">Everything you need to get online</p>
+    <div class="mt-12 rounded-3xl bg-white shadow-lg overflow-hidden">
+      <div class="relative bg-black text-white px-8 py-12 text-center overflow-hidden">
+        <div class="absolute inset-0" style="background: radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.06), transparent);"></div>
+        <div class="relative">
+          <p class="text-6xl md:text-7xl font-light tracking-tight">$1,999</p>
+          <p class="mt-3 text-white/40 text-sm">Everything you need to get online</p>
+        </div>
       </div>
       <div class="px-8 py-8">
-        <ul class="space-y-4">
+        <ul class="space-y-5">
           {inclusions.map((item) => (
-            <li class="flex items-start gap-3 text-sm text-grey-600">
-              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <li class="flex items-start gap-3 text-sm text-grey-600 py-0.5">
+              <svg class="w-5 h-5 text-grey-400 shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
               {item}
             </li>
           ))}
@@ -35,9 +39,9 @@ const stripeCheckoutUrl = "/api/create-checkout";
         <div class="mt-8 border-t border-grey-200 pt-8">
           <a
             href={stripeCheckoutUrl}
-            class="block w-full text-center px-6 py-4 rounded-full bg-accent text-white text-base font-bold hover:bg-accent-hover transition-colors"
+            class="block w-full text-center px-6 py-4 rounded-full bg-accent text-white text-lg font-bold hover:bg-accent-hover shadow-md hover:shadow-lg transition-all"
           >
-            Let's go — $999 deposit
+            Let's go. $999 deposit.
           </a>
           <p class="mt-4 text-center text-xs text-grey-400">
             7 days start · 5 days content · 2 revisions
@@ -45,7 +49,18 @@ const stripeCheckoutUrl = "/api/create-checkout";
         </div>
       </div>
     </div>
-    <p class="mt-8 text-center text-sm text-grey-600">
+    <!-- Trust indicators -->
+    <div class="flex items-center justify-center gap-6 mt-8 flex-wrap">
+      <span class="flex items-center gap-1.5 text-xs text-grey-400">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        Secure payment via Stripe
+      </span>
+      <span class="flex items-center gap-1.5 text-xs text-grey-400">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        No lock-in contracts
+      </span>
+    </div>
+    <p class="mt-6 text-center text-sm text-grey-600">
       Need e-commerce, booking systems, or something more complex?
       <a
         href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"

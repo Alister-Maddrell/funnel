@@ -1,26 +1,36 @@
 ---
 ---
 
-<section id="hero" class="pt-28 pb-20 md:pt-40 md:pb-28 px-5">
-  <div class="mx-auto max-w-3xl md:text-center">
-    <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1.05] tracking-tight text-black">
-      Stop losing customers<br class="hidden md:block" /> to a bad website
-    </h1>
-    <p class="mt-6 text-lg md:text-xl text-grey-600 max-w-xl md:mx-auto leading-relaxed">
-      Custom-designed websites for local businesses in Sydney. Live in 10 days. <span class="font-semibold text-dark">$1,999 all-in.</span>
-    </p>
-    <div class="mt-5 flex items-center gap-3 md:justify-center">
-      <div class="w-8 h-8 rounded-full bg-grey-200 flex items-center justify-center text-xs font-bold text-dark">S</div>
-      <span class="text-sm text-grey-400">I'm Ster — web designer, Sydney</span>
-    </div>
-    <div class="mt-10">
-      <a
-        href="#portfolio"
-        class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-black text-white text-base font-semibold hover:bg-dark transition-colors"
-      >
-        See my work
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
-      </a>
+<section id="hero" class="relative bg-grey-900 grain overflow-hidden">
+  <!-- Decorative lines -->
+  <div class="absolute top-1/3 left-[10%] right-[10%] h-px bg-white/[0.04]"></div>
+  <div class="absolute top-2/3 left-[15%] right-[15%] h-px bg-white/[0.04]"></div>
+  <!-- Radial glow -->
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 40% at 50% 30%, rgba(255,255,255,0.04), transparent);"></div>
+
+  <div class="relative pt-32 pb-24 md:pt-44 md:pb-32 px-5">
+    <div class="mx-auto max-w-3xl md:text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/40 mb-5">Sydney Web Design</p>
+      <h1 class="text-[clamp(2.5rem,6vw,4.5rem)] font-black leading-[1.05] tracking-tight text-white [text-wrap:balance]">
+        Stop losing customers to a bad website
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-white/50 max-w-xl md:mx-auto leading-relaxed">
+        Custom-designed websites for local businesses in Sydney. Live in 10 days. <span class="font-semibold text-white border-b border-white/20">$1,999 all-in.</span>
+      </p>
+      <div class="mt-5 flex items-center gap-3 md:justify-center">
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold text-white/60">S</div>
+        <span class="text-sm text-white/40">I'm Ster. Web designer, Sydney.</span>
+      </div>
+      <div class="mt-10">
+        <a
+          href="#portfolio"
+          class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-white text-black text-base font-semibold shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all"
+        >
+          See my work
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+        </a>
+      </div>
+      <p class="mt-4 text-xs text-white/25">No lock-in contracts. No templates. No nonsense.</p>
     </div>
   </div>
 </section>

@@ -1,17 +1,12 @@
 ---
 ---
 
-<nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-  <div class="mx-auto max-w-6xl px-5 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-9 h-9 rounded-full bg-grey-200 flex items-center justify-center text-sm font-bold text-dark">
-        SM
-      </div>
-      <span class="text-sm font-semibold text-dark">Ster Maddrell</span>
-    </div>
+<nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 px-5 transition-all duration-300">
+  <div id="nav-pill" class="mx-auto max-w-3xl mt-3 px-5 py-2.5 rounded-full flex items-center justify-between transition-all duration-300">
+    <span class="text-sm font-bold tracking-tight text-white">Ster Maddrell</span>
     <a
       href="#pricing"
-      class="inline-flex items-center px-5 py-2 rounded-full bg-accent text-white text-sm font-semibold hover:bg-accent-hover transition-colors"
+      class="inline-flex items-center px-4 py-1.5 rounded-full bg-white text-black text-xs font-semibold hover:bg-grey-100 transition-colors"
     >
       Get started
     </a>
@@ -20,13 +15,28 @@
 
 <script>
   const nav = document.getElementById('site-nav');
-  if (nav) {
+  const pill = document.getElementById('nav-pill');
+  if (nav && pill) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) {
-          nav.classList.add('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+          pill.classList.add('bg-white/80', 'backdrop-blur-xl', 'shadow-xs', 'border', 'border-grey-200/50');
+          pill.querySelector('span')?.classList.replace('text-white', 'text-black');
+          const btn = pill.querySelector('a');
+          if (btn) {
+            btn.classList.replace('bg-white', 'bg-black');
+            btn.classList.replace('text-black', 'text-white');
+            btn.classList.replace('hover:bg-grey-100', 'hover:bg-grey-800');
+          }
         } else {
-          nav.classList.remove('bg-white/95', 'backdrop-blur-md', 'shadow-sm');
+          pill.classList.remove('bg-white/80', 'backdrop-blur-xl', 'shadow-xs', 'border', 'border-grey-200/50');
+          pill.querySelector('span')?.classList.replace('text-black', 'text-white');
+          const btn = pill.querySelector('a');
+          if (btn) {
+            btn.classList.replace('bg-black', 'bg-white');
+            btn.classList.replace('text-white', 'text-black');
+            btn.classList.replace('hover:bg-grey-800', 'hover:bg-grey-100');
+          }
         }
       },
       { threshold: 0.1 }

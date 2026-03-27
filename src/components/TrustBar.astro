@@ -1,0 +1,19 @@
+---
+const metrics = [
+  { value: "10+", label: "Sites launched" },
+  { value: "5★", label: "Google reviews" },
+  { value: "10", label: "Day turnaround" },
+  { value: "$0", label: "Hidden fees" },
+];
+---
+
+<div class="py-6 md:py-8 px-5 bg-white border-y border-grey-200/50">
+  <div class="mx-auto max-w-4xl flex items-center justify-center gap-8 md:gap-14 flex-wrap">
+    {metrics.map((m) => (
+      <div class="flex items-center gap-2.5 text-grey-400">
+        <span class="text-lg font-bold text-black tracking-tight">{m.value}</span>
+        <span class="text-xs font-medium uppercase tracking-wide">{m.label}</span>
+      </div>
+    ))}
+  </div>
+</div>
