@@ -2,7 +2,7 @@
 
 @theme {
   --color-black: #000;
-  --color-dark: #111;
+  --color-dark: #242424;
   --color-grey-900: #1a1a1a;
   --color-grey-800: #2a2a2a;
   --color-grey-600: #555;
@@ -19,8 +19,8 @@
   --color-highlight: #1a3a5c;
   --color-highlight-hover: #0f2a45;
 
-  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Cal Sans", "Inter", system-ui, sans-serif;
 
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.03);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
@@ -43,7 +43,7 @@ body {
   letter-spacing: -0.01em;
 }
 
-/* Fraunces with Wonk axis for all display headings */
+/* Cal Sans display headings — tight tracking like cal.com */
 .font-display {
-  font-variation-settings: 'WONK' 1, 'opsz' 72;
+  letter-spacing: -0.02em;
 }
