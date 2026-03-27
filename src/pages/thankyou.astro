@@ -12,10 +12,10 @@ import Layout from "../layouts/Layout.astro";
         Thank you!
       </h1>
       <p class="mt-4 text-lg text-grey-600 leading-relaxed">
-        Your details have been received. I'll review everything and be in touch within 24 hours.
+        Your details have been received. I'll review everything and be in touch within 48 hours.
       </p>
       <p class="mt-8 text-sm text-grey-400">
-        Redirecting to homepage in <span id="countdown">5</span> seconds...
+        Redirecting to homepage in <span id="countdown">10</span> seconds...
       </p>
       <a href="/" class="mt-4 inline-block text-sm text-grey-400 underline decoration-grey-200 underline-offset-2 hover:text-dark transition-colors">
         Go now →
@@ -26,7 +26,7 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   const countdownEl = document.getElementById('countdown');
-  let seconds = 5;
+  let seconds = 10;
   const interval = setInterval(() => {
     seconds--;
     if (countdownEl) countdownEl.textContent = String(seconds);
