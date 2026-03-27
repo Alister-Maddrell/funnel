@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="You're in! — Ster Maddrell" description="Your deposit has been received. Fill in the quick form to get started.">
+  <div class="min-h-screen flex flex-col items-center justify-center px-5 py-20">
+    <div class="mx-auto max-w-xl text-center">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-accent/10 mb-8">
+        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h1 class="text-[clamp(2rem,5vw,3rem)] font-black leading-tight tracking-tight text-black">
+        You're in!
+      </h1>
+      <p class="mt-4 text-lg text-grey-600 leading-relaxed">
+        Your deposit has been received. Check your email for next steps — or fill in the form below to get started right away.
+      </p>
+    </div>
+
+    <!-- Google Form embed placeholder -->
+    <div class="mt-12 w-full max-w-2xl rounded-2xl border border-grey-200 bg-grey-100 p-8 md:p-12 text-center">
+      <p class="text-grey-400 text-sm">Google Form will be embedded here</p>
+      <!-- TODO: Replace with actual Google Form iframe -->
+      <!--
+      <iframe
+        src="YOUR_GOOGLE_FORM_URL"
+        width="100%"
+        height="800"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        class="rounded-xl"
+      >Loading…</iframe>
+      -->
+    </div>
+
+    <div class="mt-12">
+      <a href="/" class="text-sm text-grey-400 hover:text-dark transition-colors">
+        ← Back to homepage
+      </a>
+    </div>
+  </div>
+</Layout>

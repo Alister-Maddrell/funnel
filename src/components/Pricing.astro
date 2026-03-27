@@ -1,0 +1,60 @@
+---
+const inclusions = [
+  "Designed from scratch — not a template, not a theme",
+  "Mobile-first — built for the screen your customers actually use",
+  "Loads in under 2 seconds — faster than your competitors",
+  "Booking or contact form — enquiries come straight to you",
+  "SEO foundations — so Google knows you exist",
+  "Simple CMS — update your own text and images without calling me",
+  "2 revision rounds — we refine until it feels right",
+  "3 months hosting + support — you're covered after launch",
+];
+
+const stripeCheckoutUrl = "https://buy.stripe.com/8x2dR9eGl5KjeV58D8bo400";
+---
+
+<section id="pricing" class="py-20 md:py-28 px-5">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black text-center">
+      One package. Everything included.
+    </h2>
+    <div class="mt-12 rounded-2xl border border-grey-200 bg-white overflow-hidden">
+      <div class="bg-black text-white px-8 py-8 text-center">
+        <p class="text-5xl font-black">$1,999</p>
+        <p class="mt-2 text-white/60 text-sm">Everything you need to get online</p>
+      </div>
+      <div class="px-8 py-8">
+        <ul class="space-y-4">
+          {inclusions.map((item) => (
+            <li class="flex items-start gap-3 text-sm text-grey-600">
+              <svg class="w-5 h-5 text-accent shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <div class="mt-8 border-t border-grey-200 pt-8">
+          <a
+            href={stripeCheckoutUrl}
+            class="block w-full text-center px-6 py-4 rounded-full bg-accent text-white text-base font-bold hover:bg-accent-hover transition-colors"
+          >
+            Let's go — $999 deposit
+          </a>
+          <p class="mt-4 text-center text-xs text-grey-400">
+            7 days start · 5 days content · 2 revisions
+          </p>
+        </div>
+      </div>
+    </div>
+    <p class="mt-8 text-center text-sm text-grey-600">
+      Need e-commerce, booking systems, or something more complex?
+      <a
+        href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-semibold text-black underline decoration-grey-400 underline-offset-2 hover:decoration-black transition-colors"
+      >
+        Let's talk.
+      </a>
+    </p>
+  </div>
+</section>

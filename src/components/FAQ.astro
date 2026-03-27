@@ -1,0 +1,51 @@
+---
+const faqs = [
+  {
+    q: "How long until my site is live?",
+    a: "Most sites launch within 10 business days of receiving your content.",
+  },
+  {
+    q: "I don't have photos or copy — is that a problem?",
+    a: "Not at all. I can source photography and write your content as an add-on. Or just send what you have and I'll work with it.",
+  },
+  {
+    q: "Do I need to know anything technical?",
+    a: "Zero. You tell me about your business. I do the rest.",
+  },
+  {
+    q: "Can I edit the site myself after launch?",
+    a: "Yes. Every site comes with a simple editor. Change text, swap images — no coding, no calling me.",
+  },
+  {
+    q: "What happens after launch?",
+    a: "3 months of hosting and support is included. After that, ongoing support is available monthly.",
+  },
+  {
+    q: "What if I don't love the design?",
+    a: "You approve the layout before I write a line of code. Then two rounds of revisions to get every detail right.",
+  },
+  {
+    q: "I've got questions but I'm not ready to pay.",
+    a: 'No worries. <a href="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call" target="_blank" rel="noopener noreferrer" class="font-semibold text-black underline decoration-grey-400 underline-offset-2 hover:decoration-black">Book a free 15-min call</a> — zero pressure, zero obligation.',
+  },
+];
+---
+
+<section id="faq" class="py-20 md:py-28 px-5 bg-grey-100">
+  <div class="mx-auto max-w-2xl">
+    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black">
+      Questions
+    </h2>
+    <div class="mt-12 space-y-3">
+      {faqs.map((faq, i) => (
+        <details class="group rounded-xl border border-grey-200 bg-white overflow-hidden">
+          <summary class="flex items-center justify-between px-6 py-4 cursor-pointer text-sm font-semibold text-black select-none">
+            {faq.q}
+            <span class="ml-4 text-grey-400 text-xl leading-none transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <div class="px-6 pb-5 text-sm text-grey-600 leading-relaxed" set:html={faq.a} />
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

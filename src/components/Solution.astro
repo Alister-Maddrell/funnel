@@ -1,0 +1,36 @@
+---
+const solutions = [
+  {
+    title: "Show up first",
+    text: "When someone nearby searches for what you do, your business is right there.",
+  },
+  {
+    title: "Look sharp everywhere",
+    text: "Phone, tablet, laptop — pixel perfect on every screen your customers use.",
+  },
+  {
+    title: "Load before they blink",
+    text: "Under 2 seconds. No spinner, no waiting, no lost sales.",
+  },
+  {
+    title: "Take bookings 24/7",
+    text: "Enquiries, appointments, and orders come in around the clock — even on your day off.",
+  },
+];
+---
+
+<section id="solution" class="py-20 md:py-28 px-5">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black">
+      A website that sells while you sleep
+    </h2>
+    <div class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
+      {solutions.map((s) => (
+        <div class="rounded-xl border border-grey-200 bg-white p-5 md:p-6">
+          <h3 class="text-base font-bold text-black">{s.title}</h3>
+          <p class="mt-2 text-sm text-grey-600 leading-relaxed">{s.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,37 @@
+---
+---
+
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 translate-y-full transition-transform duration-300 md:hidden">
+  <div class="bg-black px-5 py-3 safe-bottom">
+    <a
+      href="#pricing"
+      class="block w-full text-center px-6 py-3 rounded-full bg-accent text-white text-sm font-bold hover:bg-accent-hover transition-colors"
+    >
+      Get started — $999
+    </a>
+  </div>
+</div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-cta');
+  const hero = document.getElementById('hero');
+  if (stickyCta && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.remove('translate-y-full');
+        } else {
+          stickyCta.classList.add('translate-y-full');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+  }
+</script>
+
+<style>
+  .safe-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+</style>

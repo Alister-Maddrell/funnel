@@ -1,0 +1,36 @@
+---
+const projects = [
+  { src: "/thumbnails/hartley.webp", alt: "Hartley Plumbing website" },
+  { src: "/thumbnails/cafe.webp", alt: "Kin Grain Cafe website" },
+  { src: "/thumbnails/fitness.webp", alt: "Apex Fitness website" },
+];
+---
+
+<section id="portfolio" class="py-20 md:py-28 px-5 bg-grey-100">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-[clamp(1.75rem,4vw,2.75rem)] font-black leading-tight tracking-tight text-black">
+      Built this week, not last year
+    </h2>
+    <p class="mt-4 text-grey-600 leading-relaxed">
+      No templates. No page builders. Every site designed and coded from scratch.
+    </p>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {projects.map((p, i) => (
+        <div class:list={["rounded-xl overflow-hidden border border-grey-200 bg-white", i === 2 && "md:col-span-2 md:max-w-[calc(50%-0.75rem)]"]}>
+          <img src={p.src} alt={p.alt} class="w-full h-auto" loading="lazy" />
+        </div>
+      ))}
+    </div>
+    <div class="mt-10">
+      <a
+        href="https://portfolio-alister-maddrell.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-black text-black text-sm font-semibold hover:bg-black hover:text-white transition-colors"
+      >
+        Explore the full portfolio
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17 7l-10 10M17 7H7m10 0v10"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
