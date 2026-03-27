@@ -2,33 +2,29 @@
 const steps = [
   {
     num: "01",
-    color: "bg-blue-light text-blue",
-    dotColor: "bg-blue",
-    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M8 12h8M12 8v8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="12" r="10" stroke="#3b82f6" stroke-width="1.5" fill="#eff6ff"/><path d="M8 12h8M12 8v8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>`,
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>`,
+    color: "#3b82f6",
     title: "Tell me about your business",
     text: "Quick form with the basics. I handle the rest — content, photos, structure.",
   },
   {
     num: "02",
-    color: "bg-orange-light text-orange",
-    dotColor: "bg-orange",
     icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/><path d="M7 8h10M7 12h6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/><path d="M7 16h3" stroke="#fdba74" stroke-width="1.5" stroke-linecap="round"/></svg>`,
+    color: "#f97316",
     title: "I design your layout",
     text: "You approve a wireframe before any code is written. Nothing moves without your OK.",
   },
   {
     num: "03",
-    color: "bg-purple-light text-purple",
-    dotColor: "bg-purple",
-    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M8 3l-4 6h8L8 3z" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/><path d="M16 3l-4 6h8l-4-6z" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5" stroke-linejoin="round"/><rect x="4" y="11" width="16" height="10" rx="2" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/><path d="M9 15l2 2 4-4" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="4" y="11" width="16" height="10" rx="2" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/><path d="M9 15l2 2 4-4" stroke="#8b5cf6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 3l-4 6h8L8 3z" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1" stroke-linejoin="round" opacity="0.5"/><path d="M16 3l-4 6h8l-4-6z" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1" stroke-linejoin="round" opacity="0.5"/></svg>`,
+    color: "#8b5cf6",
     title: "I build it",
     text: "Live preview link. Check it on your phone. Show your partner. Make sure it feels right.",
   },
   {
     num: "04",
-    color: "bg-green-light text-green",
-    dotColor: "bg-green",
-    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    icon: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+    color: "#22c55e",
     title: "You're live",
     text: "Domain connected, site launched. Customers start finding you.",
   },
@@ -38,6 +34,13 @@ const steps = [
 <section id="process" class="py-16 md:py-28 px-5 bg-white">
   <div class="mx-auto max-w-3xl text-center mb-10 md:mb-16">
     <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 text-[12px] font-medium text-grey-500 mb-5">
+      <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none">
+        <circle cx="3" cy="3" r="2" fill="#3b82f6"/>
+        <circle cx="8" cy="6" r="2" fill="#f97316"/>
+        <circle cx="13" cy="9" r="2" fill="#8b5cf6"/>
+        <circle cx="8" cy="13" r="2" fill="#22c55e"/>
+        <path d="M4.5 4l2.5 1.5M9.5 7.5l2.5 1M11.5 10.5l-2.5 1.5" stroke="#e5e7eb" stroke-width="1" stroke-linecap="round"/>
+      </svg>
       How it works
     </div>
     <h2 class="font-display text-[28px] md:text-[48px] leading-[1.1] text-dark">
@@ -48,28 +51,34 @@ const steps = [
     </p>
   </div>
 
-  <div class="mx-auto max-w-3xl">
-    <div class="space-y-3 md:space-y-4 relative">
-      <!-- Connecting line -->
-      <div class="absolute left-[29px] top-[40px] bottom-[40px] w-px bg-gradient-to-b from-blue via-orange via-purple to-green hidden md:block opacity-20"></div>
+  <div class="mx-auto max-w-xl" id="timeline-container">
+    <div class="relative">
+      <!-- Timeline track (background) -->
+      <div class="absolute left-[23px] top-0 bottom-0 w-[2px] bg-grey-200/60 rounded-full"></div>
+      <!-- Timeline progress (animated fill) -->
+      <div id="timeline-progress" class="absolute left-[23px] top-0 w-[2px] rounded-full transition-none" style="height: 0; background: linear-gradient(to bottom, #3b82f6, #f97316, #8b5cf6, #22c55e);"></div>
 
-      {steps.map((s) => (
-        <div class="flex gap-4 md:gap-6 p-5 md:p-6 rounded-2xl border border-grey-200/50 bg-grey-50/30 hover:bg-grey-50 transition-colors fade-in relative">
-          <div class={`w-10 h-10 shrink-0 rounded-xl ${s.color} flex items-center justify-center`}>
-            <Fragment set:html={s.icon} />
-          </div>
-          <div>
-            <div class="flex items-center gap-2 mb-1">
-              <span class={`inline-block w-5 h-5 rounded-md ${s.color} text-[10px] font-bold flex items-center justify-center leading-none`}>{s.num}</span>
-              <h3 class="text-[15px] font-semibold text-dark">{s.title}</h3>
+      <div class="space-y-0">
+        {steps.map((s, i) => (
+          <div class="timeline-step relative flex gap-5 pb-8 last:pb-0" data-step={i} data-color={s.color}>
+            <!-- Node -->
+            <div class="relative z-10 w-[48px] shrink-0 flex flex-col items-center">
+              <div class="timeline-node w-11 h-11 rounded-xl bg-white border-2 border-grey-200 flex items-center justify-center transition-all duration-500" data-color={s.color}>
+                <Fragment set:html={s.icon} />
+              </div>
             </div>
-            <p class="mt-1 text-[13px] md:text-[14px] text-grey-500 leading-relaxed">{s.text}</p>
+            <!-- Content -->
+            <div class="timeline-content pt-1.5 pb-6 opacity-50 translate-y-2 transition-all duration-500">
+              <span class="inline-block text-[10px] font-bold tracking-wider text-grey-300 uppercase mb-1">Step {s.num}</span>
+              <h3 class="text-[16px] font-semibold text-dark leading-snug">{s.title}</h3>
+              <p class="mt-1.5 text-[13px] md:text-[14px] text-grey-500 leading-relaxed">{s.text}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
 
-    <div class="mt-8 text-center">
+    <div class="mt-10 text-center">
       <a href="/book" class="btn-secondary group">
         Book a free 15-min call
         <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -77,3 +86,45 @@ const steps = [
     </div>
   </div>
 </section>
+
+<script>
+  const container = document.getElementById('timeline-container');
+  const progress = document.getElementById('timeline-progress');
+  const steps = document.querySelectorAll('.timeline-step');
+
+  if (container && progress && steps.length) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const step = entry.target as HTMLElement;
+          const content = step.querySelector('.timeline-content') as HTMLElement;
+          const node = step.querySelector('.timeline-node') as HTMLElement;
+          const color = step.dataset.color || '#3b82f6';
+
+          // Activate step
+          if (content) {
+            content.classList.remove('opacity-50', 'translate-y-2');
+            content.classList.add('opacity-100', 'translate-y-0');
+          }
+          if (node) {
+            node.style.borderColor = color;
+            node.style.boxShadow = `0 0 0 4px ${color}18`;
+          }
+
+          // Update progress bar height
+          const containerRect = container.getBoundingClientRect();
+          const stepRect = step.getBoundingClientRect();
+          const nodeHeight = 44; // h-11 = 44px
+          const relativeTop = stepRect.top - containerRect.top + container.scrollTop;
+          const targetHeight = relativeTop + nodeHeight / 2;
+          progress.style.height = `${targetHeight}px`;
+        }
+      });
+    }, {
+      threshold: 0.4,
+      rootMargin: '0px 0px -20% 0px'
+    });
+
+    steps.forEach((step) => observer.observe(step));
+  }
+</script>
