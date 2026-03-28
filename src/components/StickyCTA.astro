@@ -1,38 +1,37 @@
 ---
 ---
 
-<!-- Cal.com-style sticky bottom CTA - mobile only -->
 <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 translate-y-full transition-transform duration-300 md:hidden">
-  <div class="bg-white/95 backdrop-blur-xl border-t border-grey-200/80 px-4 py-3 safe-bottom">
-    <a href="/book" class="flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg bg-dark text-white text-[14px] font-medium hover:bg-black transition-colors">
+  <div class="bg-white/95 backdrop-blur-xl border-t border-grey-200/80 px-5 py-3 safe-bottom">
+    <a
+      href="/book"
+      class="block w-full text-center px-6 py-3 rounded-xl border-[1.5px] border-grey-300 bg-grey-100 text-dark text-sm font-semibold hover:border-dark hover:bg-dark hover:text-white transition-all"
+    >
       Book a free call
-      <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
     </a>
   </div>
 </div>
+
+<script>
+  const stickyCta = document.getElementById('sticky-cta');
+  const hero = document.getElementById('hero');
+  if (stickyCta && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.remove('translate-y-full');
+        } else {
+          stickyCta.classList.add('translate-y-full');
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(hero);
+  }
+</script>
 
 <style>
   .safe-bottom {
     padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
   }
 </style>
-
-<script>
-  const stickyCta = document.getElementById('sticky-cta');
-  const hero = document.getElementById('hero');
-  if (hero && stickyCta) {
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          stickyCta.classList.add('translate-y-full');
-          stickyCta.classList.remove('translate-y-0');
-        } else {
-          stickyCta.classList.remove('translate-y-full');
-          stickyCta.classList.add('translate-y-0');
-        }
-      },
-      { threshold: 0 }
-    );
-    obs.observe(hero);
-  }
-</script>

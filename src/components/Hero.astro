@@ -1,79 +1,109 @@
 ---
 ---
 
-<!-- Cal.com-style hero: full-width white card on page-bg -->
-<section id="hero" class="pt-16 pb-0">
-  <div class="cal-card mx-4 sm:mx-6 md:mx-auto md:max-w-[960px] overflow-hidden">
-    <div class="px-5 pt-10 pb-8 sm:px-8 sm:pt-14 sm:pb-10 md:px-12 md:pt-16">
+<section id="hero" class="relative overflow-hidden bg-white">
+  <!-- Strong colour gradient background -->
+  <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+    <div class="absolute inset-0" style="background: radial-gradient(ellipse 90% 70% at 15% 20%, rgba(59,130,246,0.15) 0%, transparent 55%), radial-gradient(ellipse 70% 60% at 85% 15%, rgba(139,92,246,0.12) 0%, transparent 50%), radial-gradient(ellipse 80% 60% at 50% 80%, rgba(249,115,22,0.10) 0%, transparent 50%), radial-gradient(ellipse 60% 50% at 75% 65%, rgba(34,197,94,0.08) 0%, transparent 45%);"></div>
+  </div>
+
+  <div class="relative pt-20 pb-8 md:pt-28 md:pb-12 px-5">
+    <div class="mx-auto max-w-3xl text-center">
       <!-- Badge -->
-      <div class="cal-badge fade-in">
-        <span class="inline-block w-2 h-2 rounded-full bg-green animate-pulse"></span>
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-grey-200/60 text-[12px] font-medium text-grey-500 mb-5 backdrop-blur-sm">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
         Sydney Web Design
       </div>
 
-      <!-- Headline -->
-      <h1 class="font-display text-[34px] sm:text-[42px] md:text-[56px] font-bold leading-[1.05] tracking-[-0.03em] text-dark mb-4 fade-in">
-        The better way to get your business online
+      <!-- Floating illustrations row — above the title -->
+      <div class="flex items-center justify-center gap-5 mb-6" aria-hidden="true">
+        <svg class="hero-float w-10 h-10 md:w-12 md:h-12 opacity-[0.45]" viewBox="0 0 60 60" fill="none">
+          <path d="M22 14L8 30l14 16" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M38 14l14 16-14 16" stroke="#3b82f6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M26 46l8-32" stroke="#93c5fd" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <svg class="hero-float-slow w-10 h-10 md:w-12 md:h-12 opacity-[0.35]" viewBox="0 0 56 48" fill="none">
+          <rect x="2" y="4" width="52" height="40" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="2.5"/>
+          <path d="M2 14h52" stroke="#3b82f6" stroke-width="2"/>
+          <circle cx="10" cy="9" r="2.5" fill="#ef4444" opacity="0.6"/>
+          <circle cx="17" cy="9" r="2.5" fill="#f59e0b" opacity="0.6"/>
+          <circle cx="24" cy="9" r="2.5" fill="#22c55e" opacity="0.6"/>
+        </svg>
+        <svg class="hero-float-slow w-9 h-9 md:w-11 md:h-11 opacity-[0.40]" viewBox="0 0 48 48" fill="none">
+          <rect x="12" y="4" width="24" height="40" rx="5" stroke="#8b5cf6" stroke-width="2.5" fill="#f5f3ff"/>
+          <path d="M19 38h10" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round"/>
+          <rect x="16" y="10" width="16" height="22" rx="2" fill="#c4b5fd" opacity="0.4"/>
+        </svg>
+        <svg class="hero-float w-9 h-9 md:w-11 md:h-11 opacity-[0.35]" viewBox="0 0 48 48" fill="none">
+          <rect x="4" y="4" width="18" height="18" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+          <rect x="26" y="4" width="18" height="8" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+          <rect x="26" y="16" width="18" height="6" rx="2" fill="#bbf7d0" opacity="0.5"/>
+          <rect x="4" y="26" width="40" height="8" rx="3" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
+        </svg>
+        <svg class="hero-float-slow w-9 h-9 md:w-11 md:h-11 opacity-[0.40]" viewBox="0 0 40 40" fill="none">
+          <path d="M8 6l4 28 8-10 12 4L8 6z" fill="#dcfce7" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 class="font-display text-[38px] md:text-[60px] lg:text-[72px] leading-[1.08] text-dark tracking-[-0.02em]">
+        The better way to<br class="hidden sm:block" />
+        <span class="relative inline-block">
+          <span class="relative z-10">get your business</span>
+          <svg class="absolute -bottom-1 left-0 w-full h-4 z-0" viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M0 8c40-6 80-6 100-2s60 4 100-2" stroke="#f97316" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.35"/></svg>
+        </span> online
       </h1>
 
-      <!-- Subtext -->
-      <p class="text-[15px] sm:text-[16px] leading-relaxed text-grey-500 max-w-[400px] mb-6 fade-in">
-        Custom-designed websites for local businesses in Sydney. Hand-coded, mobile-first, live in 10 days. <strong class="text-dark font-semibold">$1,999 all-in.</strong>
+      <p class="mt-4 md:mt-6 text-[15px] md:text-[17px] text-grey-500 leading-[1.65] max-w-lg mx-auto">
+        Custom-designed websites for local businesses in Sydney. Hand-coded, mobile-first, live in 10 days. <span class="font-semibold text-dark">$1,999 all-in.</span>
       </p>
 
-      <!-- CTA pair - cal.com style -->
-      <div class="flex items-center gap-3 mb-8 fade-in">
-        <a href="/book" class="btn-primary btn-arrow">Get started</a>
-        <a href="#pricing" class="btn-secondary btn-arrow">See pricing</a>
+      <!-- CTAs side by side -->
+      <div class="mt-6 flex items-center justify-center gap-2.5">
+        <a href="/book" class="btn-secondary group whitespace-nowrap">
+          Book a free call
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#pricing" class="btn-primary group whitespace-nowrap">
+          Get started
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
-
-      <!-- Small note -->
-      <p class="text-[12px] text-grey-400 fade-in">No credit card required</p>
     </div>
 
-    <!-- Product mockup - cal.com style card within card -->
-    <div class="px-4 pb-6 sm:px-6 md:px-10 fade-in">
-      <div class="rounded-xl border border-grey-200 bg-grey-50 overflow-hidden shadow-sm">
-        <!-- Browser chrome -->
-        <div class="flex items-center gap-2 px-4 py-2.5 border-b border-grey-200 bg-white">
-          <div class="flex gap-1.5">
-            <span class="w-2.5 h-2.5 rounded-full bg-red/60"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-amber/60"></span>
-            <span class="w-2.5 h-2.5 rounded-full bg-green/60"></span>
-          </div>
-          <div class="flex-1 mx-3">
-            <div class="bg-grey-100 rounded-md px-3 py-1 text-[11px] text-grey-400 text-center font-mono">
-              hartleyplumbing.com.au
+    <!-- Product screenshot mockup -->
+    <div class="mt-6 md:mt-10 mx-auto max-w-4xl">
+      <div class="rounded-2xl border border-grey-200/60 shadow-lg overflow-hidden bg-grey-50 p-2 md:p-3">
+        <div class="rounded-xl overflow-hidden border border-grey-200/40 bg-white">
+          <div class="flex items-center gap-2 px-4 py-2.5 border-b border-grey-100 bg-grey-50/50">
+            <div class="flex gap-1.5">
+              <span class="w-2.5 h-2.5 rounded-full bg-red/40"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber/40"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-green/40"></span>
+            </div>
+            <div class="flex-1 mx-4">
+              <div class="h-5 rounded-md bg-grey-100 flex items-center justify-center">
+                <span class="text-[10px] text-grey-400">hartleyplumbing.com.au</span>
+              </div>
             </div>
           </div>
+          <div class="aspect-[16/9] md:aspect-[16/8] bg-gradient-to-br from-grey-50 to-grey-100 flex items-center justify-center relative overflow-hidden">
+            <img src="/thumbnails/hartley.webp" alt="Example website - Hartley Plumbing" class="w-full h-full object-cover object-top" loading="eager" />
+          </div>
         </div>
-        <!-- Screenshot -->
-        <div class="aspect-[16/9] md:aspect-[16/8] overflow-hidden bg-grey-100">
-          <img src="/thumbnails/hartley.webp" alt="Example website - Hartley Plumbing" loading="eager" class="w-full h-full object-cover object-top" />
-        </div>
-      </div>
-    </div>
-
-    <!-- Social proof row - cal.com review badges style -->
-    <div class="flex items-center justify-center gap-6 px-5 pb-6 fade-in">
-      <div class="flex flex-col items-center gap-1">
-        <div class="flex gap-0.5">
-          {[1,2,3,4,5].map(() => (
-            <svg class="w-3.5 h-3.5 text-amber" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          ))}
-        </div>
-        <span class="text-[10px] text-grey-400 font-medium">Hand-coded</span>
-      </div>
-      <div class="w-px h-6 bg-grey-200"></div>
-      <div class="flex flex-col items-center gap-1">
-        <span class="text-[14px] font-bold text-dark">10 days</span>
-        <span class="text-[10px] text-grey-400 font-medium">Delivery</span>
-      </div>
-      <div class="w-px h-6 bg-grey-200"></div>
-      <div class="flex flex-col items-center gap-1">
-        <span class="text-[14px] font-bold text-dark">&lt; 2s</span>
-        <span class="text-[10px] text-grey-400 font-medium">Load time</span>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  @keyframes hero-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes hero-float-slow {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-7px) rotate(3deg); }
+  }
+  .hero-float { animation: hero-float 6s ease-in-out infinite; }
+  .hero-float-slow { animation: hero-float-slow 8s ease-in-out infinite; }
+</style>

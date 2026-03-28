@@ -1,77 +1,84 @@
 ---
 const inclusions = [
-  "Designed from scratch — not a template",
-  "Mobile-first responsive design",
-  "Under 2 second load times",
-  "Booking or contact form built in",
-  "SEO foundations for Google",
-  "Simple CMS for easy updates",
-  "2 revision rounds included",
-  "3 months hosting + support"
+  { text: "Designed from scratch — not a template", icon: "blue" },
+  { text: "Mobile-first responsive design", icon: "green" },
+  { text: "Under 2 second load times", icon: "amber" },
+  { text: "Booking or contact form built in", icon: "purple" },
+  { text: "SEO foundations for Google", icon: "orange" },
+  { text: "Simple CMS for easy updates", icon: "teal" },
+  { text: "2 revision rounds included", icon: "blue" },
+  { text: "3 months hosting + support", icon: "green" },
 ];
+
+const stripeCheckoutUrl = "/api/create-checkout";
 ---
 
-<!-- Cal.com-style pricing section -->
-<section id="pricing" class="cal-section">
-  <div class="cal-section-inner">
-    <!-- Header -->
-    <div class="mb-8 fade-in">
-      <div class="cal-badge">
-        <svg class="text-green" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 1a.75.75 0 01.75.75v.99l.975-.342a.75.75 0 01.5 1.414l-1.475.518v1.14l.988-.571a.75.75 0 01.75 1.3L9.5 6.77v1.04l1.475.519a.75.75 0 01-.5 1.414L9.5 9.4v.99a.75.75 0 01-1.5 0V9.4l-.975.342a.75.75 0 01-.5-1.414L8 7.81V6.77l-.988-.571a.75.75 0 01.75-1.3l.988.571V4.33L7.275 3.812a.75.75 0 11.5-1.414l.975.342V1.75A.75.75 0 018 1z"/></svg>
-        Pricing
-      </div>
-      <h2 class="cal-h2">One package. Everything included.</h2>
-      <p class="cal-subtext">No hidden fees. No monthly surprises. One price for a complete, professional website.</p>
+<section id="pricing" class="py-16 md:py-28 px-5 bg-grey-50">
+  <div class="mx-auto max-w-3xl text-center mb-10 md:mb-12">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-grey-200/60 text-[12px] font-medium text-grey-500 mb-5">
+      <!-- Price tag illustration -->
+      <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none">
+        <path d="M2 2h6l6 6-6 6-6-6V2z" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.2"/>
+        <circle cx="5.5" cy="5.5" r="1" fill="#22c55e"/>
+      </svg>
+      Pricing
     </div>
+    <h2 class="font-display text-[28px] md:text-[48px] leading-[1.1] text-dark">
+      One package. Everything included.
+    </h2>
+    <p class="mt-4 text-[14px] md:text-[16px] text-grey-500 leading-relaxed max-w-md mx-auto">
+      No hidden fees. No monthly surprises. One price for a complete, professional website.
+    </p>
+  </div>
 
-    <!-- Pricing card -->
-    <div class="cal-card fade-in">
-      <div class="p-6 sm:p-8">
-        <!-- Price -->
-        <div class="mb-6">
-          <div class="font-display text-[48px] sm:text-[56px] font-bold tracking-tight text-dark leading-none">$1,999</div>
-          <p class="text-[14px] text-grey-500 mt-1">Everything you need to get online</p>
-        </div>
-
-        <!-- CTA -->
-        <a href="/api/create-checkout" class="flex items-center justify-center gap-1.5 w-full py-3 rounded-lg bg-dark text-white text-[14px] font-medium hover:bg-black transition-colors mb-4">
-          Get started — $999 deposit
-          <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
-        </a>
-        <p class="text-[12px] text-grey-400 text-center mb-6">Remaining $1,000 due on launch</p>
-
-        <!-- Divider -->
-        <div class="border-t border-grey-200 pt-6">
-          <!-- Inclusions -->
-          <ul class="flex flex-col gap-3">
-            {inclusions.map((item) => (
-              <li class="flex items-start gap-3 text-[14px] text-grey-700">
-                <svg class="w-4.5 h-4.5 text-green flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
+  <div class="mx-auto max-w-md">
+    <div class="bg-white rounded-2xl border border-grey-200/60 shadow-lg overflow-hidden">
+      <!-- Price header -->
+      <div class="px-7 pt-8 pb-6 text-center border-b border-grey-100 relative overflow-hidden">
+        <!-- Decorative colored circles -->
+        <div class="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-blue/5"></div>
+        <div class="absolute -bottom-6 -left-6 w-16 h-16 rounded-full bg-orange/5"></div>
+        <p class="font-display text-[56px] md:text-[64px] tracking-[-0.03em] text-dark leading-none relative">{`$1,999`}</p>
+        <p class="mt-2 text-[13px] text-grey-400 relative">Everything you need to get online</p>
       </div>
 
-      <!-- Trust badges footer -->
-      <div class="flex items-center justify-center gap-6 px-6 py-4 border-t border-grey-200 bg-grey-50">
-        <div class="flex items-center gap-1.5 text-[12px] text-grey-400">
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
-          Secure via Stripe
-        </div>
-        <div class="w-px h-4 bg-grey-200"></div>
-        <div class="flex items-center gap-1.5 text-[12px] text-grey-400">
-          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-          No lock-in contracts
+      <!-- Inclusions -->
+      <div class="px-7 py-7">
+        <ul class="space-y-3.5">
+          {inclusions.map((item) => (
+            <li class="flex items-start gap-3 text-[13px] md:text-[14px] text-grey-600 leading-relaxed">
+              <svg class="w-4 h-4 text-green shrink-0 mt-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+              {item.text}
+            </li>
+          ))}
+        </ul>
+
+        <div class="mt-8">
+          <a href={stripeCheckoutUrl} class="btn-accent">
+            Get started — $999 deposit
+          </a>
+          <p class="mt-3 text-center text-[11px] text-grey-400">
+            Remaining $1,000 due on launch
+          </p>
         </div>
       </div>
     </div>
 
-    <!-- Extra CTA -->
-    <div class="mt-6 text-center fade-in">
-      <p class="text-[13px] text-grey-400">Need something more complex?</p>
-      <a href="/book" class="text-[13px] font-medium text-dark hover:underline">Let's talk →</a>
+    <!-- Trust indicators -->
+    <div class="flex items-center justify-center gap-5 mt-6 flex-wrap">
+      <span class="flex items-center gap-1.5 text-[11px] text-grey-400">
+        <svg class="w-3.5 h-3.5 text-green" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        Secure via Stripe
+      </span>
+      <span class="flex items-center gap-1.5 text-[11px] text-grey-400">
+        <svg class="w-3.5 h-3.5 text-blue" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+        No lock-in contracts
+      </span>
     </div>
+
+    <p class="mt-5 text-center text-[13px] text-grey-500">
+      Need something more complex?
+      <a href="/book" class="font-semibold text-dark underline decoration-grey-300 underline-offset-2 hover:decoration-dark transition-colors">Let's talk.</a>
+    </p>
   </div>
 </section>

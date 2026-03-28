@@ -5,7 +5,6 @@
   --color-dark: #111827;
   --color-grey-900: #1a1a1a;
   --color-grey-800: #2a2a2a;
-  --color-grey-700: #374151;
   --color-grey-600: #555;
   --color-grey-500: #6b7280;
   --color-grey-400: #9ca3af;
@@ -14,10 +13,13 @@
   --color-grey-150: #ededed;
   --color-grey-100: #f3f4f6;
   --color-grey-50: #f9fafb;
-  --color-page-bg: #f5f5f4;
   --color-white: #fff;
   --color-accent: #111827;
+  --color-accent-hover: #1f2937;
+  --color-highlight: #111827;
+  --color-highlight-hover: #000;
 
+  /* Cal.com-inspired accent colors for illustrations */
   --color-orange: #f97316;
   --color-orange-light: #fff7ed;
   --color-blue: #3b82f6;
@@ -37,11 +39,11 @@
   --font-display: "Cal Sans", "Inter", system-ui, sans-serif;
 
   --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.03);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
-  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
-  --shadow-card: 0 1px 3px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.04);
-  --shadow-card-hover: 0 8px 24px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.10), 0 4px 12px rgba(0,0,0,0.05);
+  --shadow-card: 0 2px 6px rgba(0,0,0,0.05), 0 0 0 1px rgba(0,0,0,0.05);
+  --shadow-card-hover: 0 12px 36px rgba(0,0,0,0.09), 0 0 0 1px rgba(0,0,0,0.07);
 }
 
 html {
@@ -51,111 +53,17 @@ html {
 body {
   font-family: var(--font-sans);
   color: var(--color-dark);
-  background: var(--color-page-bg);
+  background: var(--color-white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: -0.01em;
 }
 
 .font-display {
-  font-family: var(--font-display);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
-/* Cal.com-style section pattern */
-.cal-section {
-  padding: 4rem 1.25rem;
+.hero-glow > * {
   position: relative;
-}
-
-.cal-section-inner {
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-  .cal-section {
-    padding: 6rem 2rem;
-  }
-  .cal-section-inner {
-    max-width: 1000px;
-  }
-}
-
-/* Cal.com-style section pill/badge */
-.cal-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--color-grey-200);
-  background: var(--color-white);
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-grey-700);
-  margin-bottom: 1.25rem;
-  box-shadow: var(--shadow-xs);
-}
-
-.cal-badge svg {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-}
-
-/* Cal.com-style headings */
-.cal-h2 {
-  font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--color-dark);
-  margin-bottom: 0.75rem;
-}
-
-@media (min-width: 768px) {
-  .cal-h2 {
-    font-size: 48px;
-  }
-}
-
-.cal-subtext {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--color-grey-500);
-  max-width: 440px;
-}
-
-@media (min-width: 768px) {
-  .cal-subtext {
-    font-size: 17px;
-  }
-}
-
-/* Cal.com CTA pair */
-.cal-cta-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
-}
-
-/* White card container - cal.com style */
-.cal-card {
-  background: var(--color-white);
-  border-radius: 16px;
-  border: 1px solid var(--color-grey-200);
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-}
-
-.cal-card-padded {
-  background: var(--color-white);
-  border-radius: 16px;
-  border: 1px solid var(--color-grey-200);
-  box-shadow: var(--shadow-card);
-  padding: 1.5rem;
+  z-index: 1;
 }

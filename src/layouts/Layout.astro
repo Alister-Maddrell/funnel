@@ -21,6 +21,7 @@ const { title, description = "Custom-designed websites for local businesses in S
   <body>
     <slot />
 
+    <!-- Scroll-triggered fade-in animations -->
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
@@ -31,7 +32,7 @@ const { title, description = "Custom-designed websites for local businesses in S
             }
           });
         },
-        { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
       );
       document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
     </script>
@@ -52,6 +53,7 @@ const { title, description = "Custom-designed websites for local businesses in S
     transform: translateY(0);
   }
 
+  /* Stagger children */
   .fade-in-stagger > .fade-in:nth-child(1) { transition-delay: 0ms; }
   .fade-in-stagger > .fade-in:nth-child(2) { transition-delay: 80ms; }
   .fade-in-stagger > .fade-in:nth-child(3) { transition-delay: 160ms; }
@@ -59,91 +61,78 @@ const { title, description = "Custom-designed websites for local businesses in S
   .fade-in-stagger > .fade-in:nth-child(5) { transition-delay: 320ms; }
   .fade-in-stagger > .fade-in:nth-child(6) { transition-delay: 400ms; }
 
+  /* Focus outlines */
   :focus-visible {
     outline: 2px solid #111;
     outline-offset: 2px;
     border-radius: 4px;
   }
 
+  /* Custom scrollbar */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: #ddd; border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: #bbb; }
 
-  /* Cal.com button system */
+  /* Button styles */
   .btn-primary {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
-    border-radius: 8px;
+    gap: 0.5rem;
+    padding: 0.8rem 1.75rem;
+    border-radius: 10px;
     background: var(--color-dark);
     color: #fff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.01em;
-    transition: all 0.15s ease;
-    white-space: nowrap;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
   .btn-primary:hover {
     background: #000;
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-  .btn-primary svg {
-    width: 14px;
-    height: 14px;
   }
 
   .btn-secondary {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: 1px solid var(--color-grey-300);
-    background: var(--color-white);
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    border: 1.5px solid var(--color-grey-300);
+    background: var(--color-grey-100);
     font-size: 14px;
     font-weight: 500;
     color: var(--color-dark);
-    transition: all 0.15s ease;
-    white-space: nowrap;
+    transition: all 0.2s ease;
   }
   .btn-secondary:hover {
-    border-color: var(--color-grey-400);
-    background: var(--color-grey-50);
-  }
-  .btn-secondary svg {
-    width: 14px;
-    height: 14px;
+    border-color: var(--color-dark);
+    color: var(--color-white);
+    background: var(--color-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   }
 
   .btn-accent {
     display: block;
     width: 100%;
     text-align: center;
-    padding: 12px 20px;
-    border-radius: 8px;
+    padding: 0.875rem 1.5rem;
+    border-radius: 10px;
     background: var(--color-dark);
     color: #fff;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.01em;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   }
   .btn-accent:hover {
     background: #000;
+    transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  /* Arrow icon for CTAs */
-  .btn-arrow::after {
-    content: '';
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    background: currentColor;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='currentColor'%3E%3Cpath fill-rule='evenodd' d='M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z'/%3E%3C/svg%3E") no-repeat center;
-    mask-size: contain;
-    flex-shrink: 0;
   }
 </style>
