@@ -6,67 +6,55 @@ const projects = [
 ];
 ---
 
-<section id="portfolio" class="py-16 md:py-28 px-5 bg-white">
-  <div class="mx-auto max-w-3xl text-center mb-12 md:mb-16">
-    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-grey-50 border border-grey-200/60 text-[12px] font-medium text-grey-500 mb-5">
-      <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none">
-        <rect x="1.5" y="3" width="13" height="10" rx="2" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.2"/>
-        <path d="M1.5 6h13" stroke="#3b82f6" stroke-width="1"/>
-        <circle cx="4" cy="4.5" r="0.6" fill="#ef4444"/>
-        <circle cx="6" cy="4.5" r="0.6" fill="#f59e0b"/>
-        <circle cx="8" cy="4.5" r="0.6" fill="#22c55e"/>
-      </svg>
-      Recent work
-    </div>
-    <h2 class="font-display text-[28px] md:text-[48px] leading-[1.1] text-dark">
-      Built this week, not last year
-    </h2>
-    <p class="mt-4 text-[14px] md:text-[16px] text-grey-500 leading-relaxed max-w-lg mx-auto">
-      No templates. No page builders. Every site designed and coded from scratch for each business.
-    </p>
-  </div>
-
-  <div class="mx-auto max-w-4xl space-y-5">
-    {projects.map((p) => (
-      <div class="group rounded-2xl border border-grey-200/50 overflow-hidden bg-grey-50 p-2 md:p-3 shadow-sm hover:shadow-md transition-shadow fade-in">
-        <div class="rounded-xl overflow-hidden border border-grey-200/40 bg-white">
-          <!-- Browser chrome -->
-          <div class="flex items-center gap-2 px-4 py-2 border-b border-grey-100 bg-grey-50/50">
-            <div class="flex gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-red-300/60"></span>
-              <span class="w-2 h-2 rounded-full bg-amber-300/60"></span>
-              <span class="w-2 h-2 rounded-full bg-green-300/60"></span>
-            </div>
-            <div class="flex-1 mx-3">
-              <div class="h-5 rounded-md bg-grey-100 flex items-center justify-center">
-                <span class="text-[10px] text-grey-400">{p.url}</span>
-              </div>
-            </div>
-          </div>
-          <div class="aspect-[16/9] overflow-hidden">
-            <img src={p.src} alt={p.alt} class="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500" loading="lazy" />
-          </div>
-        </div>
-        <div class="px-3 py-3 flex items-center justify-between">
-          <div>
-            <p class="text-[13px] font-semibold text-dark">{p.name}</p>
-            <p class="text-[11px] text-grey-400">{p.type}</p>
-          </div>
-          <svg class="w-4 h-4 text-grey-300 group-hover:text-dark transition-colors" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 7l-10 10M17 7H7m10 0v10"/></svg>
-        </div>
+<!-- Cal.com-style portfolio / "Stand out" section -->
+<section id="portfolio" class="cal-section">
+  <div class="cal-section-inner">
+    <!-- Header -->
+    <div class="mb-8 fade-in">
+      <div class="cal-badge">
+        <svg class="text-blue" viewBox="0 0 16 16" fill="currentColor"><path d="M2 3a1 1 0 011-1h10a1 1 0 011 1v1H2V3zm0 2h12v7a2 2 0 01-2 2H4a2 2 0 01-2-2V5z"/></svg>
+        Recent work
       </div>
-    ))}
-  </div>
+      <h2 class="cal-h2">Built this week, not last year</h2>
+      <p class="cal-subtext">No templates. No page builders. Every site designed and coded from scratch for each business.</p>
+    </div>
 
-  <div class="mt-8 text-center">
-    <a
-      href="https://portfolio.maddrelldesign.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="btn-secondary group"
-    >
-      View all projects
-      <svg class="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
+    <!-- Project cards -->
+    <div class="flex flex-col gap-4 fade-in-stagger">
+      {projects.map((p) => (
+        <div class="cal-card group fade-in hover:shadow-md transition-all duration-200">
+          <!-- Browser chrome -->
+          <div class="flex items-center gap-2 px-4 py-2.5 border-b border-grey-200">
+            <div class="flex gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-grey-300"></span>
+              <span class="w-2 h-2 rounded-full bg-grey-300"></span>
+              <span class="w-2 h-2 rounded-full bg-grey-300"></span>
+            </div>
+            <div class="flex-1 mx-2">
+              <div class="bg-grey-50 rounded px-3 py-0.5 text-[11px] text-grey-400 text-center font-mono">{p.url}</div>
+            </div>
+          </div>
+          <!-- Screenshot -->
+          <div class="aspect-[16/9] overflow-hidden bg-grey-50">
+            <img src={p.src} alt={p.alt} loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-[1.01] transition-transform duration-500" />
+          </div>
+          <!-- Footer -->
+          <div class="flex items-center justify-between px-4 py-3 border-t border-grey-200">
+            <div>
+              <span class="text-[14px] font-semibold text-dark">{p.name}</span>
+              <span class="text-[12px] text-grey-400 ml-2">{p.type}</span>
+            </div>
+            <svg class="w-4 h-4 text-grey-400 group-hover:text-dark group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- View all link -->
+    <div class="mt-6 text-center fade-in">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" rel="noopener" class="btn-secondary btn-arrow">
+        View all projects
+      </a>
+    </div>
   </div>
 </section>

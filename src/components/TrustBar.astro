@@ -1,19 +1,15 @@
 ---
-const metrics = [
-  { value: "10", label: "Day delivery" },
-  { value: "< 2s", label: "Load time" },
-  { value: "100%", label: "Hand-coded" },
-  { value: "24/7", label: "Always on" },
-];
 ---
 
-<div class="py-8 md:py-10 px-5 bg-white">
-  <div class="mx-auto max-w-3xl grid grid-cols-4 gap-3 md:gap-5">
-    {metrics.map((m) => (
-      <div class="text-center bg-grey-50 border border-grey-200/50 rounded-xl py-4 px-2">
-        <p class="font-display text-[20px] md:text-[28px] text-dark leading-none">{m.value}</p>
-        <p class="mt-1.5 text-[10px] md:text-[12px] text-grey-400 font-medium">{m.label}</p>
-      </div>
-    ))}
+<!-- Cal.com-style "Trusted by" logo bar -->
+<div class="py-10 px-5">
+  <p class="text-center text-[12px] text-grey-400 font-medium tracking-wide mb-6">
+    Built for local businesses across Sydney
+  </p>
+  <div class="flex items-center justify-center gap-8 sm:gap-12 opacity-40 grayscale">
+    <!-- Placeholder brand-style text logos -->
+    <span class="text-[16px] sm:text-[18px] font-bold text-grey-800 tracking-tight">Hartley</span>
+    <span class="text-[16px] sm:text-[18px] font-bold text-grey-800 tracking-tight" style="font-family: serif;">Kin Grain</span>
+    <span class="text-[16px] sm:text-[18px] font-bold text-grey-800 tracking-tight">Apex</span>
   </div>
 </div>

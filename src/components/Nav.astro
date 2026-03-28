@@ -1,50 +1,92 @@
 ---
 ---
 
-<nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 px-4 transition-all duration-300">
-  <div id="nav-pill" class="mx-auto max-w-lg mt-2.5 px-4 py-2 rounded-2xl flex items-center justify-between transition-all duration-300 bg-white/60 backdrop-blur-xl border-[1.5px] border-grey-200/30 shadow-xs">
-    <a href="mailto:alistermaddrell@gmail.com" class="inline-flex items-center gap-1 text-[13px] font-bold tracking-tight text-dark hover:text-grey-600 transition-colors group">
-      Alister Maddrell
-      <svg class="w-3 h-3 text-grey-400 group-hover:text-grey-600 transition-colors -rotate-45" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<!-- Cal.com-style sticky nav bar -->
+<nav class="fixed top-0 left-0 right-0 z-50">
+  <div id="nav-bar" class="flex items-center justify-between px-4 py-3 transition-all duration-300 bg-transparent">
+    <!-- Logo -->
+    <a href="mailto:alistermaddrell@gmail.com" class="flex items-center gap-1.5 font-display text-[18px] font-bold tracking-tight text-dark hover:opacity-70 transition-opacity">
+      Maddrell
+      <svg class="w-3 h-3 text-grey-400" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
     </a>
-    <div class="flex items-center gap-1">
-      <a
-        href="https://portfolio.maddrelldesign.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="px-3 py-1.5 rounded-lg text-[12px] font-medium text-grey-500 hover:text-dark hover:bg-grey-50 transition-all"
-      >
+
+    <!-- Right side -->
+    <div class="flex items-center gap-2">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" rel="noopener" class="hidden sm:inline-flex text-[13px] font-medium text-grey-600 hover:text-dark transition-colors px-2 py-1">
         Portfolio
       </a>
-      <a
-        href="/book"
-        class="px-3 py-1.5 rounded-lg bg-dark text-white text-[12px] font-semibold hover:bg-black transition-colors"
-      >
-        Book a call
+      <a href="/book" class="inline-flex items-center gap-1 px-3.5 py-[7px] rounded-lg bg-dark text-white text-[13px] font-medium hover:bg-black transition-colors">
+        Get started
+        <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>
+      </a>
+      <button id="menu-toggle" class="sm:hidden flex items-center justify-center w-8 h-8 rounded-lg hover:bg-grey-200/50 transition-colors" aria-label="Menu">
+        <svg class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-white/95 backdrop-blur-xl border-b border-grey-200 px-4 py-3">
+    <div class="flex flex-col gap-0.5">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2.5 rounded-lg text-[14px] text-grey-700 hover:bg-grey-50 transition-colors">
+        Portfolio <svg class="w-3.5 h-3.5 text-grey-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
+      </a>
+      <a href="#pricing" class="px-3 py-2.5 rounded-lg text-[14px] text-grey-700 hover:bg-grey-50 transition-colors">Pricing</a>
+      <a href="#faq" class="px-3 py-2.5 rounded-lg text-[14px] text-grey-700 hover:bg-grey-50 transition-colors">FAQ</a>
+      <a href="/book" class="px-3 py-2.5 rounded-lg text-[14px] text-grey-700 hover:bg-grey-50 transition-colors">Book a call</a>
+      <a href="mailto:alistermaddrell@gmail.com" class="px-3 py-2.5 rounded-lg text-[14px] text-grey-700 hover:bg-grey-50 transition-colors">Email me</a>
+    </div>
+    <!-- Demo sites -->
+    <div class="border-t border-grey-100 mt-2 pt-2">
+      <p class="px-3 py-1 text-[11px] font-semibold text-grey-400 uppercase tracking-wider">Demo Sites</p>
+      <a href="https://hartley.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Hartley Plumbing <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://cafe.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Kin Grain Cafe <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://fitness.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Apex Fitness <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://beauty.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Luma Beauty <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://accounting.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Whitfield Accounting <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://events.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Evergreen Events <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
+      </a>
+      <a href="https://saas.maddrelldesign.com" target="_blank" rel="noopener" class="flex items-center justify-between px-3 py-2 rounded-lg text-[13px] text-grey-500 hover:bg-grey-50 transition-colors">
+        Flowline SaaS <svg class="w-3 h-3 text-grey-300" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" /></svg>
       </a>
     </div>
   </div>
 </nav>
 
 <script>
-  const navPill = document.getElementById('nav-pill');
-  if (navPill) {
-    let ticking = false;
-    const updateNav = () => {
-      if (window.scrollY > 100) {
-        navPill.classList.remove('bg-white/60', 'border-grey-200/30');
-        navPill.classList.add('bg-white/90', 'border-grey-200/60', 'shadow-sm');
-      } else {
-        navPill.classList.add('bg-white/60', 'border-grey-200/30');
-        navPill.classList.remove('bg-white/90', 'border-grey-200/60', 'shadow-sm');
-      }
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(updateNav);
-        ticking = true;
-      }
-    }, { passive: true });
-  }
+  const navBar = document.getElementById('nav-bar');
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 60) {
+          navBar?.classList.add('bg-white/90', 'backdrop-blur-lg', 'border-b', 'border-grey-200/60', 'shadow-xs');
+          navBar?.classList.remove('bg-transparent');
+        } else {
+          navBar?.classList.remove('bg-white/90', 'backdrop-blur-lg', 'border-b', 'border-grey-200/60', 'shadow-xs');
+          navBar?.classList.add('bg-transparent');
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }, { passive: true });
+
+  document.getElementById('menu-toggle')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+  });
+  document.getElementById('mobile-menu')?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('mobile-menu')?.classList.add('hidden'));
+  });
 </script>
