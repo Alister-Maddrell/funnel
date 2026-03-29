@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Book a Free Call | Maddrell Design">
+
+<!-- Nav -->
+<nav class="px-4 py-3.5 max-w-[1200px] mx-auto">
+  <div class="flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#292929] to-[#242424] flex items-center justify-center shadow-sm">
+        <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+      </div>
+      <span class="font-cal text-[16px] font-bold text-[#242424] tracking-[-0.02em]">Maddrell</span>
+    </a>
+    <a href="/" class="cal-btn-outline chevron text-[13px]">Back to site</a>
+  </div>
+</nav>
+
+<!-- Booking -->
+<section class="px-4 sm:px-6 py-6 grid-bg">
+  <div class="max-w-[700px] mx-auto">
+    <div class="text-center mb-6">
+      <h1 class="font-cal text-[28px] sm:text-[36px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em">
+        Book your free call
+      </h1>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px] mx-auto">
+        Pick a time that works for you. 15 minutes, no pressure, no commitment.
+      </p>
+    </div>
+
+    <div class="cal-card">
+      <div class="p-4 sm:p-6">
+        <div class="rounded border border-[#e8e8e8] bg-[#f8f8f8] overflow-hidden" style="min-height: 600px;">
+          <iframe
+            src="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call?embed=true&layout=month_view&hideBranding=true&theme=light"
+            width="100%"
+            height="700"
+            frameborder="0"
+            style="border: none; overflow: hidden;"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
