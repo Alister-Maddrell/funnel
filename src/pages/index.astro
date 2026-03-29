@@ -6,17 +6,17 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- ═══════════════ NAV ═══════════════ -->
 <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-200">
-  <div class="flex items-center justify-between px-4 py-3.5 max-w-[1200px] mx-auto">
+  <div class="flex items-center justify-between px-4 py-3.5 max-w-6xl mx-auto">
     <!-- Logo with custom mark -->
     <a href="/" class="flex items-center gap-2">
-      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#292929] to-[#242424] flex items-center justify-center shadow-sm">
+      <div class="w-7 h-7 rounded-xl bg-gradient-to-br from-[#1a1a1a] to-[#111] flex items-center justify-center shadow-sm">
         <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
       </div>
-      <span class="font-cal text-[16px] font-bold text-[#242424] tracking-[-0.02em]">Maddrell</span>
+      <span class="font-cal text-[17px] font-bold text-[#111] tracking-[-0.02em]">Maddrell</span>
     </a>
     <div class="flex items-center gap-2">
-      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="hidden sm:block text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors px-2 py-1">Portfolio</a>
-      <a href="/book" class="cal-btn-outline chevron">Free consultation</a>
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="hidden sm:block text-[13px] text-[#6b6b6b] hover:text-[#111] transition-colors px-2 py-1">Portfolio</a>
+      <a href="/book" class="btn-nav">Free consultation</a>
       <button id="menu-btn" class="sm:hidden w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/50 transition-colors" aria-label="Menu">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
       </button>
@@ -51,7 +51,7 @@ import Layout from "../layouts/Layout.astro";
 </div>
 
 <!-- ═══════════════ HERO ═══════════════ -->
-<section id="hero" class="pt-16 grid-bg">
+<section id="hero" class="pt-32 md:pt-40 grid-bg">
   <div class="cal-card mx-3 sm:mx-4 md:mx-auto md:max-w-[1100px] !overflow-visible">
     <div class="px-5 pt-6 pb-6 sm:px-8 sm:pt-10 md:px-10 md:pt-10 md:pb-10 overflow-visible">
       <div class="flex flex-col md:flex-row md:items-stretch md:gap-10 overflow-visible">
@@ -59,7 +59,7 @@ import Layout from "../layouts/Layout.astro";
         <div class="mb-6 md:mb-0 md:order-2 md:flex-1 flex-shrink-0 md:flex md:items-stretch overflow-visible">
           <div class="relative w-full md:flex md:flex-col overflow-visible">
             <!-- Premium gradient container -->
-            <div class="relative mx-auto w-full md:flex-1 rounded bg-gradient-to-br from-[#eff6ff] via-[#f5f3ff]/60 to-[#f0fdf4]/40 border border-[#c7d2fe]/60 p-3 sm:p-3 md:p-4 md:flex md:flex-col overflow-visible">
+            <div class="relative mx-auto w-full md:flex-1 rounded bg-gradient-to-br from-[#eff6ff] via-[#f5f3ff]/60 to-[#f0fdf4]/40 border border-[#c7d2fe]/60 p-3 sm:p-3 md:p-4 md:flex md:flex-col overflow-visible" style="transform: perspective(1200px) rotateY(-2deg) rotateX(1deg)">
               <!-- Subtle grid pattern inside container -->
               <div class="absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:40px 40px"></div>
               <!-- Dashboard card -->
@@ -193,14 +193,14 @@ import Layout from "../layouts/Layout.astro";
             Sydney's premium web studio
             <svg class="w-3.5 h-3.5 text-[#9a9a9a]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
           </a>
-          <h1 class="font-cal text-[36px] sm:text-[40px] md:text-[48px] font-bold leading-[1.08] text-[#242424] mb-5" style="letter-spacing:-0.035em;text-wrap:balance">
+          <h1 class="font-cal font-extrabold leading-[1.08] text-[#111] mb-5" style="font-size:clamp(36px, 7vw, 72px);letter-spacing:-0.02em;text-wrap:balance">
             The better way to launch your business online
           </h1>
-          <p class="text-[14px] sm:text-[15px] leading-[1.65] text-[#6b6b6b] max-w-[380px] md:max-w-none mb-7">
+          <p class="text-[17px] leading-[1.7] text-[#3D3D3D] max-w-[380px] md:max-w-none mb-7">
             Bespoke websites for ambitious local businesses. Designed for conversions, delivered in 10 days.
           </p>
           <div class="max-w-[320px] md:max-w-none mb-5">
-            <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+            <a href="/book" class="btn-primary">Book your free call</a>
           </div>
         </div>
       </div>
@@ -227,7 +227,7 @@ import Layout from "../layouts/Layout.astro";
           <svg class="w-4 h-4 text-[#3b82f6]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
           <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#3b82f6] opacity-40"></div>
         </div>
-        <span class="text-[10px] text-[#9a9a9a] font-medium">100% Custom</span>
+        <span class="text-[11px] text-[#9a9a9a] font-medium font-mono">100% Custom</span>
       </div>
       <div class="w-px h-10 bg-[#e8e8e8]"></div>
       <div class="flex flex-col items-center gap-1.5 text-center">
@@ -235,7 +235,7 @@ import Layout from "../layouts/Layout.astro";
           <svg class="w-4 h-4 text-[#f59e0b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
           <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#f59e0b] opacity-40"></div>
         </div>
-        <span class="text-[10px] text-[#9a9a9a] font-medium">10-day delivery</span>
+        <span class="text-[11px] text-[#9a9a9a] font-medium font-mono">10-day delivery</span>
       </div>
       <div class="w-px h-10 bg-[#e8e8e8]"></div>
       <div class="flex flex-col items-center gap-1.5 text-center">
@@ -243,7 +243,7 @@ import Layout from "../layouts/Layout.astro";
           <svg class="w-4 h-4 text-[#22c55e]" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
           <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#22c55e] opacity-40"></div>
         </div>
-        <span class="text-[10px] text-[#9a9a9a] font-medium">Sub 2s load</span>
+        <span class="text-[11px] text-[#9a9a9a] font-medium font-mono">Sub 2s load</span>
       </div>
     </div>
   </div>
@@ -251,8 +251,8 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- ═══════════════ BUILT WITH ═══════════════ -->
 <div class="py-10 px-5 grid-bg">
-  <p class="text-center text-[12px] text-[#9a9a9a] mb-5">Built with industry-leading tools</p>
-  <div class="flex items-center justify-center gap-6 sm:gap-10 opacity-40 grayscale">
+  <p class="text-center text-[13px] font-mono uppercase tracking-wider text-[#9a9a9a] mb-5">Built with industry-leading tools</p>
+  <div class="flex items-center justify-center gap-6 sm:gap-10 opacity-30 grayscale hover:opacity-60 transition-opacity">
     <!-- Astro -->
     <div class="flex items-center gap-1.5">
       <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#242424"><path d="M16.074 16.86c-.72.616-2.157 1.035-3.812 1.035-2.032 0-3.735-.632-4.187-1.483-.161.55-.198 1.18-.198 1.58 0 0-.107 1.774 1.138 3.008.268-.956.946-1.202 1.4-1.202.902 0 .9.784.898 1.424v.144c0 1.407.953 2.593 2.272 2.95a2.146 2.146 0 01-.165-.832c0-1.073.621-1.472 1.331-1.929.566-.364 1.19-.766 1.59-1.622a3.16 3.16 0 00.293-1.33c0-.54-.137-1.048-.377-1.496l-.183-.247z"/><path d="M15.551.6L9.97 17.3a10.076 10.076 0 012.292-.27c.882 0 1.723.104 2.49.296L20.37.6h-4.82z"/><path d="M8.007.6L2.38 17.468a6.7 6.7 0 012.239-.394c1.065 0 2.037.262 2.736.704L12.89.6H8.007z"/></svg>
@@ -272,21 +272,21 @@ import Layout from "../layouts/Layout.astro";
 </div>
 
 <!-- ═══════════════ HOW IT WORKS — TIMELINE ═══════════════ -->
-<section id="how-it-works" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <div class="mb-8 fade-in md:text-center">
+<section id="how-it-works" class="px-4 sm:px-6 py-24 md:py-32 grid-bg">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12 fade-in md:text-center">
       <div class="cal-pill md:mx-auto">
         <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none"><circle cx="4" cy="4" r="3" fill="#3b82f6"/><circle cx="10" cy="8" r="3" fill="#f97316"/><circle cx="16" cy="12" r="3" fill="#8b5cf6"/><circle cx="10" cy="16" r="3" fill="#22c55e"/><path d="M6 5.5l3 1.5M12 9.5l3 1.5M13 13.5l-2 1.5" stroke="#e8e8e8" stroke-width="1"/></svg>
         How it works
       </div>
-      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+      <h2 class="font-cal font-bold leading-[1.08] text-[#111] mb-3" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">
         From brief to live in four simple steps
       </h2>
-      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px] md:mx-auto">
+      <p class="text-[17px] leading-[1.7] text-[#3D3D3D] max-w-[420px] md:mx-auto">
         Your total time commitment: about 30 minutes. We handle design, development, and deployment so you can focus on running your business.
       </p>
       <div class="flex items-center gap-3 mt-5 md:justify-center">
-        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+        <a href="/book" class="btn-primary">Book your free call</a>
       </div>
     </div>
 
@@ -303,10 +303,10 @@ import Layout from "../layouts/Layout.astro";
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>
           </div>
         </div>
-        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
-          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 01</span>
-          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Share your vision</h3>
-          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">A quick brief about your business, audience, and goals. We'll handle content strategy, photography sourcing, and site architecture.</p>
+        <div class="cal-card p-6 md:p-8 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase font-mono">Step 01</span>
+          <h3 class="text-[17px] font-semibold text-[#111] mt-1 mb-1.5" style="letter-spacing:-0.2px">Share your vision</h3>
+          <p class="text-[17px] leading-[1.7] text-[#3D3D3D]">A quick brief about your business, audience, and goals. We'll handle content strategy, photography sourcing, and site architecture.</p>
           <!-- Illustration: brief form -->
           <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#eff6ff] to-[#dbeafe]/30 border border-[#dbeafe] overflow-visible">
             <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
@@ -360,10 +360,10 @@ import Layout from "../layouts/Layout.astro";
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/><path d="M7 8h10M7 12h6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
         </div>
-        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
-          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 02</span>
-          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Approve the blueprint</h3>
-          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Review a detailed wireframe before we write a single line of code. Every element placed with intention. Nothing moves without your sign-off.</p>
+        <div class="cal-card p-6 md:p-8 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase font-mono">Step 02</span>
+          <h3 class="text-[17px] font-semibold text-[#111] mt-1 mb-1.5" style="letter-spacing:-0.2px">Approve the blueprint</h3>
+          <p class="text-[17px] leading-[1.7] text-[#3D3D3D]">Review a detailed wireframe before we write a single line of code. Every element placed with intention. Nothing moves without your sign-off.</p>
           <!-- Illustration: wireframe layout -->
           <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#fff7ed] to-[#fed7aa]/20 border border-[#fed7aa] overflow-visible">
             <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
@@ -407,10 +407,10 @@ import Layout from "../layouts/Layout.astro";
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </div>
-        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
-          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 03</span>
-          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Preview &amp; refine</h3>
-          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Get a live preview link to test on your phone. Share it with your team. Two revision rounds to polish every detail until it's perfect.</p>
+        <div class="cal-card p-6 md:p-8 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase font-mono">Step 03</span>
+          <h3 class="text-[17px] font-semibold text-[#111] mt-1 mb-1.5" style="letter-spacing:-0.2px">Preview &amp; refine</h3>
+          <p class="text-[17px] leading-[1.7] text-[#3D3D3D]">Get a live preview link to test on your phone. Share it with your team. Two revision rounds to polish every detail until it's perfect.</p>
           <!-- Illustration: browser preview -->
           <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#f5f3ff] to-[#ddd6fe]/20 border border-[#ddd6fe] overflow-visible">
             <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
@@ -458,10 +458,10 @@ import Layout from "../layouts/Layout.astro";
             <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
         </div>
-        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
-          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 04</span>
-          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Launch day</h3>
-          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Domain connected, SSL secured, analytics tracking live. Your customers start finding you on Google from day one.</p>
+        <div class="cal-card p-6 md:p-8 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase font-mono">Step 04</span>
+          <h3 class="text-[17px] font-semibold text-[#111] mt-1 mb-1.5" style="letter-spacing:-0.2px">Launch day</h3>
+          <p class="text-[17px] leading-[1.7] text-[#3D3D3D]">Domain connected, SSL secured, analytics tracking live. Your customers start finding you on Google from day one.</p>
           <!-- Illustration: launch -->
           <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#f0fdf4] to-[#bbf7d0]/20 border border-[#bbf7d0] overflow-visible">
             <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
@@ -496,21 +496,21 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <!-- ═══════════════ BENEFITS ═══════════════ -->
-<section id="benefits" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <div class="mb-8 fade-in">
+<section id="benefits" class="px-4 sm:px-6 py-24 md:py-32 grid-bg">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12 fade-in">
       <div class="cal-pill">
         <svg class="w-4 h-4 text-[#f59e0b]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg>
         What's included
       </div>
-      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+      <h2 class="font-cal font-bold leading-[1.08] text-[#111] mb-3" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">
         Everything you need to thrive online
       </h2>
-      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px]">
+      <p class="text-[17px] leading-[1.7] text-[#3D3D3D] max-w-[420px]">
         A complete, all-inclusive website package. Every feature crafted to turn visitors into customers.
       </p>
       <div class="flex items-center gap-3 mt-5">
-        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+        <a href="/book" class="btn-primary">Book your free call</a>
       </div>
     </div>
 
@@ -549,7 +549,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Pixel-perfect on every device</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">Pixel-perfect on every device</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Flawless on every screen — mobile, tablet, and desktop.</p>
       </div>
 
@@ -586,7 +586,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Lightning-fast load times</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">Lightning-fast load times</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Zero bloat. Every site loads under 2 seconds.</p>
       </div>
 
@@ -626,7 +626,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Built to rank on Google</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">Built to rank on Google</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">SEO foundations, structured data, and performance tuning baked in.</p>
       </div>
 
@@ -661,7 +661,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">24/7 booking &amp; enquiries</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">24/7 booking &amp; enquiries</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Customers book and enquire around the clock.</p>
       </div>
 
@@ -704,7 +704,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Complete ownership</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">Complete ownership</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Your code, your domain, your data. Zero lock-in.</p>
       </div>
 
@@ -743,7 +743,7 @@ import Layout from "../layouts/Layout.astro";
               </div>
             </div>
           </div>
-          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Edit anything, anytime</h3>
+          <h3 class="text-[14px] font-semibold text-[#111] mb-1">Edit anything, anytime</h3>
           <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Update text, images, and hours — no developer needed.</p>
       </div>
     </div>
@@ -752,8 +752,8 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- ═══════════════ "AND SO MUCH MORE" ACCORDION ═══════════════ -->
 <section class="px-4 sm:px-6 pb-10 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-6 fade-in" style="letter-spacing:-0.035em;text-wrap:balance">And so much more</h2>
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-cal font-bold leading-[1.08] text-[#111] mb-6 fade-in" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">And so much more</h2>
     <div class="flex flex-col gap-2">
       {[
         { label: "Custom domains", desc: "Your business name, your URL. We handle DNS setup and configuration for you.", color: "#3b82f6", bg: "#eff6ff", border: "#dbeafe", icon: `<div class="w-6 h-6 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg></div><div class="absolute bottom-1 right-1.5 w-3 h-1 rounded-sm bg-[#93c5fd]"></div>` },
@@ -769,7 +769,7 @@ import Layout from "../layouts/Layout.astro";
             <div class="w-12 h-12 rounded flex-shrink-0 flex items-center justify-center relative" style={`background:linear-gradient(135deg,${item.bg},white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 2px 6px rgba(0,0,0,0.08);border:1px solid ${item.border || item.bg}`}>
               <Fragment set:html={item.icon} />
             </div>
-            <span class="text-[14px] font-medium text-[#242424] flex-1">{item.label}</span>
+            <span class="text-[14px] font-medium text-[#111] flex-1">{item.label}</span>
             <svg class="w-4 h-4 text-[#9a9a9a] flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
           </summary>
           <div class="px-4 pb-4 pl-[60px] -mt-1">
@@ -782,19 +782,20 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <!-- ═══════════════ FREE CONSULTATION ═══════════════ -->
-<section id="consultation" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <div class="mb-8 fade-in md:text-center">
+<section id="consultation" class="px-4 sm:px-6 py-24 md:py-32 grid-bg section-stone">
+  <div class="max-w-6xl mx-auto">
+    <div class="mb-12 fade-in md:text-center">
       <div class="cal-pill md:mx-auto">
         <svg class="w-4 h-4 text-[#3b82f6]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
         Free consultation
       </div>
-      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+      <h2 class="font-cal font-bold leading-[1.08] text-[#111] mb-3" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">
         Let's talk about your business
       </h2>
-      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px] md:mx-auto">
+      <p class="text-[17px] leading-[1.7] text-[#3D3D3D] max-w-[420px] md:mx-auto">
         A 15-minute call to understand your goals and show you exactly how we'd bring your vision to life. No pressure, no commitment.
       </p>
+
     </div>
 
     <div class="cal-card md:max-w-[800px] md:mx-auto fade-in">
@@ -851,11 +852,11 @@ import Layout from "../layouts/Layout.astro";
             </div>
           </div>
 
-          <p class="font-cal text-[28px] sm:text-[32px] font-bold text-[#242424] leading-none mb-2" style="letter-spacing:-0.035em">100% free</p>
+          <div class="mb-2"><span class="inline-block px-3 py-1 rounded-full bg-[#16A34A] text-white font-mono text-sm font-medium">100% free</span></div>
           <p class="text-[14px] text-[#6b6b6b] mb-5">15 minutes. No strings attached.</p>
 
           <div>
-            <a href="/book" class="cal-btn-outline chevron">
+            <a href="/book" class="btn-primary">
               Book your free call
             </a>
           </div>
@@ -903,14 +904,14 @@ import Layout from "../layouts/Layout.astro";
 </section>
 
 <!-- ═══════════════ FAQ ═══════════════ -->
-<section id="faq" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <div class="mb-8 fade-in">
+<section id="faq" class="px-4 sm:px-6 py-24 md:py-32 grid-bg">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-12 fade-in">
       <div class="cal-pill">
         <svg class="w-4 h-4 text-[#6b6b6b]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
         Common questions
       </div>
-      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424]" style="letter-spacing:-0.035em;text-wrap:balance">
+      <h2 class="font-cal font-bold leading-[1.08] text-[#111]" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">
         Everything you want to know
       </h2>
     </div>
@@ -926,7 +927,7 @@ import Layout from "../layouts/Layout.astro";
         { q: "Can we just have a conversation first?", a: "Of course. <a href='/book' class='font-semibold text-[#242424] underline underline-offset-2'>Book a free 15-minute call</a>. It's a conversation, not a commitment.", iconColor: "#3b82f6", iconBg: "#eff6ff", iconBorder: "#dbeafe", icon: `<div class="w-6 h-6 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97"/></svg></div><div class="absolute bottom-1 left-1.5 w-2.5 h-1 rounded bg-[#93c5fd]"></div>` },
       ].map(faq => (
         <details class="cal-card group fade-in">
-          <summary class="flex items-center gap-3 px-5 py-4 cursor-pointer text-[14px] font-medium text-[#242424] select-none list-none [&::-webkit-details-marker]:hidden">
+          <summary class="flex items-center gap-3 px-5 py-4 cursor-pointer text-[14px] font-medium text-[#111] select-none list-none [&::-webkit-details-marker]:hidden">
             <div class="w-12 h-12 rounded flex-shrink-0 flex items-center justify-center relative" style={`background:linear-gradient(135deg,${faq.iconBg},white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 2px 6px rgba(0,0,0,0.08);border:1px solid ${faq.iconBorder || faq.iconBg}`}>
               <Fragment set:html={faq.icon} />
             </div>
@@ -944,8 +945,8 @@ import Layout from "../layouts/Layout.astro";
 
 <!-- ═══════════════ PRE-FOOTER CTA ═══════════════ -->
 <section class="px-4 sm:px-6 pb-10 grid-bg">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
-    <div class="cal-card p-6 sm:p-10 text-center fade-in">
+  <div class="max-w-6xl mx-auto">
+    <div class="cal-card p-6 md:p-8 sm:p-10 text-center fade-in">
       <!-- Abstract design flow illustration -->
       <div class="inline-block mb-6 relative rounded bg-[#fafafa] border border-[#e8e8e8] overflow-hidden" style="width:280px;height:160px">
         <svg class="absolute inset-0 w-full h-full" viewBox="0 0 280 160" fill="none">
@@ -987,61 +988,61 @@ import Layout from "../layouts/Layout.astro";
         <div class="absolute top-5 right-[100px] w-2 h-2 rounded-full bg-[#3b82f6] illus-sparkle"></div>
         <div class="absolute bottom-10 left-[100px] w-1.5 h-1.5 rounded-full bg-[#f97316] illus-sparkle" style="animation-delay:1s"></div>
       </div>
-      <h2 class="font-cal text-[28px] sm:text-[36px] font-bold leading-[1.08] text-[#242424] mb-3 mx-auto" style="letter-spacing:-0.035em;text-wrap:balance">
+      <h2 class="font-cal font-bold leading-[1.08] text-[#111] mb-3 mx-auto" style="font-size:clamp(28px, 4.5vw, 48px);letter-spacing:-0.02em;text-wrap:balance">
         Ready to stand out online?
       </h2>
-      <p class="text-[14px] text-[#6b6b6b] mb-6 max-w-sm mx-auto">
+      <p class="text-[17px] text-[#3D3D3D] mb-6 max-w-sm mx-auto">
         Join ambitious local businesses who chose a website that actually works. Book a free call today.
       </p>
       <div class="flex justify-center max-w-xs mx-auto">
-        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+        <a href="/book" class="btn-primary">Book your free call</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════ FOOTER ═══════════════ -->
-<footer class="px-4 sm:px-6 pt-10 pb-8">
-  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+<footer class="bg-[#111] px-4 sm:px-6 pt-16 pb-10">
+  <div class="max-w-6xl mx-auto">
     <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 mb-8">
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-2">
-          <div class="w-6 h-6 rounded-md bg-gradient-to-br from-[#292929] to-[#242424] flex items-center justify-center shadow-sm">
+          <div class="w-6 h-6 rounded-md bg-white/10 flex items-center justify-center">
             <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
           </div>
-          <span class="font-cal text-[16px] font-bold text-[#242424]">Maddrell Design</span>
+          <span class="font-cal text-[17px] font-bold text-white">Maddrell Design</span>
         </div>
-        <p class="text-[13px] text-[#9a9a9a]">Premium websites for ambitious local businesses.</p>
+        <p class="text-[13px] text-white/60">Premium websites for ambitious local businesses.</p>
       </div>
       <div class="flex gap-12">
         <div>
-          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Quick links</p>
+          <p class="text-white/40 uppercase tracking-wider font-mono text-[11px] mb-3">Quick links</p>
           <ul class="flex flex-col gap-2">
-            <li><a href="https://portfolio.maddrelldesign.com" target="_blank" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Portfolio</a></li>
-            <li><a href="#consultation" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Consultation</a></li>
-            <li><a href="#faq" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">FAQ</a></li>
-            <li><a href="/book" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Book a call</a></li>
+            <li><a href="https://portfolio.maddrelldesign.com" target="_blank" class="text-[13px] text-white/70 hover:text-white transition-colors">Portfolio</a></li>
+            <li><a href="#consultation" class="text-[13px] text-white/70 hover:text-white transition-colors">Consultation</a></li>
+            <li><a href="#faq" class="text-[13px] text-white/70 hover:text-white transition-colors">FAQ</a></li>
+            <li><a href="/book" class="text-[13px] text-white/70 hover:text-white transition-colors">Book a call</a></li>
           </ul>
         </div>
         <div>
-          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Contact</p>
+          <p class="text-white/40 uppercase tracking-wider font-mono text-[11px] mb-3">Contact</p>
           <ul class="flex flex-col gap-2">
-            <li><a href="mailto:alistermaddrell@gmail.com" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">alistermaddrell@gmail.com</a></li>
-            <li><span class="text-[13px] text-[#9a9a9a]">Sydney, Australia</span></li>
+            <li><a href="mailto:alistermaddrell@gmail.com" class="text-[13px] text-white/70 hover:text-white transition-colors">alistermaddrell@gmail.com</a></li>
+            <li><span class="text-[13px] text-white/40">Sydney, Australia</span></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="border-t border-[#e8e8e8] pt-5">
-      <p class="text-[12px] text-[#9a9a9a]">&copy; 2026 Maddrell Design</p>
+    <div class="border-t border-white/10 pt-5">
+      <p class="text-[12px] text-white/30">&copy; 2026 Maddrell Design</p>
     </div>
   </div>
 </footer>
 
 <!-- ═══════════════ STICKY CTA (mobile) ═══════════════ -->
 <div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 translate-y-full transition-transform duration-300 md:hidden">
-  <div class="px-6 py-3 flex justify-center" style="padding-bottom:max(0.75rem,env(safe-area-inset-bottom))">
-    <a href="/book" class="cal-btn-outline chevron">
+  <div class="px-6 py-3 flex justify-center bg-white/90 backdrop-blur-md border-t border-[rgba(0,0,0,0.06)]" style="padding-bottom:max(0.75rem,env(safe-area-inset-bottom))">
+    <a href="/book" class="btn-primary">
       Free consultation
     </a>
   </div>
@@ -1053,11 +1054,11 @@ import Layout from "../layouts/Layout.astro";
   window.addEventListener('scroll', () => {
     if (nav) {
       if (window.scrollY > 50) {
-        nav.style.background = 'rgba(250, 248, 245, 0.92)';
+        nav.style.background = 'rgba(250, 250, 249, 0.9)';
         nav.style.backdropFilter = 'blur(16px)';
         nav.style.webkitBackdropFilter = 'blur(16px)';
-        nav.style.borderBottom = '1px solid #d0d0d0';
-        nav.style.boxShadow = 'inset 0 -3px 0 rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 3px rgba(0,0,0,0.06)';
+        nav.style.borderBottom = '1px solid rgba(0,0,0,0.06)';
+        nav.style.boxShadow = '0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03)';
       } else {
         nav.style.background = '';
         nav.style.backdropFilter = '';
@@ -1092,7 +1093,7 @@ import Layout from "../layouts/Layout.astro";
   // Fade-in observer
   const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
   // Timeline scroll animation
