@@ -1,28 +1,1123 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Nav from "../components/Nav.astro";
-import Hero from "../components/Hero.astro";
-import TrustBar from "../components/TrustBar.astro";
-import Problem from "../components/Problem.astro";
-import Solution from "../components/Solution.astro";
-import Portfolio from "../components/Portfolio.astro";
-import Process from "../components/Process.astro";
-import Pricing from "../components/Pricing.astro";
-import FAQ from "../components/FAQ.astro";
-import Footer from "../components/Footer.astro";
-import StickyCTA from "../components/StickyCTA.astro";
 ---
 
-<Layout title="Alister Maddrell — Web Designer, Sydney">
-  <Nav />
-  <Hero />
-  <TrustBar />
-  <Problem />
-  <Solution />
-  <Portfolio />
-  <Process />
-  <Pricing />
-  <FAQ />
-  <Footer />
-  <StickyCTA />
+<Layout title="Maddrell Design | Premium Websites for Local Business">
+
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-200">
+  <div class="flex items-center justify-between px-4 py-3.5 max-w-[1200px] mx-auto">
+    <!-- Logo with custom mark -->
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#292929] to-[#242424] flex items-center justify-center shadow-sm">
+        <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+      </div>
+      <span class="font-cal text-[16px] font-bold text-[#242424] tracking-[-0.02em]">Maddrell</span>
+    </a>
+    <div class="flex items-center gap-2">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="hidden sm:block text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors px-2 py-1">Portfolio</a>
+      <a href="/book" class="cal-btn-outline chevron">Free consultation</a>
+      <button id="menu-btn" class="sm:hidden w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/50 transition-colors" aria-label="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden">
+  <div class="absolute inset-0 bg-black/20 backdrop-blur-sm" id="menu-backdrop"></div>
+  <div class="absolute top-0 right-0 w-[280px] h-full bg-white shadow-2xl p-6 pt-16 overflow-y-auto">
+    <button id="menu-close" class="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-[#f4f4f4]">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="flex flex-col gap-0.5">
+      <a href="https://portfolio.maddrelldesign.com" target="_blank" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4]">Portfolio</a>
+      <a href="#how-it-works" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4]">How it works</a>
+      <a href="#benefits" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4]">Benefits</a>
+      <a href="#consultation" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4]">Consultation</a>
+      <a href="/book" class="px-3 py-2.5 rounded-lg text-[14px] text-[#6b6b6b] hover:bg-[#f4f4f4]">Book a call</a>
+      <div class="border-t border-[#e8e8e8] my-2 pt-2">
+        <p class="px-3 py-1 text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider">Demo Sites</p>
+        <a href="https://hartley.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Hartley Plumbing</a>
+        <a href="https://cafe.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Kin Grain Cafe</a>
+        <a href="https://fitness.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Apex Fitness</a>
+        <a href="https://beauty.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Luma Beauty</a>
+        <a href="https://accounting.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Whitfield Accounting</a>
+        <a href="https://events.maddrelldesign.com" target="_blank" class="px-3 py-2 rounded-lg text-[13px] text-[#9a9a9a] hover:bg-[#f4f4f4] block">Evergreen Events</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section id="hero" class="pt-16 grid-bg">
+  <div class="cal-card mx-3 sm:mx-4 md:mx-auto md:max-w-[1100px] !overflow-visible">
+    <div class="px-5 pt-6 pb-6 sm:px-8 sm:pt-10 md:px-10 md:pt-10 md:pb-10 overflow-visible">
+      <div class="flex flex-col md:flex-row md:items-stretch md:gap-10 overflow-visible">
+        <!-- Dashboard Analytics illustration — FIRST on mobile, RIGHT on desktop -->
+        <div class="mb-6 md:mb-0 md:order-2 md:flex-1 flex-shrink-0 md:flex md:items-stretch overflow-visible">
+          <div class="relative w-full md:flex md:flex-col overflow-visible">
+            <!-- Premium gradient container -->
+            <div class="relative mx-auto w-full md:flex-1 rounded bg-gradient-to-br from-[#eff6ff] via-[#f5f3ff]/60 to-[#f0fdf4]/40 border border-[#c7d2fe]/60 p-3 sm:p-3 md:p-4 md:flex md:flex-col overflow-visible">
+              <!-- Subtle grid pattern inside container -->
+              <div class="absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:40px 40px"></div>
+              <!-- Dashboard card -->
+              <div class="dashboard-float relative z-10 md:flex-1 rounded bg-white border border-[#d0d0d0] shadow-xl shadow-[#3b82f6]/8 p-3 sm:p-4 md:p-5 md:flex md:flex-col md:justify-between">
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-3 md:mb-4">
+                  <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 md:w-10 md:h-10 rounded bg-gradient-to-br from-[#3b82f6] to-[#6366f1] flex items-center justify-center shadow-lg shadow-[#3b82f6]/25">
+                      <svg class="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18"/><path stroke-linecap="round" stroke-linejoin="round" d="M18 17V9M13 17V5M8 17v-3"/></svg>
+                    </div>
+                    <div>
+                      <div class="text-[10px] md:text-[13px] font-bold text-[#242424]">Your Website</div>
+                      <div class="text-[8px] md:text-[10px] text-[#9a9a9a]">Last 30 days</div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-2 py-1 rounded-lg bg-[#f0fdf4] border border-[#86efac] shadow-sm shadow-[#22c55e]/10">
+                    <div class="w-2 h-2 rounded-full bg-[#22c55e] animate-pulse"></div>
+                    <span class="text-[7px] md:text-[9px] font-bold text-[#15803d]">Live</span>
+                  </div>
+                </div>
+                <!-- Visitor count with mini bar chart -->
+                <div class="mb-3 md:mb-4">
+                  <div class="flex items-end justify-between">
+                    <div>
+                      <div class="text-[8px] md:text-[10px] text-[#9a9a9a] mb-0.5">Total visitors</div>
+                      <div class="text-[26px] md:text-[40px] font-bold text-[#242424] leading-none" style="letter-spacing:-0.03em">2,847</div>
+                    </div>
+                    <!-- Mini bar chart -->
+                    <div class="flex items-end gap-[3px] md:gap-1 pb-1">
+                      <div class="w-[4px] md:w-[6px] h-3 md:h-5 rounded-sm bg-[#dbeafe]"></div>
+                      <div class="w-[4px] md:w-[6px] h-4 md:h-6 rounded-sm bg-[#93c5fd]"></div>
+                      <div class="w-[4px] md:w-[6px] h-3 md:h-5 rounded-sm bg-[#bfdbfe]"></div>
+                      <div class="w-[4px] md:w-[6px] h-5 md:h-8 rounded-sm bg-[#60a5fa]"></div>
+                      <div class="w-[4px] md:w-[6px] h-6 md:h-10 rounded-sm bg-[#3b82f6]"></div>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1.5 mt-1.5">
+                    <div class="flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-[#f0fdf4] border border-[#86efac] shadow-sm shadow-[#22c55e]/10">
+                      <svg class="w-2.5 h-2.5 text-[#22c55e]" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5h7.5V12"/></svg>
+                      <span class="text-[8px] md:text-[9px] font-bold text-[#15803d]">+24%</span>
+                    </div>
+                    <span class="text-[7px] md:text-[8px] text-[#9a9a9a]">vs last month</span>
+                  </div>
+                </div>
+                <!-- Chart with labels -->
+                <div class="mb-3 md:mb-4 p-2 md:p-3 rounded bg-gradient-to-b from-[#fafafa] to-white border border-[#e8e8e8]">
+                  <div class="flex items-center justify-between mb-1 md:mb-2">
+                    <span class="text-[7px] md:text-[8px] font-medium text-[#9a9a9a]">Visitors</span>
+                    <div class="flex gap-2">
+                      <span class="text-[6px] md:text-[7px] text-[#d0d0d0]">Mon</span>
+                      <span class="text-[6px] md:text-[7px] text-[#d0d0d0]">Wed</span>
+                      <span class="text-[6px] md:text-[7px] text-[#d0d0d0]">Fri</span>
+                      <span class="text-[6px] md:text-[7px] text-[#242424] font-medium">Today</span>
+                    </div>
+                  </div>
+                  <svg class="w-full h-8 md:h-16" viewBox="0 0 280 40" fill="none" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="hcg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b82f6" stop-opacity="0.15"/><stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/></linearGradient>
+                    </defs>
+                    <!-- Secondary line (previous period) -->
+                    <path d="M0 35 Q40 33 80 34 Q120 30 160 29 Q200 31 240 27 Q260 26 280 24" stroke="#e0e0e0" stroke-width="1.5" fill="none" stroke-dasharray="4 3"/>
+                    <!-- Primary line -->
+                    <path d="M0 32 Q25 30 50 28 Q75 24 100 22 Q125 26 150 18 Q175 14 200 10 Q225 6 250 4 Q265 3 280 2" stroke="#3b82f6" stroke-width="2.5" fill="none"/>
+                    <path d="M0 32 Q25 30 50 28 Q75 24 100 22 Q125 26 150 18 Q175 14 200 10 Q225 6 250 4 Q265 3 280 2 V40 H0 Z" fill="url(#hcg)"/>
+                    <!-- Endpoint -->
+                    <circle cx="280" cy="2" r="4" fill="white" stroke="#3b82f6" stroke-width="2"/>
+                  </svg>
+                </div>
+                <!-- Metric cards — compact horizontal -->
+                <div class="flex gap-1.5 md:gap-2">
+                  <div class="flex-1 rounded bg-[#fefce8] border border-[#fde047] px-2 py-1.5 md:px-3 md:py-2 flex items-center gap-1.5 shadow-sm shadow-[#f59e0b]/5">
+                    <div class="w-5 h-5 md:w-6 md:h-6 rounded bg-gradient-to-br from-[#f59e0b] to-[#f97316] shadow-sm shadow-[#f59e0b]/20 flex items-center justify-center flex-shrink-0">
+                      <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+                    </div>
+                    <div>
+                      <div class="text-[9px] md:text-[12px] font-bold text-[#242424] leading-none">1.2s</div>
+                      <div class="text-[6px] md:text-[7px] text-[#9a9a9a]">Speed</div>
+                    </div>
+                  </div>
+                  <div class="flex-1 rounded bg-[#f0fdf4] border border-[#86efac] px-2 py-1.5 md:px-3 md:py-2 flex items-center gap-1.5 shadow-sm shadow-[#22c55e]/5">
+                    <div class="w-5 h-5 md:w-6 md:h-6 rounded bg-gradient-to-br from-[#22c55e] to-[#16a34a] shadow-sm shadow-[#22c55e]/20 flex items-center justify-center flex-shrink-0">
+                      <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                    </div>
+                    <div>
+                      <div class="text-[9px] md:text-[12px] font-bold text-[#242424] leading-none">98</div>
+                      <div class="text-[6px] md:text-[7px] text-[#9a9a9a]">SEO</div>
+                    </div>
+                  </div>
+                  <div class="flex-1 rounded bg-[#f5f3ff] border border-[#a78bfa] px-2 py-1.5 md:px-3 md:py-2 flex items-center gap-1.5 shadow-sm shadow-[#8b5cf6]/5">
+                    <div class="w-5 h-5 md:w-6 md:h-6 rounded bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] shadow-sm shadow-[#8b5cf6]/20 flex items-center justify-center flex-shrink-0">
+                      <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z"/></svg>
+                    </div>
+                    <div>
+                      <div class="text-[9px] md:text-[12px] font-bold text-[#242424] leading-none">142</div>
+                      <div class="text-[6px] md:text-[7px] text-[#9a9a9a]">Leads</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Notification badge (floating, overlapping) -->
+              <div class="absolute -top-5 -right-2 sm:-right-3 md:-right-2 z-20 illus-float" style="animation-delay:0.4s">
+                <div class="px-2.5 py-2 rounded bg-white border border-[#d0d0d0] shadow-xl shadow-black/8 flex items-center gap-2">
+                  <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#6366f1] shadow-md shadow-[#3b82f6]/25 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[8px] md:text-[9px] font-bold text-[#242424]">3 new enquiries</div>
+                    <div class="text-[6px] md:text-[7px] text-[#9a9a9a]">Just now</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Floating conversion rate badge -->
+              <div class="absolute -bottom-5 -left-2 sm:-left-3 md:-left-2 z-20 illus-float" style="animation-delay:0.8s">
+                <div class="px-2.5 py-1.5 rounded bg-white border border-[#d0d0d0] shadow-xl shadow-black/8 flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-[#22c55e] to-[#16a34a] shadow-md shadow-[#22c55e]/25 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"/></svg>
+                  </div>
+                  <div>
+                    <div class="text-[8px] md:text-[9px] font-bold text-[#15803d]">4.2% conversion</div>
+                    <div class="text-[6px] md:text-[7px] text-[#9a9a9a]">Above average</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Text — SECOND on mobile, LEFT on desktop -->
+        <div class="flex-1 md:order-1 md:flex md:flex-col md:justify-center md:max-w-[360px] md:flex-shrink-0">
+          <a href="#benefits" class="cal-pill mb-6">
+            <svg class="w-4 h-4 text-[#6349ea]" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Sydney's premium web studio
+            <svg class="w-3.5 h-3.5 text-[#9a9a9a]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+          </a>
+          <h1 class="font-cal text-[36px] sm:text-[40px] md:text-[48px] font-bold leading-[1.08] text-[#242424] mb-5" style="letter-spacing:-0.035em;text-wrap:balance">
+            The better way to launch your business online
+          </h1>
+          <p class="text-[14px] sm:text-[15px] leading-[1.65] text-[#6b6b6b] max-w-[380px] md:max-w-none mb-7">
+            Bespoke websites for ambitious local businesses. Designed for conversions, delivered in 10 days.
+          </p>
+          <div class="max-w-[320px] md:max-w-none mb-5">
+            <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cal.com Booking Embed -->
+    <div class="px-4 pb-6 sm:px-6 md:px-8">
+      <div class="rounded border border-[#e8e8e8] bg-[#f8f8f8] overflow-hidden" style="min-height: 600px;">
+        <iframe
+          src="https://cal.com/alister-maddrell-rmtqo9/15-min-discovery-call?embed=true&layout=month_view&hideBranding=true"
+          width="100%"
+          height="700"
+          frameborder="0"
+          style="border: none; overflow: hidden;"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="flex items-center justify-center gap-6 sm:gap-8 px-5 pb-6 border-t border-[#f0f0f0] pt-5">
+      <div class="flex flex-col items-center gap-1.5 text-center">
+        <div class="relative w-9 h-9 rounded flex items-center justify-center" style="background:linear-gradient(135deg,#eff6ff,white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 1px 3px rgba(0,0,0,0.08);border:1px solid #dbeafe">
+          <svg class="w-4 h-4 text-[#3b82f6]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#3b82f6] opacity-40"></div>
+        </div>
+        <span class="text-[10px] text-[#9a9a9a] font-medium">100% Custom</span>
+      </div>
+      <div class="w-px h-10 bg-[#e8e8e8]"></div>
+      <div class="flex flex-col items-center gap-1.5 text-center">
+        <div class="relative w-9 h-9 rounded flex items-center justify-center" style="background:linear-gradient(135deg,#fefce8,white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 1px 3px rgba(0,0,0,0.08);border:1px solid #fef08a">
+          <svg class="w-4 h-4 text-[#f59e0b]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#f59e0b] opacity-40"></div>
+        </div>
+        <span class="text-[10px] text-[#9a9a9a] font-medium">10-day delivery</span>
+      </div>
+      <div class="w-px h-10 bg-[#e8e8e8]"></div>
+      <div class="flex flex-col items-center gap-1.5 text-center">
+        <div class="relative w-9 h-9 rounded flex items-center justify-center" style="background:linear-gradient(135deg,#f0fdf4,white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 1px 3px rgba(0,0,0,0.08);border:1px solid #bbf7d0">
+          <svg class="w-4 h-4 text-[#22c55e]" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+          <div class="absolute -top-0.5 -right-0.5 w-2 h-2 rounded-full bg-[#22c55e] opacity-40"></div>
+        </div>
+        <span class="text-[10px] text-[#9a9a9a] font-medium">Sub 2s load</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BUILT WITH ═══════════════ -->
+<div class="py-10 px-5 grid-bg">
+  <p class="text-center text-[12px] text-[#9a9a9a] mb-5">Built with industry-leading tools</p>
+  <div class="flex items-center justify-center gap-6 sm:gap-10 opacity-40 grayscale">
+    <!-- Astro -->
+    <div class="flex items-center gap-1.5">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="#242424"><path d="M16.074 16.86c-.72.616-2.157 1.035-3.812 1.035-2.032 0-3.735-.632-4.187-1.483-.161.55-.198 1.18-.198 1.58 0 0-.107 1.774 1.138 3.008.268-.956.946-1.202 1.4-1.202.902 0 .9.784.898 1.424v.144c0 1.407.953 2.593 2.272 2.95a2.146 2.146 0 01-.165-.832c0-1.073.621-1.472 1.331-1.929.566-.364 1.19-.766 1.59-1.622a3.16 3.16 0 00.293-1.33c0-.54-.137-1.048-.377-1.496l-.183-.247z"/><path d="M15.551.6L9.97 17.3a10.076 10.076 0 012.292-.27c.882 0 1.723.104 2.49.296L20.37.6h-4.82z"/><path d="M8.007.6L2.38 17.468a6.7 6.7 0 012.239-.394c1.065 0 2.037.262 2.736.704L12.89.6H8.007z"/></svg>
+      <span class="text-[13px] font-semibold text-[#242424]">Astro</span>
+    </div>
+    <!-- Vercel -->
+    <div class="flex items-center gap-1.5">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#242424"><path d="M12 1L24 22H0L12 1z"/></svg>
+      <span class="text-[13px] font-semibold text-[#242424]">Vercel</span>
+    </div>
+    <!-- Cal.com -->
+    <div class="flex items-center gap-1.5 hidden sm:flex">
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="#242424"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#fff" stroke-width="1.5"/></svg>
+      <span class="text-[13px] font-semibold text-[#242424]">Cal.com</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ HOW IT WORKS — TIMELINE ═══════════════ -->
+<section id="how-it-works" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8 fade-in md:text-center">
+      <div class="cal-pill md:mx-auto">
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none"><circle cx="4" cy="4" r="3" fill="#3b82f6"/><circle cx="10" cy="8" r="3" fill="#f97316"/><circle cx="16" cy="12" r="3" fill="#8b5cf6"/><circle cx="10" cy="16" r="3" fill="#22c55e"/><path d="M6 5.5l3 1.5M12 9.5l3 1.5M13 13.5l-2 1.5" stroke="#e8e8e8" stroke-width="1"/></svg>
+        How it works
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+        From brief to live in four simple steps
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px] md:mx-auto">
+        Your total time commitment: about 30 minutes. We handle design, development, and deployment so you can focus on running your business.
+      </p>
+      <div class="flex items-center gap-3 mt-5 md:justify-center">
+        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+      </div>
+    </div>
+
+    <!-- Timeline steps -->
+    <div id="timeline-container" class="relative max-w-[500px] md:mx-auto">
+      <!-- Track -->
+      <div class="absolute left-[23px] top-0 bottom-0 w-[2px] bg-[#e8e8e8] rounded-full"></div>
+      <div id="timeline-progress" class="absolute left-[23px] top-0 w-[2px] rounded-full" style="height:0;background:linear-gradient(to bottom,#3b82f6,#f97316,#8b5cf6,#22c55e);transition:height 0.5s cubic-bezier(0.16,1,0.3,1);"></div>
+
+      <!-- Step 01 -->
+      <div class="timeline-step relative flex gap-5 pb-6" data-color="#3b82f6">
+        <div class="relative z-10 w-[48px] shrink-0 flex flex-col items-center">
+          <div class="timeline-node w-11 h-11 rounded bg-white border-2 border-[#e8e8e8] flex items-center justify-center transition-all duration-500">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/><path d="M8 12h8M12 8v8" stroke="#3b82f6" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 01</span>
+          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Share your vision</h3>
+          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">A quick brief about your business, audience, and goals. We'll handle content strategy, photography sourcing, and site architecture.</p>
+          <!-- Illustration: brief form -->
+          <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#eff6ff] to-[#dbeafe]/30 border border-[#dbeafe] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#bfdbfe] shadow-lg shadow-[#3b82f6]/10 p-3">
+                <div class="flex items-center gap-2 mb-2.5">
+                  <div class="w-7 h-7 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="h-2 rounded bg-[#93c5fd] w-3/4 mb-1"></div>
+                    <div class="h-1.5 rounded bg-[#dbeafe] w-1/2"></div>
+                  </div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded border-2 border-[#3b82f6] flex items-center justify-center"><svg class="w-2.5 h-2.5 text-[#3b82f6]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div class="h-1.5 rounded bg-[#93c5fd] flex-1"></div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded border-2 border-[#3b82f6] flex items-center justify-center"><svg class="w-2.5 h-2.5 text-[#3b82f6]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div>
+                    <div class="h-1.5 rounded bg-[#bfdbfe] flex-1"></div>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <div class="w-4 h-4 rounded border-2 border-[#dbeafe]"></div>
+                    <div class="h-1.5 rounded bg-[#dbeafe] w-2/3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#3b82f6] illus-sparkle"></div>
+            <div class="absolute bottom-2 left-3 w-1.5 h-1.5 rounded-full bg-[#8b5cf6] illus-sparkle" style="animation-delay:1s"></div>
+            <div class="absolute top-3 left-2 w-1 h-1 rounded-full bg-[#93c5fd] illus-sparkle" style="animation-delay:1.6s"></div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-3 -right-2 z-20 illus-float" style="animation-delay:0.5s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#3b82f6] to-[#6366f1] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#3b82f6]">3 of 3</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="timeline-step relative flex gap-5 pb-6" data-color="#f97316">
+        <div class="relative z-10 w-[48px] shrink-0 flex flex-col items-center">
+          <div class="timeline-node w-11 h-11 rounded bg-white border-2 border-[#e8e8e8] flex items-center justify-center transition-all duration-500">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/><path d="M7 8h10M7 12h6" stroke="#f97316" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+        </div>
+        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 02</span>
+          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Approve the blueprint</h3>
+          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Review a detailed wireframe before we write a single line of code. Every element placed with intention. Nothing moves without your sign-off.</p>
+          <!-- Illustration: wireframe layout -->
+          <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#fff7ed] to-[#fed7aa]/20 border border-[#fed7aa] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#fed7aa] shadow-lg shadow-[#f97316]/10 p-3">
+                <div class="flex gap-1.5 mb-2">
+                  <div class="h-2.5 rounded bg-[#fdba74] flex-1"></div>
+                  <div class="h-2.5 rounded bg-[#fed7aa] w-10"></div>
+                </div>
+                <div class="h-12 rounded-lg bg-gradient-to-br from-[#fff7ed] to-[#fed7aa]/40 mb-2 border border-[#fed7aa]/60"></div>
+                <div class="grid grid-cols-3 gap-1.5 mb-2">
+                  <div class="h-8 rounded-lg bg-[#fff7ed] border border-[#fed7aa]/40"></div>
+                  <div class="h-8 rounded-lg bg-[#fff7ed] border border-[#fed7aa]/40"></div>
+                  <div class="h-8 rounded-lg bg-[#fff7ed] border border-[#fed7aa]/40"></div>
+                </div>
+                <div class="flex items-center justify-center">
+                  <div class="px-3 py-1 rounded-lg bg-[#f97316] shadow-sm shadow-[#f97316]/20 text-white text-[9px] font-bold">Approved ✓</div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#f97316] illus-sparkle" style="animation-delay:0.5s"></div>
+            <div class="absolute bottom-2 right-3 w-1.5 h-1.5 rounded-full bg-[#f59e0b] illus-sparkle" style="animation-delay:1.5s"></div>
+            <div class="absolute bottom-4 left-2 w-1 h-1 rounded-full bg-[#fdba74] illus-sparkle" style="animation-delay:2s"></div>
+            <!-- Floating badge -->
+            <div class="absolute -top-3 -left-2 z-20 illus-float" style="animation-delay:0.6s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#f97316] to-[#f59e0b] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#f97316]">Approved</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="timeline-step relative flex gap-5 pb-6" data-color="#8b5cf6">
+        <div class="relative z-10 w-[48px] shrink-0 flex flex-col items-center">
+          <div class="timeline-node w-11 h-11 rounded bg-white border-2 border-[#e8e8e8] flex items-center justify-center transition-all duration-500">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#8b5cf6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 03</span>
+          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Preview &amp; refine</h3>
+          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Get a live preview link to test on your phone. Share it with your team. Two revision rounds to polish every detail until it's perfect.</p>
+          <!-- Illustration: browser preview -->
+          <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#f5f3ff] to-[#ddd6fe]/20 border border-[#ddd6fe] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#ddd6fe] shadow-lg shadow-[#8b5cf6]/10 overflow-hidden">
+                <div class="flex items-center gap-1 px-2.5 py-1.5 bg-[#f5f3ff] border-b border-[#ede9fe]">
+                  <span class="w-2 h-2 rounded-full bg-[#c4b5fd]"></span>
+                  <span class="w-2 h-2 rounded-full bg-[#c4b5fd]"></span>
+                  <span class="w-2 h-2 rounded-full bg-[#c4b5fd]"></span>
+                  <div class="flex-1 mx-1.5 h-3.5 rounded bg-[#ede9fe] flex items-center justify-center">
+                    <span class="text-[7px] text-[#8b5cf6]">preview.maddrelldesign.com</span>
+                  </div>
+                </div>
+                <div class="p-2.5">
+                  <div class="h-2 rounded bg-[#242424] w-3/4 mb-1.5"></div>
+                  <div class="h-1.5 rounded bg-[#ddd6fe] w-full mb-1"></div>
+                  <div class="h-8 rounded-lg bg-gradient-to-br from-[#ede9fe] to-[#fdf2f8] mb-2 border border-[#ddd6fe]/40"></div>
+                  <div class="flex gap-1.5">
+                    <div class="h-5 rounded-lg bg-[#8b5cf6] shadow-sm shadow-[#8b5cf6]/20 flex-1"></div>
+                    <div class="h-5 rounded-lg bg-white border border-[#ddd6fe] flex-1"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#8b5cf6] illus-sparkle" style="animation-delay:0.3s"></div>
+            <div class="absolute bottom-2 left-2 w-1.5 h-1.5 rounded-full bg-[#6366f1] illus-sparkle" style="animation-delay:1.3s"></div>
+            <div class="absolute top-5 left-2 w-1 h-1 rounded-full bg-[#c4b5fd] illus-sparkle" style="animation-delay:1.8s"></div>
+            <!-- Floating badge -->
+            <div class="absolute -bottom-3 -right-2 z-20 illus-float" style="animation-delay:0.4s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#8b5cf6]">Mobile ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="timeline-step relative flex gap-5 pb-2" data-color="#22c55e">
+        <div class="relative z-10 w-[48px] shrink-0 flex flex-col items-center">
+          <div class="timeline-node w-11 h-11 rounded bg-white border-2 border-[#e8e8e8] flex items-center justify-center transition-all duration-500">
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/><path d="M8 12l3 3 5-6" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+        <div class="cal-card p-5 flex-1 timeline-content opacity-50 translate-y-2 transition-all duration-500">
+          <span class="text-[10px] font-bold tracking-wider text-[#9a9a9a] uppercase">Step 04</span>
+          <h3 class="text-[17px] font-semibold text-[#242424] mt-1 mb-1.5" style="letter-spacing:-0.2px">Launch day</h3>
+          <p class="text-[14px] leading-[1.6] text-[#6b6b6b]">Domain connected, SSL secured, analytics tracking live. Your customers start finding you on Google from day one.</p>
+          <!-- Illustration: launch -->
+          <div class="mt-4 relative p-3 rounded bg-gradient-to-br from-[#f0fdf4] to-[#bbf7d0]/20 border border-[#bbf7d0] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#bbf7d0] shadow-lg shadow-[#22c55e]/10 p-3 text-center">
+                <div class="inline-flex items-center justify-center w-10 h-10 rounded bg-[#22c55e] shadow-md shadow-[#22c55e]/20 mb-2">
+                  <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/></svg>
+                </div>
+                <p class="text-[11px] font-semibold text-[#15803d]">Your site is live!</p>
+                <div class="mt-1.5 px-2 py-0.5 rounded-md bg-[#f0fdf4] border border-[#bbf7d0] inline-block">
+                  <span class="text-[8px] text-[#22c55e] font-medium">yourbusiness.com.au</span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 left-3 w-2 h-2 rounded-full bg-[#22c55e] illus-sparkle" style="animation-delay:0.7s"></div>
+            <div class="absolute bottom-2 right-2 w-1.5 h-1.5 rounded-full bg-[#14b8a6] illus-sparkle" style="animation-delay:1.7s"></div>
+            <div class="absolute bottom-4 right-6 w-1 h-1 rounded-full bg-[#86efac] illus-sparkle" style="animation-delay:2.2s"></div>
+            <!-- Floating badge -->
+            <div class="absolute -top-3 -right-2 z-20 illus-float" style="animation-delay:0.7s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#22c55e] to-[#16a34a] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#15803d]">SSL active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BENEFITS ═══════════════ -->
+<section id="benefits" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8 fade-in">
+      <div class="cal-pill">
+        <svg class="w-4 h-4 text-[#f59e0b]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd"/></svg>
+        What's included
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+        Everything you need to thrive online
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px]">
+        A complete, all-inclusive website package. Every feature crafted to turn visitors into customers.
+      </p>
+      <div class="flex items-center gap-3 mt-5">
+        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+      </div>
+    </div>
+
+    <!-- Feature cards — bento grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      <!-- Pixel-perfect -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#3b82f6]">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#eff6ff] to-[#dbeafe]/30 border border-[#dbeafe] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="flex items-end gap-2 justify-center illus-float relative z-10">
+              <!-- Phone -->
+              <div class="w-[44px] rounded bg-white border border-[#bfdbfe] shadow-lg shadow-[#3b82f6]/10 p-1.5" style="transform:perspective(600px) rotateY(5deg)">
+                <div class="h-1 rounded-full bg-[#e0e0e0] w-6 mx-auto mb-1.5"></div>
+                <div class="h-1.5 rounded bg-[#3b82f6] w-3/4 mb-1"></div>
+                <div class="h-1 rounded bg-[#93c5fd] mb-1"></div>
+                <div class="h-6 rounded bg-[#dbeafe] mb-1"></div>
+                <div class="h-3 rounded bg-[#3b82f6]"></div>
+              </div>
+              <!-- Tablet -->
+              <div class="w-[70px] rounded bg-white border border-[#bfdbfe] shadow-xl shadow-[#3b82f6]/15 p-2" style="transform:perspective(600px) rotateY(-3deg)">
+                <div class="flex gap-1 mb-1.5"><div class="h-1.5 rounded bg-[#242424] flex-1"></div><div class="h-1.5 rounded bg-[#93c5fd] w-4"></div></div>
+                <div class="h-2 rounded bg-[#3b82f6] w-3/4 mb-1"></div>
+                <div class="h-1 rounded bg-[#bfdbfe] mb-1"></div>
+                <div class="h-8 rounded-lg bg-gradient-to-br from-[#dbeafe] to-[#ede9fe] mb-1.5"></div>
+                <div class="flex gap-1"><div class="h-3 rounded bg-[#3b82f6] flex-1"></div><div class="h-3 rounded bg-[#e0e0e0] flex-1"></div></div>
+              </div>
+            </div>
+            <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#3b82f6] illus-sparkle"></div>
+            <div class="absolute bottom-3 left-3 w-1.5 h-1.5 rounded-full bg-[#8b5cf6] illus-sparkle" style="animation-delay:1s"></div>
+            <div class="absolute -bottom-3 -right-2 z-20 illus-float" style="animation-delay:0.3s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#3b82f6] to-[#6366f1] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#3b82f6]">100%</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Pixel-perfect on every device</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Flawless on every screen — mobile, tablet, and desktop.</p>
+      </div>
+
+      <!-- Fast loading -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#f59e0b] md:col-span-2">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#fefce8] to-[#fef08a]/20 border border-[#fef08a] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#fef08a] shadow-lg shadow-[#f59e0b]/10 p-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-7 h-7 rounded-lg bg-[#f59e0b] flex items-center justify-center shadow-sm shadow-[#f59e0b]/20">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="h-2 rounded-full bg-[#fef08a] overflow-hidden"><div class="h-full rounded-full bg-[#f59e0b] w-[95%]"></div></div>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-[9px] text-[#b45309]">Page load</span>
+                  <div class="px-2 py-0.5 rounded-md bg-[#fefce8] border border-[#fef08a]">
+                    <span class="text-[11px] font-bold text-[#f59e0b]">1.2s</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 left-3 w-2 h-2 rounded-full bg-[#f59e0b] illus-sparkle" style="animation-delay:0.5s"></div>
+            <div class="absolute bottom-2 right-2 w-1.5 h-1.5 rounded-full bg-[#f97316] illus-sparkle" style="animation-delay:1.5s"></div>
+            <div class="absolute -top-3 -right-2 z-20 illus-float" style="animation-delay:0.6s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#f59e0b] to-[#f97316] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#f59e0b]">A+ grade</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Lightning-fast load times</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Zero bloat. Every site loads under 2 seconds.</p>
+      </div>
+
+      <!-- SEO -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#22c55e] col-span-2 md:col-span-2">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#f0fdf4] to-[#bbf7d0]/20 border border-[#bbf7d0] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#bbf7d0] shadow-lg shadow-[#22c55e]/10 p-3">
+                <div class="flex items-center gap-1.5 mb-2">
+                  <div class="w-5 h-5 rounded bg-[#22c55e] flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+                  </div>
+                  <div class="flex-1 h-3 rounded bg-[#f0fdf4] border border-[#bbf7d0]"></div>
+                </div>
+                <div class="rounded-lg bg-[#f0fdf4] border border-[#dcfce7] p-2 mb-1.5">
+                  <div class="flex items-center gap-1.5">
+                    <div class="w-1.5 h-1.5 rounded-full bg-[#22c55e]"></div>
+                    <div class="h-1.5 rounded bg-[#22c55e] w-2/3"></div>
+                    <span class="text-[7px] text-[#22c55e] font-bold ml-auto">#1</span>
+                  </div>
+                </div>
+                <div class="flex items-center justify-between">
+                  <span class="text-[8px] text-[#15803d]">SEO Score</span>
+                  <span class="text-[13px] font-bold text-[#22c55e]">98/100</span>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 right-3 w-2 h-2 rounded-full bg-[#22c55e] illus-sparkle"></div>
+            <div class="absolute bottom-3 left-2 w-1.5 h-1.5 rounded-full bg-[#14b8a6] illus-sparkle" style="animation-delay:1.2s"></div>
+            <div class="absolute -bottom-3 -left-2 z-20 illus-float" style="animation-delay:0.5s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#22c55e] to-[#16a34a] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#15803d]">Page 1</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Built to rank on Google</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">SEO foundations, structured data, and performance tuning baked in.</p>
+      </div>
+
+      <!-- Bookings -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#8b5cf6]">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#f5f3ff] to-[#ddd6fe]/20 border border-[#ddd6fe] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#ddd6fe] shadow-lg shadow-[#8b5cf6]/10 p-3">
+                <!-- Calendar mini -->
+                <div class="grid grid-cols-7 gap-px mb-2">
+                  {['M','T','W','T','F','S','S'].map(d => <div class="text-[6px] text-[#9a9a9a] text-center font-medium">{d}</div>)}
+                  {[1,2,3,4,5,6,7].map(n => <div class={`text-[7px] text-center rounded ${n === 4 ? 'bg-[#8b5cf6] text-white font-bold' : 'text-[#6b6b6b]'}`}>{n}</div>)}
+                </div>
+                <div class="flex items-center gap-1.5 p-1.5 rounded-lg bg-[#f5f3ff] border border-[#ede9fe]">
+                  <div class="w-5 h-5 rounded-full bg-[#c4b5fd] flex items-center justify-center text-[7px] text-white font-bold">JK</div>
+                  <div>
+                    <div class="text-[8px] font-medium text-[#242424]">New booking</div>
+                    <div class="text-[6px] text-[#a78bfa]">10:30 AM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#8b5cf6] illus-sparkle" style="animation-delay:0.7s"></div>
+            <div class="absolute bottom-2 right-3 w-1.5 h-1.5 rounded-full bg-[#6366f1] illus-sparkle" style="animation-delay:1.8s"></div>
+            <div class="absolute -top-3 -left-2 z-20 illus-float" style="animation-delay:0.4s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#8b5cf6] to-[#7c3aed] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75V9A6 6 0 006 9v.75"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#8b5cf6]">3 today</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">24/7 booking &amp; enquiries</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Customers book and enquire around the clock.</p>
+      </div>
+
+      <!-- Full ownership -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#14b8a6]">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#f0fdfa] to-[#99f6e4]/20 border border-[#99f6e4] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#99f6e4] shadow-lg shadow-[#14b8a6]/10 p-3">
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-6 h-6 rounded-lg bg-[#14b8a6] flex items-center justify-center shadow-sm shadow-[#14b8a6]/20">
+                    <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"/></svg>
+                  </div>
+                  <span class="text-[9px] font-semibold text-[#0d9488]">Your files</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center gap-1.5 px-1.5 py-1 rounded-md bg-[#f0fdfa]">
+                    <div class="w-3 h-3 rounded bg-[#5eead4]"></div>
+                    <span class="text-[7px] text-[#0d9488]">source-code/</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-1.5 py-1 rounded-md bg-[#f0fdfa]">
+                    <div class="w-3 h-3 rounded bg-[#99f6e4]"></div>
+                    <span class="text-[7px] text-[#0d9488]">domain-config</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 px-1.5 py-1 rounded-md bg-[#f0fdfa]">
+                    <div class="w-3 h-3 rounded bg-[#ccfbf1]"></div>
+                    <span class="text-[7px] text-[#0d9488]">analytics-data</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 right-2 w-2 h-2 rounded-full bg-[#14b8a6] illus-sparkle" style="animation-delay:0.3s"></div>
+            <div class="absolute bottom-3 left-3 w-1.5 h-1.5 rounded-full bg-[#22c55e] illus-sparkle" style="animation-delay:1.5s"></div>
+            <div class="absolute -bottom-3 -right-2 z-20 illus-float" style="animation-delay:0.5s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#14b8a6] to-[#0d9488] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#0d9488]">Yours</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Complete ownership</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Your code, your domain, your data. Zero lock-in.</p>
+      </div>
+
+      <!-- CMS editor -->
+      <div class="cal-card p-4 fade-in border-t-[3px] border-t-[#f43f5e] col-span-2 md:col-span-1">
+          <div class="mb-3 relative p-3 rounded bg-gradient-to-br from-[#fff1f2] to-[#fecdd3]/20 border border-[#fecdd3] overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03] rounded" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#fecdd3] shadow-lg shadow-[#f43f5e]/10 p-3">
+                <!-- Toolbar -->
+                <div class="flex items-center gap-1 mb-2 pb-1.5 border-b border-[#fecdd3]">
+                  <div class="w-4 h-4 rounded bg-[#fff1f2] flex items-center justify-center text-[8px] font-bold text-[#f43f5e]">B</div>
+                  <div class="w-4 h-4 rounded bg-[#fff1f2] flex items-center justify-center text-[8px] italic text-[#f43f5e]">I</div>
+                  <div class="w-4 h-4 rounded bg-[#fff1f2] flex items-center justify-center">
+                    <svg class="w-2.5 h-2.5 text-[#f43f5e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-3.313a4.5 4.5 0 00-6.364 6.364L12 10.636"/></svg>
+                  </div>
+                  <div class="ml-auto px-1.5 py-0.5 rounded bg-[#f43f5e] text-white text-[6px] font-bold">Save</div>
+                </div>
+                <!-- Content being edited -->
+                <div class="space-y-1.5">
+                  <div class="h-2 rounded bg-[#242424] w-3/4"></div>
+                  <div class="h-1.5 rounded bg-[#fda4af] w-full"></div>
+                  <div class="h-1.5 rounded bg-[#fecdd3] w-5/6"></div>
+                  <div class="h-1.5 rounded bg-[#fecdd3] w-2/3"></div>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-2 left-2 w-2 h-2 rounded-full bg-[#f43f5e] illus-sparkle" style="animation-delay:0.8s"></div>
+            <div class="absolute bottom-2 right-3 w-1.5 h-1.5 rounded-full bg-[#f97316] illus-sparkle" style="animation-delay:2s"></div>
+            <div class="absolute -top-3 -right-2 z-20 illus-float" style="animation-delay:0.3s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#f43f5e] to-[#e11d48] flex items-center justify-center">
+                  <svg class="w-2.5 h-2.5 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+                </div>
+                <span class="text-[7px] font-bold text-[#f43f5e]">Saved</span>
+              </div>
+            </div>
+          </div>
+          <h3 class="text-[14px] font-semibold text-[#242424] mb-1">Edit anything, anytime</h3>
+          <p class="text-[13px] leading-[1.5] text-[#6b6b6b]">Update text, images, and hours — no developer needed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ "AND SO MUCH MORE" ACCORDION ═══════════════ -->
+<section class="px-4 sm:px-6 pb-10 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-6 fade-in" style="letter-spacing:-0.035em;text-wrap:balance">And so much more</h2>
+    <div class="flex flex-col gap-2">
+      {[
+        { label: "Custom domains", desc: "Your business name, your URL. We handle DNS setup and configuration for you.", color: "#3b82f6", bg: "#eff6ff", border: "#dbeafe", icon: `<div class="w-6 h-6 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21a9 9 0 100-18 9 9 0 000 18z"/><path d="M3.6 9h16.8M3.6 15h16.8"/></svg></div><div class="absolute bottom-1 right-1.5 w-3 h-1 rounded-sm bg-[#93c5fd]"></div>` },
+        { label: "SSL security", desc: "Free SSL certificate included. Your customers' data is always encrypted and secure.", color: "#22c55e", bg: "#f0fdf4", border: "#bbf7d0", icon: `<div class="w-6 h-6 rounded-lg bg-[#22c55e] shadow-sm shadow-[#22c55e]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg></div><div class="absolute bottom-1 right-1 w-2.5 h-2.5 rounded-full bg-[#86efac]/40"></div>` },
+        { label: "Global CDN", desc: "Content delivered from the closest server to your visitor. Fast load times worldwide.", color: "#f59e0b", bg: "#fefce8", border: "#fef08a", icon: `<div class="w-6 h-6 rounded-lg bg-[#f59e0b] shadow-sm shadow-[#f59e0b]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><div class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>` },
+        { label: "Analytics", desc: "Track visitors, page views, and conversions. Know exactly what's working and what isn't.", color: "#6366f1", bg: "#eef2ff", border: "#c7d2fe", icon: `<div class="w-6 h-6 rounded-lg bg-[#6366f1] shadow-sm shadow-[#6366f1]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></div><div class="absolute bottom-1.5 right-1 flex gap-px"><div class="w-1 h-2 rounded-sm bg-[#a5b4fc]"></div><div class="w-1 h-3 rounded-sm bg-[#818cf8]"></div></div>` },
+        { label: "Form builder", desc: "Custom contact forms, enquiry forms, and quote requests. All submissions sent to your inbox.", color: "#f97316", bg: "#fff7ed", border: "#fed7aa", icon: `<div class="w-6 h-6 rounded-lg bg-[#f97316] shadow-sm shadow-[#f97316]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h4"/></svg></div><div class="absolute bottom-1 right-1.5 w-3 h-0.5 rounded bg-[#fdba74]"></div><div class="absolute bottom-2 right-1.5 w-2 h-0.5 rounded bg-[#fed7aa]"></div>` },
+        { label: "Social links", desc: "Instagram, Facebook, and Google Business integrated. One-click follow buttons on every page.", color: "#14b8a6", bg: "#f0fdfa", border: "#99f6e4", icon: `<div class="w-6 h-6 rounded-lg bg-[#14b8a6] shadow-sm shadow-[#14b8a6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></div><div class="absolute top-1.5 right-1 w-2 h-2 rounded-full bg-[#5eead4]/40"></div>` },
+        { label: "Accessibility", desc: "WCAG compliant. Your site works for everyone, including visitors using screen readers.", color: "#f43f5e", bg: "#fff1f2", border: "#fecdd3", icon: `<div class="w-6 h-6 rounded-lg bg-[#f43f5e] shadow-sm shadow-[#f43f5e]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 8v4m0 0l-4 6m4-6l4 6M6 12h12"/></svg></div><div class="absolute bottom-1 left-1.5 w-2 h-2 rounded-full bg-[#fda4af]/40"></div>` },
+      ].map(item => (
+        <details class="cal-card group fade-in">
+          <summary class="flex items-center gap-3 px-4 py-3.5 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
+            <div class="w-12 h-12 rounded flex-shrink-0 flex items-center justify-center relative" style={`background:linear-gradient(135deg,${item.bg},white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 2px 6px rgba(0,0,0,0.08);border:1px solid ${item.border || item.bg}`}>
+              <Fragment set:html={item.icon} />
+            </div>
+            <span class="text-[14px] font-medium text-[#242424] flex-1">{item.label}</span>
+            <svg class="w-4 h-4 text-[#9a9a9a] flex-shrink-0 transition-transform duration-200 group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+          </summary>
+          <div class="px-4 pb-4 pl-[60px] -mt-1">
+            <p class="text-[13px] leading-[1.6] text-[#6b6b6b]">{item.desc}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FREE CONSULTATION ═══════════════ -->
+<section id="consultation" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8 fade-in md:text-center">
+      <div class="cal-pill md:mx-auto">
+        <svg class="w-4 h-4 text-[#3b82f6]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+        Free consultation
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424] mb-3" style="letter-spacing:-0.035em;text-wrap:balance">
+        Let's talk about your business
+      </h2>
+      <p class="text-[14px] sm:text-[15px] leading-[1.6] text-[#6b6b6b] max-w-[420px] md:mx-auto">
+        A 15-minute call to understand your goals and show you exactly how we'd bring your vision to life. No pressure, no commitment.
+      </p>
+    </div>
+
+    <div class="cal-card md:max-w-[800px] md:mx-auto fade-in">
+      <div class="flex flex-col md:flex-row">
+        <!-- Left: Illustration + CTA -->
+        <div class="m-3 sm:m-4 rounded bg-[#f8f8f8] p-5 sm:p-6 md:flex-1 flex flex-col">
+          <!-- Calendar illustration -->
+          <div class="relative mb-5 p-3 rounded bg-gradient-to-br from-[#eff6ff] via-[#f0fdf4]/60 to-[#fefce8]/40 border border-[#93c5fd]/40 overflow-visible">
+            <div class="absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(to right,#000 1px,transparent 1px),linear-gradient(to bottom,#000 1px,transparent 1px);background-size:24px 24px"></div>
+            <div class="illus-float relative z-10">
+              <div class="rounded bg-white border border-[#d0d0d0] shadow-xl shadow-black/5 p-3">
+                <!-- Calendar header -->
+                <div class="flex items-center justify-between mb-2.5">
+                  <div class="flex items-center gap-2">
+                    <div class="w-6 h-6 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#6366f1] flex items-center justify-center shadow-sm shadow-[#3b82f6]/20">
+                      <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+                    </div>
+                    <div class="text-[8px] font-bold text-[#242424]">Discovery Call</div>
+                  </div>
+                  <div class="px-1.5 py-0.5 rounded bg-[#f0fdf4] border border-[#86efac]">
+                    <span class="text-[6px] font-bold text-[#15803d]">15 min</span>
+                  </div>
+                </div>
+                <!-- Calendar grid -->
+                <div class="grid grid-cols-7 gap-px mb-1.5">
+                  {['M','T','W','T','F','S','S'].map(d => (
+                    <div class="text-[5px] text-center text-[#9a9a9a] font-medium py-0.5">{d}</div>
+                  ))}
+                </div>
+                <div class="grid grid-cols-7 gap-0.5">
+                  {[...Array(5)].map(() => (
+                    <div class="h-4 rounded-sm bg-[#f4f4f4]"></div>
+                  ))}
+                  <div class="h-4 rounded-sm bg-[#dbeafe] border border-[#93c5fd]"></div>
+                  <div class="h-4 rounded-sm bg-[#f4f4f4]"></div>
+                  {[...Array(7)].map((_, i) => (
+                    <div class={`h-4 rounded-sm ${i === 2 ? 'bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/30' : 'bg-[#f4f4f4]'}`}></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <!-- Sparkles -->
+            <div class="absolute top-2 right-3 w-2 h-2 rounded-full bg-[#3b82f6] illus-sparkle"></div>
+            <div class="absolute bottom-3 left-2 w-1.5 h-1.5 rounded-full bg-[#22c55e] illus-sparkle" style="animation-delay:1s"></div>
+            <div class="absolute top-4 left-3 w-1 h-1 rounded-full bg-[#f59e0b] illus-sparkle" style="animation-delay:1.6s"></div>
+            <!-- Floating badge -->
+            <div class="absolute -top-3 -right-2 z-20 illus-float" style="animation-delay:0.5s">
+              <div class="px-2 py-1 rounded bg-white border border-[#d0d0d0] shadow-lg shadow-black/5 flex items-center gap-1.5">
+                <div class="w-4 h-4 rounded bg-gradient-to-br from-[#22c55e] to-[#16a34a] flex items-center justify-center">
+                  <div class="w-2 h-2 rounded-full bg-white animate-pulse"></div>
+                </div>
+                <span class="text-[7px] font-bold text-[#15803d]">Available</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="font-cal text-[28px] sm:text-[32px] font-bold text-[#242424] leading-none mb-2" style="letter-spacing:-0.035em">100% free</p>
+          <p class="text-[14px] text-[#6b6b6b] mb-5">15 minutes. No strings attached.</p>
+
+          <div>
+            <a href="/book" class="cal-btn-outline chevron">
+              Book your free call
+            </a>
+          </div>
+          <p class="text-[12px] text-[#9a9a9a] mt-2">Pick a time that suits you.</p>
+        </div>
+
+        <!-- Right: What we'll cover -->
+        <div class="md:flex-1 flex flex-col">
+          <div class="px-6 sm:px-8 pb-6 pt-4 border-t md:border-t-0 md:border-l border-[#f0f0f0] flex-1 flex flex-col justify-center">
+            <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-4">What we'll cover</p>
+            <div class="flex flex-col gap-3">
+              {[
+                { text: "Your business goals and target audience", color: "#3b82f6", bg: "#eff6ff", border: "#dbeafe" },
+                { text: "How a bespoke website can drive real leads", color: "#8b5cf6", bg: "#f5f3ff", border: "#ddd6fe" },
+                { text: "Your timeline and launch priorities", color: "#f97316", bg: "#fff7ed", border: "#fed7aa" },
+                { text: "Live examples of sites we've built", color: "#22c55e", bg: "#f0fdf4", border: "#bbf7d0" },
+                { text: "Transparent pricing with no surprises", color: "#14b8a6", bg: "#f0fdfa", border: "#99f6e4" },
+                { text: "Next steps — only if you're ready", color: "#f59e0b", bg: "#fefce8", border: "#fef08a" },
+              ].map(item => (
+                <div class="flex items-center gap-3 text-[13px] text-[#6b6b6b]">
+                  <div class="w-7 h-7 rounded flex-shrink-0 flex items-center justify-center" style={`background:linear-gradient(135deg,${item.bg},white);border:1px solid ${item.border}`}>
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" style={`color:${item.color}`} viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  </div>
+                  {item.text}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Trust footer -->
+          <div class="flex items-center justify-center gap-5 px-6 py-4 border-t border-[#f0f0f0] bg-[#fafafa] md:rounded-bl-none rounded-b-2xl">
+            <span class="flex items-center gap-1.5 text-[11px] text-[#9a9a9a]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              15-minute call
+            </span>
+            <span class="flex items-center gap-1.5 text-[11px] text-[#9a9a9a]">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+              Zero commitment
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FAQ ═══════════════ -->
+<section id="faq" class="px-4 sm:px-6 py-10 sm:py-14 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="mb-8 fade-in">
+      <div class="cal-pill">
+        <svg class="w-4 h-4 text-[#6b6b6b]" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+        Common questions
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[32px] font-bold leading-[1.08] text-[#242424]" style="letter-spacing:-0.035em;text-wrap:balance">
+        Everything you want to know
+      </h2>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      {[
+        { q: "How quickly can my site be live?", a: "Most projects launch within 10 business days of receiving your brief. Complex multi-page sites may take slightly longer, and we'll agree a timeline upfront.", iconColor: "#22c55e", iconBg: "#f0fdf4", iconBorder: "#bbf7d0", icon: `<div class="w-6 h-6 rounded-lg bg-[#22c55e] shadow-sm shadow-[#22c55e]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><div class="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-[#86efac]/40"></div>` },
+        { q: "I don't have content ready. Is that a problem?", a: "Not at all. We offer content strategy and copywriting as part of the package. Send what you have and we'll shape it into something compelling.", iconColor: "#3b82f6", iconBg: "#eff6ff", iconBorder: "#dbeafe", icon: `<div class="w-6 h-6 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z"/></svg></div><div class="absolute bottom-1 right-1.5 w-3 h-0.5 rounded bg-[#93c5fd]"></div>` },
+        { q: "Do I need any technical knowledge?", a: "None at all. You focus on your business expertise and we handle every technical detail from domain setup to deployment.", iconColor: "#8b5cf6", iconBg: "#f5f3ff", iconBorder: "#ddd6fe", icon: `<div class="w-6 h-6 rounded-lg bg-[#8b5cf6] shadow-sm shadow-[#8b5cf6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div><div class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#c4b5fd]"></div>` },
+        { q: "Can I update the site myself after launch?", a: "Yes. Every site includes a visual content editor. Change text, swap images, update business hours, all without touching code.", iconColor: "#f97316", iconBg: "#fff7ed", iconBorder: "#fed7aa", icon: `<div class="w-6 h-6 rounded-lg bg-[#f97316] shadow-sm shadow-[#f97316]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487z"/></svg></div><div class="absolute bottom-1 right-1.5 w-3 h-0.5 rounded bg-[#fdba74]"></div>` },
+        { q: "What's included after launch?", a: "Three months of hosting, support, and minor updates are included. After that, ongoing maintenance plans are available monthly.", iconColor: "#14b8a6", iconBg: "#f0fdfa", iconBorder: "#99f6e4", icon: `<div class="w-6 h-6 rounded-lg bg-[#14b8a6] shadow-sm shadow-[#14b8a6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5"/></svg></div><div class="absolute bottom-1 right-1 w-2 h-2 rounded-full bg-[#5eead4]/40"></div>` },
+        { q: "What if the design needs changes?", a: "You approve the wireframe before development begins. Then two full revision rounds are included to refine every detail.", iconColor: "#f59e0b", iconBg: "#fefce8", iconBorder: "#fef08a", icon: `<div class="w-6 h-6 rounded-lg bg-[#f59e0b] shadow-sm shadow-[#f59e0b]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182"/></svg></div><div class="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-[#fcd34d]"></div>` },
+        { q: "Can we just have a conversation first?", a: "Of course. <a href='/book' class='font-semibold text-[#242424] underline underline-offset-2'>Book a free 15-minute call</a>. It's a conversation, not a commitment.", iconColor: "#3b82f6", iconBg: "#eff6ff", iconBorder: "#dbeafe", icon: `<div class="w-6 h-6 rounded-lg bg-[#3b82f6] shadow-sm shadow-[#3b82f6]/20 flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97"/></svg></div><div class="absolute bottom-1 left-1.5 w-2.5 h-1 rounded bg-[#93c5fd]"></div>` },
+      ].map(faq => (
+        <details class="cal-card group fade-in">
+          <summary class="flex items-center gap-3 px-5 py-4 cursor-pointer text-[14px] font-medium text-[#242424] select-none list-none [&::-webkit-details-marker]:hidden">
+            <div class="w-12 h-12 rounded flex-shrink-0 flex items-center justify-center relative" style={`background:linear-gradient(135deg,${faq.iconBg},white);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.04),inset 0 1px 0 rgba(255,255,255,0.8),0 2px 6px rgba(0,0,0,0.08);border:1px solid ${faq.iconBorder || faq.iconBg}`}>
+              <Fragment set:html={faq.icon} />
+            </div>
+            <span class="pr-4 flex-1">{faq.q}</span>
+            <svg class="w-4 h-4 text-[#9a9a9a] flex-shrink-0 transition-transform duration-200 group-open:rotate-45" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+          </summary>
+          <div class="px-5 pb-4 pl-[52px] -mt-1">
+            <p class="text-[13px] leading-[1.6] text-[#6b6b6b]" set:html={faq.a} />
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PRE-FOOTER CTA ═══════════════ -->
+<section class="px-4 sm:px-6 pb-10 grid-bg">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="cal-card p-6 sm:p-10 text-center fade-in">
+      <!-- Abstract design flow illustration -->
+      <div class="inline-block mb-6 relative rounded bg-[#fafafa] border border-[#e8e8e8] overflow-hidden" style="width:280px;height:160px">
+        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 280 160" fill="none">
+          <line x1="0" y1="40" x2="280" y2="40" stroke="#ddd" stroke-width="1"/>
+          <line x1="0" y1="80" x2="280" y2="80" stroke="#ddd" stroke-width="1"/>
+          <line x1="0" y1="120" x2="280" y2="120" stroke="#ddd" stroke-width="1"/>
+          <line x1="70" y1="0" x2="70" y2="160" stroke="#ddd" stroke-width="1"/>
+          <line x1="140" y1="0" x2="140" y2="160" stroke="#ddd" stroke-width="1"/>
+          <line x1="210" y1="0" x2="210" y2="160" stroke="#ddd" stroke-width="1"/>
+        </svg>
+        <!-- Button -->
+        <div class="absolute top-3 left-3 px-3 py-1.5 rounded-lg bg-[#3b82f6] shadow-md shadow-[#3b82f6]/20 illus-float">
+          <div class="w-10 h-2 rounded bg-white/60"></div>
+        </div>
+        <!-- Card -->
+        <div class="absolute top-8 right-3 w-24 rounded-lg bg-white border border-[#e8e8e8] shadow-md p-2 illus-float" style="animation-delay:0.3s">
+          <div class="w-5 h-5 rounded-md bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center mb-1">
+            <svg class="w-3 h-3 text-[#22c55e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+          </div>
+          <div class="h-1 rounded bg-[#d0d0d0] w-full mb-0.5"></div>
+          <div class="h-1 rounded bg-[#e8e8e8] w-2/3"></div>
+        </div>
+        <!-- Sparkle element -->
+        <div class="absolute bottom-6 left-6 w-14 h-14 rounded bg-gradient-to-br from-[#f5f3ff] to-[#fdf2f8] border border-[#e0e7ff] shadow-md flex items-center justify-center illus-float" style="animation-delay:0.6s">
+          <div class="w-7 h-7 rounded-lg bg-[#8b5cf6] flex items-center justify-center shadow-sm shadow-[#8b5cf6]/20">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          </div>
+        </div>
+        <!-- Icons -->
+        <div class="absolute bottom-3 right-4 flex gap-1.5 illus-float" style="animation-delay:0.9s">
+          <div class="w-8 h-8 rounded-lg bg-[#fefce8] border border-[#fef08a] flex items-center justify-center shadow-sm">
+            <svg class="w-4 h-4 text-[#f59e0b]" fill="currentColor" viewBox="0 0 20 20"><path d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/></svg>
+          </div>
+          <div class="w-8 h-8 rounded-lg bg-[#f0fdf4] border border-[#bbf7d0] flex items-center justify-center shadow-sm">
+            <svg class="w-4 h-4 text-[#22c55e]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+        </div>
+        <!-- Sparkle dots -->
+        <div class="absolute top-5 right-[100px] w-2 h-2 rounded-full bg-[#3b82f6] illus-sparkle"></div>
+        <div class="absolute bottom-10 left-[100px] w-1.5 h-1.5 rounded-full bg-[#f97316] illus-sparkle" style="animation-delay:1s"></div>
+      </div>
+      <h2 class="font-cal text-[28px] sm:text-[36px] font-bold leading-[1.08] text-[#242424] mb-3 mx-auto" style="letter-spacing:-0.035em;text-wrap:balance">
+        Ready to stand out online?
+      </h2>
+      <p class="text-[14px] text-[#6b6b6b] mb-6 max-w-sm mx-auto">
+        Join ambitious local businesses who chose a website that actually works. Book a free call today.
+      </p>
+      <div class="flex justify-center max-w-xs mx-auto">
+        <a href="/book" class="cal-btn-outline chevron">Book your free call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="px-4 sm:px-6 pt-10 pb-8">
+  <div class="max-w-[640px] md:max-w-[1000px] mx-auto">
+    <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 mb-8">
+      <div class="flex-1">
+        <div class="flex items-center gap-2 mb-2">
+          <div class="w-6 h-6 rounded-md bg-gradient-to-br from-[#292929] to-[#242424] flex items-center justify-center shadow-sm">
+            <svg class="w-3.5 h-3.5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"/></svg>
+          </div>
+          <span class="font-cal text-[16px] font-bold text-[#242424]">Maddrell Design</span>
+        </div>
+        <p class="text-[13px] text-[#9a9a9a]">Premium websites for ambitious local businesses.</p>
+      </div>
+      <div class="flex gap-12">
+        <div>
+          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Quick links</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="https://portfolio.maddrelldesign.com" target="_blank" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Portfolio</a></li>
+            <li><a href="#consultation" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Consultation</a></li>
+            <li><a href="#faq" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">FAQ</a></li>
+            <li><a href="/book" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">Book a call</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[11px] font-semibold text-[#9a9a9a] uppercase tracking-wider mb-3">Contact</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="mailto:alistermaddrell@gmail.com" class="text-[13px] text-[#6b6b6b] hover:text-[#242424] transition-colors">alistermaddrell@gmail.com</a></li>
+            <li><span class="text-[13px] text-[#9a9a9a]">Sydney, Australia</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-[#e8e8e8] pt-5">
+      <p class="text-[12px] text-[#9a9a9a]">&copy; 2026 Maddrell Design</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════ STICKY CTA (mobile) ═══════════════ -->
+<div id="sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 translate-y-full transition-transform duration-300 md:hidden">
+  <div class="px-6 py-3 flex justify-center" style="padding-bottom:max(0.75rem,env(safe-area-inset-bottom))">
+    <a href="/book" class="cal-btn-outline chevron">
+      Free consultation
+    </a>
+  </div>
+</div>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (nav) {
+      if (window.scrollY > 50) {
+        nav.style.background = 'rgba(250, 248, 245, 0.92)';
+        nav.style.backdropFilter = 'blur(16px)';
+        nav.style.webkitBackdropFilter = 'blur(16px)';
+        nav.style.borderBottom = '1px solid #d0d0d0';
+        nav.style.boxShadow = 'inset 0 -3px 0 rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.9), 0 1px 3px rgba(0,0,0,0.06)';
+      } else {
+        nav.style.background = '';
+        nav.style.backdropFilter = '';
+        nav.style.webkitBackdropFilter = '';
+        nav.style.borderBottom = '';
+        nav.style.boxShadow = '';
+      }
+    }
+  }, { passive: true });
+
+  // Mobile menu
+  const menuBtn = document.getElementById('menu-btn');
+  const menuClose = document.getElementById('menu-close');
+  const menuBackdrop = document.getElementById('menu-backdrop');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const toggleMenu = () => mobileMenu?.classList.toggle('hidden');
+  menuBtn?.addEventListener('click', toggleMenu);
+  menuClose?.addEventListener('click', toggleMenu);
+  menuBackdrop?.addEventListener('click', toggleMenu);
+  mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu?.classList.add('hidden')));
+
+  // Sticky CTA
+  const stickyCta = document.getElementById('sticky-cta');
+  const hero = document.getElementById('hero');
+  if (stickyCta && hero) {
+    new IntersectionObserver(([e]) => {
+      stickyCta.classList.toggle('translate-y-full', e.isIntersecting);
+      stickyCta.classList.toggle('translate-y-0', !e.isIntersecting);
+    }).observe(hero);
+  }
+
+  // Fade-in observer
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+  // Timeline scroll animation
+  const timelineContainer = document.getElementById('timeline-container');
+  const timelineProgress = document.getElementById('timeline-progress');
+  const timelineSteps = document.querySelectorAll('.timeline-step');
+  if (timelineContainer && timelineProgress && timelineSteps.length) {
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const step = entry.target as HTMLElement;
+          const content = step.querySelector('.timeline-content') as HTMLElement;
+          const node = step.querySelector('.timeline-node') as HTMLElement;
+          const color = step.dataset.color || '#3b82f6';
+          if (content) { content.classList.remove('opacity-50', 'translate-y-2'); content.classList.add('opacity-100', 'translate-y-0'); }
+          if (node) { node.style.borderColor = color; node.style.boxShadow = `0 0 0 4px ${color}18`; }
+          const containerRect = timelineContainer.getBoundingClientRect();
+          const stepRect = step.getBoundingClientRect();
+          const targetHeight = stepRect.top - containerRect.top + timelineContainer.scrollTop + 22;
+          timelineProgress.style.height = `${targetHeight}px`;
+        }
+      });
+    }, { threshold: 0.4, rootMargin: '0px 0px -20% 0px' });
+    timelineSteps.forEach(s => stepObserver.observe(s));
+  }
+</script>
+
 </Layout>
