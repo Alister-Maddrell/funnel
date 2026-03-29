@@ -1,21 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-page: #FAFAF9;
-  --color-surface: #F5F4F0;
+  --color-page: #f4f4f4;
   --color-white: #ffffff;
-  --color-dark: #111111;
-  --color-text: #3D3D3D;
-  --color-text-secondary: #6B6B6B;
-  --color-text-muted: #9A9A9A;
-  --color-border: rgba(0,0,0,0.06);
-  --color-border-light: rgba(0,0,0,0.04);
-  --color-accent: #16A34A;
-  --color-accent-hover: #15803D;
+  --color-dark: #242424;
+  --color-text: #242424;
+  --color-text-secondary: #6b6b6b;
+  --color-text-muted: #9a9a9a;
+  --color-border: #e8e8e8;
+  --color-border-light: #f0f0f0;
 
-  --font-heading: "Outfit", system-ui, sans-serif;
-  --font-body: "DM Sans", system-ui, -apple-system, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-cal: "Cal Sans", "Inter", system-ui, sans-serif;
+  --font-inter: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 html {
@@ -24,8 +20,8 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
-  font-weight: 400;
+  font-family: var(--font-inter);
+  font-weight: 450;
   color: var(--color-text);
   background: var(--color-page);
   -webkit-font-smoothing: antialiased;
@@ -37,19 +33,15 @@ body {
   padding: 0;
 }
 
-/* Heading font alias — keeps font-cal working across templates */
 .font-cal {
-  font-family: var(--font-heading);
-}
-.font-mono {
-  font-family: var(--font-mono);
+  font-family: var(--font-cal);
 }
 
-/* ═══════════ SUBTLE GRID BACKGROUND ═══════════ */
+/* ═══════════ CROSSHAIR GRID BACKGROUND (cal.com signature) ═══════════ */
 .grid-bg {
   background-image:
-    linear-gradient(to right, rgba(0,0,0,0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.025) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px);
   background-size: 80px 80px;
   position: relative;
 }
@@ -58,7 +50,7 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(circle 1.5px at center, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0.06) 50%, transparent 50%);
+    radial-gradient(circle 2px at center, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.08) 50%, transparent 50%);
   background-size: 80px 80px;
   background-position: -1px -1px;
   pointer-events: none;
@@ -69,181 +61,322 @@ body {
   z-index: 1;
 }
 
-/* Alternating section background */
-.section-stone {
-  background-color: var(--color-surface);
-}
-
-/* ═══════════ BUTTONS ═══════════ */
-/* Primary — green, the conversion CTA */
-.btn-primary {
+/* ═══════════ CAL.COM EXACT BUTTON STYLES ═══════════ */
+/* Dark button: gradient #292929 → #242424, white inset shadow for depth */
+.cal-btn-dark {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
-  padding: 14px 28px !important;
-  border-radius: 12px !important;
-  background-color: #16A34A !important;
-  color: #ffffff !important;
-  font-family: var(--font-body) !important;
-  font-size: 15px !important;
-  font-weight: 600 !important;
+  gap: 4px !important;
+  padding: 12px 18px 14px !important;
+  border-radius: 4px !important;
+  background-color: #1a1a1a !important;
+  --tw-shadow: none !important;
+  --tw-inset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  --tw-inset-ring-shadow: none !important;
+  --tw-ring-offset-shadow: none !important;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.4) !important;
+  color: #f5f0e8 !important;
+  font-size: 14px !important;
+  font-weight: 450 !important;
   line-height: 1 !important;
+  transition: padding 0.2s cubic-bezier(0,0.32,0.12,1), color 0.2s cubic-bezier(0,0.32,0.12,1), box-shadow 0.2s cubic-bezier(0,0.32,0.12,1) !important;
   white-space: nowrap !important;
   text-decoration: none !important;
   border: none !important;
-  cursor: pointer !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 1px 3px rgba(22,163,74,0.2) !important;
+  position: relative !important;
+  overflow: hidden !important;
 }
-.btn-primary:hover {
-  background-color: #15803D !important;
-  box-shadow: 0 8px 24px rgba(22,163,74,0.3) !important;
-  transform: translateY(-1px) !important;
+.cal-btn-dark:hover {
+  background-color: #2a2a2a !important;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.5) !important;
 }
-.btn-primary:active {
-  transform: translateY(0) !important;
-  box-shadow: 0 1px 3px rgba(22,163,74,0.2) !important;
+.cal-btn-dark:active {
+  box-shadow: inset 0 4px 0 rgba(0,0,0,0.15) !important;
+  padding: 14px 18px 12px !important;
 }
-/* Arrow inside primary button */
-.btn-primary::after {
-  content: '→' !important;
-  font-size: 16px !important;
+
+/* Secondary/outline button: gradient #fcfcfc → #fff, white inset shadow */
+.cal-btn-outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding-top: 8px !important;
+  padding-bottom: 10px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  border-radius: 4px !important;
+  background-color: #f5f0e8 !important;
+  --tw-shadow: none !important;
+  --tw-inset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  --tw-inset-ring-shadow: none !important;
+  --tw-ring-offset-shadow: none !important;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.9) !important;
+  border: 1px solid #888 !important;
+  color: #1a1a1a !important;
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  line-height: 1 !important;
+  transition: all 0.1s !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+}
+.cal-btn-outline:hover:not(.chevron) {
+  background-color: #ebe5db !important;
+  border-color: #666 !important;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.9) !important;
+}
+.cal-btn-outline:active {
+  background-color: #e2dbd0 !important;
+  box-shadow: inset 0 4px 0 rgba(0,0,0,0.12) !important;
+  padding: 10px 14px 8px !important;
+}
+
+/* Full-width dark CTA */
+.cal-btn-full {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  padding: 12px 20px 14px !important;
+  border-radius: 4px !important;
+  background-color: #1a1a1a !important;
+  --tw-shadow: none !important;
+  --tw-inset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  --tw-inset-ring-shadow: none !important;
+  --tw-ring-offset-shadow: none !important;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.4) !important;
+  color: #f5f0e8 !important;
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  line-height: 1 !important;
+  transition: padding 0.2s cubic-bezier(0,0.32,0.12,1), color 0.2s cubic-bezier(0,0.32,0.12,1), box-shadow 0.2s cubic-bezier(0,0.32,0.12,1) !important;
+  text-decoration: none !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+.cal-btn-full:hover {
+  background-color: #2a2a2a !important;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.5) !important;
+}
+.cal-btn-full:active {
+  box-shadow: inset 0 4px 0 rgba(0,0,0,0.15) !important;
+  padding: 14px 20px 12px !important;
+}
+
+/* Full-width secondary */
+.cal-btn-full-outline {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  width: 100% !important;
+  padding-top: 8px !important;
+  padding-bottom: 10px !important;
+  padding-left: 14px !important;
+  padding-right: 14px !important;
+  border-radius: 4px !important;
+  background-color: #f5f0e8 !important;
+  --tw-shadow: none !important;
+  --tw-inset-shadow: none !important;
+  --tw-ring-shadow: none !important;
+  --tw-inset-ring-shadow: none !important;
+  --tw-ring-offset-shadow: none !important;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2), inset 0 2px 0 rgba(255,255,255,0.9) !important;
+  border: 1px solid #888 !important;
+  color: #1a1a1a !important;
+  font-size: 14px !important;
+  font-weight: 450 !important;
+  line-height: 1 !important;
+  transition: all 0.1s !important;
+  text-decoration: none !important;
+}
+.cal-btn-full-outline:hover:not(.chevron) {
+  background-color: #ebe5db !important;
+  border-color: #666 !important;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.9) !important;
+}
+.cal-btn-full-outline:active {
+  background-color: #e2dbd0 !important;
+  box-shadow: inset 0 4px 0 rgba(0,0,0,0.12) !important;
+  padding: 10px 14px 8px !important;
+}
+
+/* ═══════════ ARROW ANIMATION (Shopify Academy style) ═══════════ */
+/* Arrow mask SVG — right-pointing arrow */
+:root {
+  --arrow-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-width='1.5'%3E%3Cpath d='M3.5 8h9M8.5 4l4 4-4 4'/%3E%3C/svg%3E");
+}
+
+/* Dark buttons with arrow: ::after = visible arrow, ::before = hidden incoming arrow */
+.cal-btn-dark.chevron::before,
+.cal-btn-dark.chevron::after,
+.cal-btn-full.chevron::before,
+.cal-btn-full.chevron::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  width: 16px !important;
+  height: 16px !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
+  -webkit-mask: var(--arrow-mask) center / contain no-repeat !important;
+  mask: var(--arrow-mask) center / contain no-repeat !important;
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), opacity 0.3s cubic-bezier(0.16,1,0.3,1) !important;
+  will-change: transform, opacity !important;
+  display: block !important;
+}
+
+/* ::after = current arrow (visible, on the right) */
+.cal-btn-dark.chevron::after,
+.cal-btn-full.chevron::after {
+  background-color: rgba(245,240,232,0.5) !important;
+  opacity: 1 !important;
+  right: 16px !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+}
+
+/* ::before = incoming arrow (hidden, off to the left) */
+.cal-btn-dark.chevron::before,
+.cal-btn-full.chevron::before {
+  background-color: #faf8f5 !important;
+  opacity: 0 !important;
+  left: 16px !important;
+  right: auto !important;
+  transform: translate(-1.4rem, -50%) !important;
+}
+
+/* Dark button padding adjustments for arrow space */
+.cal-btn-dark.chevron {
+  padding-right: 42px !important;
+  padding-left: 16px !important;
+}
+.cal-btn-full.chevron {
+  padding-right: 42px !important;
+}
+
+/* HOVER: only animate arrows (no padding shift = no layout jank) */
+.cal-btn-dark.chevron:hover,
+.cal-btn-full.chevron:hover {
+  box-shadow: inset 0 -3px 0 rgba(255,255,255,0.3) !important;
+  color: #faf8f5 !important;
+}
+.cal-btn-dark.chevron:hover::after,
+.cal-btn-full.chevron:hover::after {
+  opacity: 0 !important;
+  transform: translate(1.4rem, -50%) !important;
+}
+.cal-btn-dark.chevron:hover::before,
+.cal-btn-full.chevron:hover::before {
+  opacity: 1 !important;
+  transform: translateY(-50%) !important;
+}
+
+/* Outline buttons: simple chevron, no arrow animation */
+.cal-btn-outline.chevron::after,
+.cal-btn-full-outline.chevron::after {
+  content: '' !important;
+  display: inline-block !important;
+  width: 16px !important;
+  height: 16px !important;
+  background: currentColor !important;
+  -webkit-mask: var(--arrow-mask) center / contain no-repeat !important;
+  mask: var(--arrow-mask) center / contain no-repeat !important;
+  flex-shrink: 0 !important;
+  position: static !important;
+  transform: none !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.1s !important;
+}
+.cal-btn-outline.chevron::before,
+.cal-btn-full-outline.chevron::before {
+  display: none !important;
+}
+.cal-btn-outline.chevron:hover::after,
+.cal-btn-full-outline.chevron:hover::after {
   opacity: 0.8 !important;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.btn-primary:hover::after {
-  transform: translateX(3px) !important;
-  opacity: 1 !important;
 }
 
-/* Nav variant — smaller */
-.btn-nav {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  padding: 10px 18px !important;
-  border-radius: 10px !important;
-  background-color: #16A34A !important;
-  color: #ffffff !important;
-  font-family: var(--font-body) !important;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  text-decoration: none !important;
-  border: none !important;
-  cursor: pointer !important;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  box-shadow: 0 1px 3px rgba(22,163,74,0.15) !important;
-}
-.btn-nav:hover {
-  background-color: #15803D !important;
-  box-shadow: 0 4px 16px rgba(22,163,74,0.25) !important;
-  transform: translateY(-1px) !important;
-}
-.btn-nav::after {
-  content: '→' !important;
-  font-size: 14px !important;
-  opacity: 0.7 !important;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-.btn-nav:hover::after {
-  transform: translateX(2px) !important;
-  opacity: 1 !important;
+/* Outline hover: pressed effect (shadow shrinks) */
+.cal-btn-outline:hover,
+.cal-btn-full-outline:hover {
+  border-color: #666 !important;
+  background-color: #ebe5db !important;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.9) !important;
 }
 
-/* Secondary — ghost/outline, for lower-priority actions */
-.btn-secondary {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 6px !important;
-  padding: 12px 24px !important;
-  border-radius: 12px !important;
-  background-color: transparent !important;
-  color: var(--color-dark) !important;
-  font-family: var(--font-body) !important;
-  font-size: 15px !important;
-  font-weight: 500 !important;
-  line-height: 1 !important;
-  white-space: nowrap !important;
-  text-decoration: none !important;
-  border: 1px solid rgba(0,0,0,0.12) !important;
-  cursor: pointer !important;
-  transition: all 0.2s !important;
-}
-.btn-secondary:hover {
-  border-color: rgba(0,0,0,0.2) !important;
-  background-color: rgba(0,0,0,0.03) !important;
-}
-
-/* ═══════════ SECTION PILL / LABEL ═══════════ */
+/* ═══════════ SECTION PILL BADGE ═══════════ */
+/* Cal.com uses white bg, border-radius 9999px, shadow: rgba(34,42,53,0.05) 0 4px 8px */
 .cal-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 9999px;
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  font-family: var(--font-mono);
-  font-size: 13px;
+  gap: 6px;
+  padding: 5px 12px 7px 8px;
+  border-radius: 4px;
+  background: #faf8f5;
+  border: 1px solid #d0d0d0;
+  box-shadow: inset 0 -3px 0 rgba(0,0,0,0.05), inset 0 1px 0 rgba(255,255,255,0.9);
+  font-size: 12px;
   font-weight: 500;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
+  color: var(--color-text);
+  margin-bottom: 16px;
 }
 
-/* ═══════════ CARDS ═══════════ */
+/* ═══════════ WHITE CARDS ═══════════ */
 .cal-card {
-  background: #ffffff;
-  border-radius: 16px;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+  background: #faf8f5;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.06), inset 0 2px 0 rgba(255,255,255,0.9);
   overflow: hidden;
-  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .cal-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
+  border-color: #bbb;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,0.08), inset 0 2px 0 rgba(255,255,255,0.9);
 }
 
-/* FAQ / accordion cards — no hover lift */
+/* Accordion/FAQ cards: button-press on click */
 details.cal-card {
   cursor: pointer;
+  transition: box-shadow 0.1s, border-color 0.1s;
 }
-details.cal-card:hover {
-  transform: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+details.cal-card:active {
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.12), inset 0 2px 0 rgba(255,255,255,0.9) !important;
+  border-color: #999 !important;
 }
 details.cal-card[open] {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  border-color: #999;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.9);
 }
 
-/* Icon container */
+/* Icon container — cal.com style nested rounded square */
 .cal-icon-box {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--color-surface);
+  background: #f4f4f4;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
 }
 
-/* ═══════════ SECTION HEADINGS ═══════════ */
+/* ═══════════ SECTION HEADINGS — intentional typography ═══════════ */
 .section-heading {
-  font-family: var(--font-heading);
+  font-family: var(--font-cal);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
   text-wrap: balance;
   color: var(--color-dark);
 }
 
-/* Coloured icon box variants */
+/* ═══════════ COLOURED ICON BOX VARIANTS ═══════════ */
 .cal-icon-box-colored {
   width: 48px;
   height: 48px;
@@ -257,7 +390,7 @@ details.cal-card[open] {
   transform: scale(1.05);
 }
 
-/* ═══════════ ANIMATIONS ═══════════ */
+/* ═══════════ ILLUSTRATION ANIMATIONS ═══════════ */
 .illus-float { animation: illusFloat 3s ease-in-out infinite; }
 @keyframes illusFloat {
   0%, 100% { transform: translateY(0); }
@@ -277,21 +410,27 @@ details.cal-card[open] {
 }
 .dashboard-float { animation: illusFloat 3s ease-in-out infinite; }
 
+/* ═══════════ PRICING DEVICE ANIMATIONS ═══════════ */
+.pricing-float { animation: pricingFloat 3s ease-in-out infinite; }
+@keyframes pricingFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.pricing-particle { animation: pricingOrbit 6s ease-in-out infinite; }
+@keyframes pricingOrbit {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  25% { transform: translate(6px, -8px) scale(1.1); opacity: 0.8; }
+  50% { transform: translate(0, -12px) scale(1); opacity: 0.5; }
+  75% { transform: translate(-6px, -4px) scale(0.9); opacity: 0.7; }
+}
+
 /* Scroll-triggered fade-in */
 .fade-in {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* Stagger delays for grid items */
-.stagger-1 { transition-delay: 0ms; }
-.stagger-2 { transition-delay: 100ms; }
-.stagger-3 { transition-delay: 200ms; }
-.stagger-4 { transition-delay: 300ms; }
-.stagger-5 { transition-delay: 400ms; }
-.stagger-6 { transition-delay: 500ms; }
